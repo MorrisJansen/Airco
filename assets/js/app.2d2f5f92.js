@@ -238,7 +238,7 @@ module.exports = __webpack_require__("56d7");
 /***/ "48bf":
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "img/vraag1-afbeelding.4f37bb22.png";
+module.exports = __webpack_require__.p + "assets/img/vraag1-afbeelding.4f37bb22.png";
 
 /***/ }),
 
@@ -1478,6 +1478,7 @@ var vraag2_component = Object(componentNormalizer["a" /* default */])(
 vue_runtime_esm["a" /* default */].use(vue_router_esm["a" /* default */]);
 /* harmony default export */ var router = (new vue_router_esm["a" /* default */]({
   mode: "history",
+  base: '/Airco/',
   routes: [{
     path: "*",
     component: CampagneStart,
@@ -1485,7 +1486,7 @@ vue_runtime_esm["a" /* default */].use(vue_router_esm["a" /* default */]);
       ...campagneStartData
     }
   }, {
-    path: "/vraag1",
+    path: "/Airco/vraag1",
     component: vraag1,
     props: {
       ...campagneStartData
@@ -1647,4 +1648,4 @@ new vue_runtime_esm["a" /* default */]({
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.94a4aaf3.js.map
+//# sourceMappingURL=app.2d2f5f92.js.map
