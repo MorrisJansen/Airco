@@ -1493,7 +1493,7 @@ vue_runtime_esm["a" /* default */].use(vue_router_esm["a" /* default */]);
       ...campagneStartData
     }
   }, {
-    path: "/vraag1",
+    path: "https://morrisjansen.github.io/Airco/vraag1",
     component: vraag1,
     props: {
       ...campagneStartData
@@ -1648,4 +1648,4 @@ new vue_runtime_esm["a" /* default */]({
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.b5f7b762.js.map
+//# sourceMappingURL=app.fdbc84e5.js.map
