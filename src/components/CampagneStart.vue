@@ -202,27 +202,31 @@ export default {
         <div class="nederlandsadviesnl valign-text-bottom label-text">{{ nederlandsadviesNl }}</div>
         <div class="hoe-werkt-het valign-text-bottom">{{ hoeWerktHet }}</div>
       </div>
+
+
+
+
       <div class="overlap-group-container">
         <div class="overlap-group7">
+
+
+
           <div class="rectangle"></div>
           <frame6 :stap1="frame61Props.stap1" :controleerOfWijAc="frame61Props.controleerOfWijAc" />
           <div class="group-3">
-            <img
-              class="file-edit"
-              src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/file--edit.svg"
-              alt="File, edit"
-            />
+            <img class="file-edit" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/file--edit.svg" alt="File, edit"/>
           </div>
         </div>
+
+
+
         <div class="overlap-group3">
           <div class="rectangle"></div>
           <group4 />
-          <frame6
-            :stap1="frame62Props.stap1"
-            :controleerOfWijAc="frame62Props.controleerOfWijAc"
-            :className="frame62Props.className"
-          />
+          <frame6 :stap1="frame62Props.stap1" :controleerOfWijAc="frame62Props.controleerOfWijAc" :className="frame62Props.className"/>
         </div>
+
+
         <div class="overlap-group5">
           <div class="rectangle"></div>
           <group4 :className="group4Props.className" />
@@ -231,7 +235,14 @@ export default {
             <p class="onze-vakmensen-geven valign-text-bottom body-text">{{ onzeVakmensenGeven }}</p>
           </div>
         </div>
+
+
       </div>
+
+
+
+
+
       <div class="overlap-group4">
         <div class="frame-22">
           <div class="frame">
@@ -443,7 +454,7 @@ export default {
 
 .frame-1
   align-items: center
-  display: inline-flex
+  display: inline-flex 
   flex: 0 0 auto
   gap: 12px
   position: relative
@@ -786,4 +797,21 @@ export default {
   margin-left: 13.0px
   margin-top: 53px
   min-width: 419px
+
+
+
+
+
+
+
+@media (max-width: 1150px)
+  .overlap-group
+    position: relative
+    right: 10%
+
+
+
+@media (max-width: 1000px)
+
+
 </style>
