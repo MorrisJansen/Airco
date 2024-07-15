@@ -18,7 +18,7 @@ export default new Router({
       props: { ...campagneStartData },
     },
     {
-      path: "vraag1",
+      path: "/vraag1",
       component: vraag1,
       props: {...campagneStartData},
     },

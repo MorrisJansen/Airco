@@ -2,7 +2,7 @@
 
 
 
-  <a href="./vraag1">
+  <a href="./Airco/vraag1">
     <div class="button">
       <div class="controleer valign-text-bottom">{{ controleer }}</div>
     </div>
