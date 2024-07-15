@@ -145,7 +145,7 @@ export default {
 
 
 
-  .navbar
+.navbar
   width: 100vw
   height: 7.3rem
   display: inline-flex
