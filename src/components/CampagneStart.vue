@@ -87,7 +87,7 @@ export default {
         </div>
           <div class="container-rechts">
             <div class="container-tekst-rechts">
-              <span class="tekst-zwart-navbar">{{ spanText1 }}</span><br>
+              <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
               <span class="tekst-geel-navbar">{{ spanText2 }}</span>
             </div>
           </div>
