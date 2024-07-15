@@ -2,11 +2,11 @@
 
 
 
-  <a href="./Airco/vraag1">
+  <router-link to="/vraag1">
     <div class="button">
       <div class="controleer valign-text-bottom">{{ controleer }}</div>
     </div>
-  </a>
+  </router-link>
 
 </template>
 
