@@ -6,6 +6,11 @@ import Group4 from "./Group4";
 import XLabel from "./XLabel";
 import XButton2 from "./XButton2";
 import Navbar from './navbar.vue';
+import sectie1 from "./sectie1.vue";
+
+
+
+
 export default {
   name: "CampagneStart",
   components: {
@@ -328,8 +333,9 @@ export default {
   background-color: $white
   display: flex
   flex-direction: column
-  height: 2927px
-  width: 1920px
+  width: 100vw!important
+  // height: 2927px
+  // width: 1920px
 
 .flex-row
   align-items: center
@@ -380,181 +386,19 @@ export default {
   
 
 
-.container-sectie1
-  width: 100vw
 
 
 
-.overlap-group6
-  align-items: center
-  background-position: 50% 50%
-  background-size: cover
-  display: flex
-  height: 794px
-  // min-width: 1920px
-  width: 100vw
-  padding: 79px 54px
+  
 
 
 
 
 
 
-.layer_1
-  height: 107px
-  margin-top: 258.99px
-  width: 93px
-
-.frame-13
-  align-items: flex-start
-  display: inline-flex
-  flex-direction: column
-  gap: 40px
-  margin-bottom: 15.0px
-  margin-left: 13px
-  position: relative
-
-.hou-je-huis-koel-met-airconditioning
-  color: transparent
-  font-weight: 800
-  line-height: 65px
-  margin-top: -1.00px
-  position: relative
-  width: 721px
-
-.span0-1
-  color: $white
-
-.span1-1
-  color: $primary-yellow
-
-.frame-11
-  align-items: flex-start
-  display: inline-flex
-  flex: 0 0 auto
-  flex-direction: column
-  gap: 23px
-  position: relative
-
-.doe-de-woningscan-en-check
-  letter-spacing: 0
-  line-height: normal
-  margin-top: -1.00px
-  position: relative
-  white-space: nowrap
-  width: fit-content
-
-.frame
-  align-items: flex-start
-  display: inline-flex
-  flex: 0 0 auto
-  flex-direction: column
-  gap: 6px
-  position: relative
-
-.frame-1
-  align-items: center
-  display: inline-flex 
-  flex: 0 0 auto
-  gap: 12px
-  position: relative
-
-.small-icons
-  height: 24px
-  position: relative
-  width: 24px
-
-.hoeveel-jij-kan-besp,
-.de-best-beschikbare,
-.de-juiste-specialist,
-.controleer-nu-of-wij,
-.verbeterde-luchtkwaliteit,
-.betere-slaapkwaliteit,
-.geluidsstil-de-spli
-  letter-spacing: 0
-  line-height: normal
-  position: relative
-  white-space: nowrap
-  width: fit-content
-
-.frame-14
-  align-items: flex-end
-  display: inline-flex
-  flex: 0 0 auto
-  flex-direction: column
-  gap: 10px
-  position: relative
-
-.frame-20
-  align-items: center
-  display: inline-flex
-  flex: 0 0 auto
-  gap: 20px
-  justify-content: center
-  position: relative
-
-//  .frame-16
-//    align-items: center
-//    background-color: $white
-//    border: 1px solid
-//    border-color: $bon-jour
-//    display: flex
-//    gap: 10px
-//    height: 56px
-//    padding: 5px 26px
-//    position: relative
-//    width: 235px
-
-.postcode
-  letter-spacing: 0
-  line-height: normal
-  position: relative
-  width: fit-content
-
-.postcode-input
-  align-items: center
-  background-color: $white
-  border: 1px solid
-  border-color: $bon-jour
-  gap: 10px
-  height: 66px
-  width: 265px!important
-  padding: 5px 26px
-  position: relative
-  left: -20px
-  font-size: 22px
-
-.postcode-input:placeholder 
-  font-size: 22px
-  color: black
 
 
-.klaar-binnen-1-minuut
-  color: $white
-  font-weight: 600
-  line-height: normal
-  position: relative
-  white-space: nowrap
-  width: fit-content
-
-.overlap-group
-  align-items: flex-end
-  align-self: flex-start
-  background-color: $black
-  border-radius: 98.5px
-  display: flex
-  height: 197px
-  justify-content: flex-end
-  margin-left: 34px
-  min-width: 197px
-  padding: 54px 14.1px
-
-.bespaar-tot-40-op-de-aanschafprijs
-  height: 87px
-  letter-spacing: 0
-  line-height: normal
-  text-align: center
-  width: 169px
+//sectie 2 begint hier
 
 .frame-26
   align-items: center
@@ -804,14 +648,6 @@ export default {
 
 
 
-@media (max-width: 1150px)
-  .overlap-group
-    position: relative
-    right: 10%
-
-
-
-@media (max-width: 1000px)
 
 
 </style>

@@ -104,6 +104,10 @@ export default {
     zoom: 90%
 
 
+
+  // hier moet de sectie 1 komen met een zoom attribuut kijken of ik het zo responsive kan maken.
+
+
 @media (max-width: 850px)
   .container-advies-logo, .container-tekst-rechts
     zoom: 80%
