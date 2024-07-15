@@ -145,38 +145,46 @@ export default {
 
 
 
+  .navbar
+  width: 100vw
+  height: 7.3rem
+  display: inline-flex
 
+.container-links
+  width: 50vw
+  background-color: black
+  max-height: 100%
 
+.container-advies-logo
+  margin-left: 20%
+  margin-top: 3%
 
-.flex-row
-  align-items: center
-  align-self: flex-start
-  display: flex
-  min-width: 1761px
+.container-tekst-rechts
+  margin-left: 50%
+  margin-top: 2%
 
-.overlap-group8
-  align-items: flex-end
-  background-color: $primary-dark-blue
-  display: flex
-  height: 118px
-  min-width: 960px
-  padding: 26px 159px
-  position: relative
+.container-rechts
+  width: 50%
+  display: inline
+  max-height: 100%
 
-.besparen-op-aircondi
-  color: transparent
-  font-family: $font-family-catamaran
-  font-size: $font-size-m
+  
+
+.tekst-zwart-navbar
+  color: black
+  font-family: Catamaran
+  font-size: 1.375rem
+  font-style: normal
   font-weight: 700
-  height: 51px
-  letter-spacing: 0
   line-height: normal
-  margin-top: 9.0px
-  min-width: 316px
-  text-align: right
 
-.span0
-  color: $black
+.tekst-geel-navbar
+  color: #FFCD02
+  font-family: Catamaran
+  font-size: 1.375rem
+  font-style: normal
+  font-weight: 700
+  line-height: normal
 
 
 
