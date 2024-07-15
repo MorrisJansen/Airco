@@ -10,7 +10,7 @@ Vue.use(Router);
 
 export default new Router({
   mode: "history",
-  base: '/Airco/',  // De naam van je GitHub Pages repository subdirectory
+  base: '/Airco/',
   routes: [
     {
       path: "*",
@@ -18,7 +18,7 @@ export default new Router({
       props: { ...campagneStartData },
     },
     {
-      path: "/vraag1",
+      path: "/Airco/vraag1",
       component: vraag1,
       props: {...campagneStartData},
     },
