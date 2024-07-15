@@ -1,9 +1,9 @@
 <template>
-<a href="./vraag1">
-  <div class="button-1">
-    <div class="controleer-1 valign-text-bottom">{{ controleer }}</div>
-  </div>
-</a>
+  <router-link to="/vraag1">
+    <div class="button">
+      <div class="controleer valign-text-bottom">{{ controleer }}</div>
+    </div>
+  </router-link>
 
 </template>
 
