@@ -6,7 +6,10 @@ import Group4 from "./Group4";
 import XLabel from "./XLabel";
 import XButton2 from "./XButton2";
 import Navbar from './navbar.vue';
-import sectie1 from "./sectie1.vue";
+import Sectie1 from './sectie1.vue';
+import sectie2 from "./sectie2.vue";
+import sectie3 from "./sectie3.vue";
+import sectie4 from "./sectie4.vue";
 
 
 
@@ -21,6 +24,7 @@ export default {
     XLabel,
     XButton2,
     Navbar,
+    Sectie1,
   },
   data() {
     return {
@@ -199,7 +203,6 @@ export default {
 
 
 
-
       <!-- dit is sectie 2  (hoe werkt het) -->
 
 
@@ -248,6 +251,11 @@ export default {
 
 
 
+
+
+
+      
+      <!-- dit is sectie 3 -->
       <div class="overlap-group4">
         <div class="frame-22">
           <div class="frame">
@@ -294,6 +302,9 @@ export default {
           /><x-label :text1="xLabelProps.text1" :mensenGingenJeVoor="xLabelProps.mensenGingenJeVoor" />
         </div>
       </div>
+
+
+      
       <div class="frame-24">
         <div class="frame-15">
           <img
@@ -307,10 +318,8 @@ export default {
           <div class="frame-18">
 
 
-            <!-- <div class="frame-16-1"> -->
               <label class="postcode-label" for="postcode-input"></label>
               <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" />
-            <!-- </div> -->
 
 
 
@@ -334,6 +343,8 @@ export default {
   display: flex
   flex-direction: column
   width: 100vw!important
+  max-width: 100vw
+  min-width: 100vw
   // height: 2927px
   // width: 1920px
 
@@ -400,247 +411,23 @@ export default {
 
 //sectie 2 begint hier
 
-.frame-26
-  align-items: center
-  display: inline-flex
-  flex-direction: column
-  gap: 20px
-  margin-right: 15.0px
-  margin-top: 77px
-  position: relative
 
-.nederlandsadviesnl
-  color: $primary-dark-blue
-  font-weight: 600
-  line-height: normal
-  margin-top: -1.00px
-  position: relative
-  white-space: nowrap
-  width: fit-content
 
-.hoe-werkt-het
-  color: $primary-dark-blue
-  font-family: $font-family-catamaran
-  font-size: $font-size-xl
-  font-weight: 800
-  letter-spacing: 0
-  line-height: 58.5px
-  position: relative
-  white-space: nowrap
-  width: fit-content
 
-.overlap-group-container
-  align-items: flex-start
-  display: flex
-  margin-right: 13.0px
-  margin-top: 84px
-  min-width: 1159px
 
-.overlap-group7
-  height: 351px
-  position: relative
-  width: 362px
 
-.rectangle
-  background-color: $light-yellow
-  height: 294px
-  left: 0
-  position: absolute
-  top: 57px
-  width: 362px
 
-.group-3
-  align-items: flex-end
-  background-color: $primary-dark-blue
-  border-radius: 59.5px
-  display: flex
-  height: 119px
-  justify-content: flex-end
-  left: 122px
-  min-width: 119px
-  padding: 23.5px 17.8px
-  position: absolute
-  top: 0
 
-.file-edit
-  height: 71px
-  width: 71px
 
-.overlap-group3
-  height: 351px
-  margin-left: 40px
-  position: relative
-  width: 362px
 
-.overlap-group5
-  height: 351px
-  margin-left: 33px
-  position: relative
-  width: 362px
 
-.frame-28
-  align-items: center
-  display: inline-flex
-  flex-direction: column
-  gap: 40px
-  left: 44px
-  position: absolute
-  top: 173px
 
-.stap-3
-  color: $primary-dark-blue
-  font-weight: 800
-  line-height: 52.3px
-  margin-top: -1.00px
-  position: relative
-  white-space: nowrap
-  width: fit-content
 
-.onze-vakmensen-geven
-  color: $primary-dark-blue
-  font-weight: 400
-  line-height: normal
-  position: relative
-  text-align: center
-  width: 275px
 
-.overlap-group4
-  align-items: flex-start
-  background-color: $primary-dark-blue
-  display: flex
-  gap: 129px
-  height: 820px
-  margin-top: 102px
-  min-width: 1920px
-  padding: 126px 165px
 
-.frame-22
-  align-items: flex-start
-  align-self: center
-  display: inline-flex
-  flex-direction: column
-  gap: 40px
-  margin-bottom: 61.0px
-  position: relative
+  
 
-.waarom-airconditioning
-  color: $white
-  font-family: $font-family-catamaran
-  font-size: $font-size-xl
-  font-weight: 800
-  letter-spacing: 0
-  line-height: 58.5px
-  margin-top: -1.00px
-  position: relative
-  width: 531px
 
-.frame-22-item
-  letter-spacing: 0
-  line-height: normal
-  position: relative
-  width: 733px
-
-.frame-29
-  align-items: flex-start
-  display: inline-flex
-  flex: 0 0 auto
-  flex-direction: column
-  gap: 10px
-  position: relative
-
-.overlap-group9
-  height: 567px
-  position: relative
-  width: 679px
-
-.rectangle-5
-  height: 490px
-  left: 0
-  object-fit: cover
-  position: absolute
-  top: 0
-  width: 408px
-
-.rectangle-6
-  height: 300px
-  left: 273px
-  object-fit: cover
-  position: absolute
-  top: 267px
-  width: 406px
-
-.frame-24
-  align-items: center
-  background-color: $light-yellow
-  display: flex
-  flex-direction: column
-  gap: 10px
-  height: 396px
-  justify-content: center
-  padding: 127px 158px
-  position: relative
-  width: 1920px
-
-.frame-15
-  align-items: center
-  display: inline-flex
-  flex: 0 0 auto
-  gap: 19px
-  position: relative
-
-.arrows
-  height: 53.82px
-  position: relative
-  width: 41.86px
-
-.controleer-of-wij-ac
-  color: $black
-  font-family: $font-family-catamaran
-  font-size: $font-size-xl
-  font-weight: 800
-  letter-spacing: 0
-  line-height: 58.5px
-  position: relative
-  white-space: nowrap
-  width: fit-content
-
-.frame-19
-  align-items: center
-  display: inline-flex
-  flex: 0 0 auto
-  gap: 23px
-  position: relative
-
-.frame-18
-  align-items: flex-start
-  display: flex
-  gap: 19px
-  // height: 55px
-  position: relative
-
-.frame-16-1
-  align-items: center
-  background-color: $white
-  border: 1px solid
-  border-color: $bon-jour
-  display: flex
-  gap: 10px
-  height: 55px
-  padding: 5px 26px
-  position: relative
-  width: 249px
-
-.nederlandsadviesn
-  color: $black
-  font-family: $font-family-catamaran
-  font-size: $font-size-xs
-  font-weight: 400
-  height: 26px
-  letter-spacing: 0
-  line-height: normal
-  margin-left: 13.0px
-  margin-top: 53px
-  min-width: 419px
 
 
 

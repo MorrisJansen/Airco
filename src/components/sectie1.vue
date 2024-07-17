@@ -37,7 +37,7 @@ export default {
 
 
           <h1 class="hou-je-huis-koel-met-airconditioning valign-text-bottom large-title-capitals">
-            <span>
+            <span> 
               <span class="span0-1 large-title-capitals">Hou je huis koel met<br></span>
               <span class="span1-1 large-title-capitals">airconditioning</span>
             </span>
@@ -127,6 +127,8 @@ export default {
   height: 794px
   width: 100vw
   padding: 79px 54px
+
+
 
 
 .layer_1
@@ -291,23 +293,86 @@ export default {
 
 
 
-@media (max-width: 1000px)
+@media (max-width: 1050px)
   .frame-13
     width: 100vw
-    zoom: 80%
+    zoom: 90%
 
   .overlap-group6
     min-width: 100%!important
+    zoom: 95%
 
 
-@media (max-width: 850px)
+  .overlap-group
+    zoom: 90%
+
+
+@media (max-width: 900px)
   .frame-13
+    zoom: 90%
+
+  .overlap-group
     zoom: 70%
+
+  .overlap-group6
+    zoom: 90%
+
+@media (max-width: 800px)
+  .frame-13
+    zoom: 85%
+    
+  .overlap-group6
+    zoom: 85%
+
+  .overlap-group
+    zoom: 60%
+
+
 
 
 @media (max-width: 700px)
   .frame-13
     margin: 0 auto
+    zoom: 90%
+
+  .overlap-group
+    zoom: 60%
+    position: relative
+    bottom: 50px
+
+  .hou-je-huis-koel-met-airconditioning
+    zoom: 80%
+
+@media (max-width: 640px)
+  .frame-13
+    zoom: 85%
+
+  .overlap-group
+    zoom: 50%
+    position: relative
+    right: 200px
+
+
+@media (max-width: 550px)
+  .overlap-group
+    position: relative
+    right: 200px
+    top: 150px
+
+  .overlap-group6
+    padding: 0
+  
+  .frame-13
+    zoom: 78%
+
+
+@media (max-width: 450px)
+  .frame-13
+    zoom: 30%
+
+
+
+  
 
 
 

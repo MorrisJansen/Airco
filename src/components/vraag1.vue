@@ -4,7 +4,7 @@ import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
 
 export default {
-  name: "CampagneStart",
+  name: "vraag1x",
   components: {
     LogoNlAdviesAirco,
 
