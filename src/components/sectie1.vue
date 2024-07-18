@@ -62,12 +62,12 @@ export default {
 
               <div class="frame-1">
                 <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons.svg" alt="Small icons"/>
-                <p class="de-juiste-specialist valign-text-middle catamaran-bold-white-22px">De juiste specialisten voor gratis & vrijblijvend advies;</p>
+                <p class="de-juiste-specialist valign-text-middle catamaran-bold-white-22px">De juiste specialisten voor gratis & vrijblijvend<br class="dekstop"> advies;</p>
               </div>
 
             </div>
 
-            br
+            <br>
             <p class="controleer-nu-of-wij valign-text-bottom">Controleer nu of wij actief zijn in jouw regio:</p>
           </div>
 
@@ -441,4 +441,7 @@ export default {
     position: relative
     top: 8px
 
+@media (min-width: 500px)
+  .desktop
+    display: none
 </style>
