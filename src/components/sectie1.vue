@@ -371,8 +371,8 @@ export default {
     zoom: 60%
     position: relative
     top: -80px
-    padding-left: 0
-    margin-left: 0
+    padding-left: -10px
+    margin-left: -10px
 
   .frame-20
     margin-left: 30px

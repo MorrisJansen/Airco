@@ -194,6 +194,6 @@ export default {
 
 @media (max-width: 500px)
   .overlap-group4
-    margin-top: 400px
+    margin-top: 350px
 
 </style>
