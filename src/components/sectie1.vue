@@ -404,7 +404,7 @@ export default {
     font-size: 40px
 
   .klaar-binnen-1-minuut
-    margin-top: 50px
+    margin-top: 70px
 
 
   .overlap-group
