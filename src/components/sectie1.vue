@@ -379,7 +379,7 @@ export default {
   .layer_1
     position: relative
     top: -75px
-    right: -800px
+    right: -750px
     padding-left: 0px
     zoom: 50%
     transform: scaleX(-1)
