@@ -175,7 +175,7 @@ export default {
     display: flex
     justify-content: center
     align-items: center
-    margin-top: 30px
+    margin-top: 33px
     font-family: $font-family-catamaran
   
   
