@@ -67,7 +67,7 @@ export default {
 
             </div>
 
-
+            br
             <p class="controleer-nu-of-wij valign-text-bottom">Controleer nu of wij actief zijn in jouw regio:</p>
           </div>
 
@@ -371,11 +371,11 @@ export default {
     zoom: 60%
     position: relative
     top: -80px
-    margin-left: -60px
+    margin-left:  20px
     padding: 0 20px
 
   .frame-20
-    margin-left: 30px
+    margin-left: 20px
 
   .layer_1
     position: relative
@@ -384,11 +384,16 @@ export default {
     padding-left: 0px
     zoom: 50%
     transform: scaleX(-1)
-
+    display: none
 
 
   .frame-11
     zoom: 120%
+
+  .button
+    width: 109%
+    position: relative
+    right: 10px
 
 
   .overlap-group
