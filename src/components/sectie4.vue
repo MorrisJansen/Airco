@@ -167,7 +167,7 @@ export default {
   
   .controleer-beneden
     align-items: center
-    font-size: 30px
+    font-size: 40px
     color: $white
     margin: auto 0
 
