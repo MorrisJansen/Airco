@@ -75,11 +75,11 @@ export default {
 
           <div class="frame-14">
             <div class="frame-20">
-              <label class="postcode-label" for="postcode-input"></label>
-                <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" />
+              <label class="postcode-label" for="postcode-input1"></label>
+                <input id="postcode-input postcode-input1" type="text" class="postcode-input" placeholder="Postcode" />
                 
               <!-- controleer knop en klaar binnen 1 minuut tekst -->
-              <x-button :controleer="xButtonProps.controleer" />
+              <x-button :controleer="xButtonProps.controleer" class="postcode-button" />
             </div>
             <div class="klaar-binnen-1-minuut valign-text-bottom label-text">Klaar binnen 1 minuut</div>
           </div>
@@ -241,7 +241,7 @@ export default {
   border-color: $bon-jour
   gap: 10px
   height: 66px
-  width: 265px!important
+  // width: 265px!important
   padding: 5px 26px
   position: relative
   left: -20px
@@ -409,15 +409,18 @@ export default {
     zoom: 90%
 
 
-  .frame-20
-    display: block
-    width: 100vw
+  .frame-20, .frame-19
+    display: block!important
+    width: 150vw!important
+    height: 200px
 
   .postcode-input
-    width: 160vw!important
-  
+    width: 110%!important
+    margin-bottom: 40px!important
+    display: block!important
 
-
+  .postcode-button
+    margin-top: 40px!important
 
 
 </style>
