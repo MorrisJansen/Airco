@@ -50,7 +50,7 @@ export default {
             <div class="overkoepelende-container">
                 <div class="laadbalk">
                     <div class="geladen-gedeelte">
-                        <div class="procent">34%</div>
+                        <div class="procent">33%</div>
                     </div>
                 </div>
 
@@ -177,7 +177,7 @@ export default {
   background: #FFF
 
 .geladen-gedeelte
-  width: 23rem
+  width: 22.6rem
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01

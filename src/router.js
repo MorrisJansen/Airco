@@ -28,6 +28,11 @@ export default new Router({
       props: {...campagneStartData},
     },
     {
+      path: '/vraag3',
+      component: vraag2,
+      props: {...campagneStartData},
+    },
+    {
       path: '/navbar',
       component: navbar,
       props: {...campagneStartData},

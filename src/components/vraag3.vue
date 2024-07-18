@@ -16,7 +16,7 @@ export default {
 ],
   methods: {
     navigateToNextPage() {
-        this.$router.push('./vraag3');
+        this.$router.push('./bedankt2');
     }
   }
 };
@@ -49,8 +49,8 @@ export default {
         <div class="achtergrond">
             <div class="overkoepelende-container">
                 <div class="laadbalk">
-                    <div class="geladen-gedeelte-2">
-                        <div class="procent">66%</div>
+                    <div class="geladen-gedeelte-3">
+                        <div class="procent">100%</div>
                     </div>
                 </div>
 
@@ -67,7 +67,7 @@ export default {
                         </svg>
                     </div>
                     <div class="vraag-hoeveel">
-                        <p>Vraag 2 van 3</p>
+                        <p>Vraag 3 van 3</p>
                     </div>
 
 
@@ -216,8 +216,8 @@ export default {
   border-radius: 2.5rem
   background: #FFF
 
-.geladen-gedeelte-2
-  width: 45.2rem
+.geladen-gedeelte-3
+  width: 68rem
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
