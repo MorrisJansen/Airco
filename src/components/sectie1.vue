@@ -409,7 +409,7 @@ export default {
 
   .overlap-group
     position: relative
-    top: 82%
+    top: 84.5%
     right: 38%
     zoom: 100%
 
