@@ -371,8 +371,7 @@ export default {
     zoom: 60%
     position: relative
     top: -80px
-    padding-left: -10px
-    margin-left: -10px
+    margin-left: -50px
 
   .frame-20
     margin-left: 30px
@@ -380,9 +379,12 @@ export default {
   .layer_1
     position: relative
     top: -75px
-    zoom: 60%
+    right: -800px
     padding-left: 0px
-    zoom: 40%
+    zoom: 50%
+    transform: scaleX(-1)
+
+
 
   .frame-11
     zoom: 120%
@@ -394,6 +396,7 @@ export default {
     right: 38%
     zoom: 100%
 
+  
   .overlap-group6
     height: 650px
 
