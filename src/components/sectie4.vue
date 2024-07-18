@@ -40,7 +40,9 @@ export default {
               </div>
               <router-link to="/vraag1">
                 <div class="button-onder">
-                  <div class="controleer valign-text-bottom">Controleer</div>
+                  <div class="controleer-beneden valign-text-bottom">
+                    <span class="centreer">Controleer</span>
+                  </div>
                 </div>
               </router-link>           
             </div>
@@ -148,7 +150,7 @@ export default {
 
 @media (max-width: 600px)
   .frame-15, .frame-19
-    zoom: 60%
+    zoom: 57%
 
 
 @media (max-width: 500px)
@@ -157,20 +159,24 @@ export default {
 
 
   .button-onder
-    height: 70px
-    width: 80%
+    height: 100px
+    width: 95%
     background-color: black
     border-radius: 35px
 
   
   .controleer-beneden
+    align-items: center
+    font-size: 30px
+    color: $white
+    margin: auto 0
+
+  .centreer
     display: flex
     justify-content: center
     align-items: center
-    vertical-align: center
-    font-size: 30px
-    color: $white
-    margin-top: 1%!important
+    margin-top: 30px
+    font-family: $font-family-catamaran
   
   
   

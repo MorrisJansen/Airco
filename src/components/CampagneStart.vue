@@ -327,7 +327,9 @@ export default {
           </div>
           <router-link to="/vraag1">
             <div class="button-onder">
-              <div class="controleer-beneden valign-text-bottom">Controleer</div>
+              <div class="controleer-beneden valign-text-bottom">
+                <span class="centreer">Controleer</span>
+              </div>
             </div>
           </router-link>        
         </div>
