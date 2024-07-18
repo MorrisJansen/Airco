@@ -159,6 +159,7 @@ export default {
             </div>
 
             <br>
+            <br>
             <p class="controleer-nu-of-wij valign-text-bottom">Controleer nu of wij actief zijn in jouw regio:</p>
           </div>
 
