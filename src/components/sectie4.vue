@@ -38,7 +38,11 @@ export default {
                   <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" />
     
               </div>
-              <x-button2  :controleer="xButton2Props.controleer" />
+              <router-link to="/vraag1">
+                <div class="button-onder">
+                  <div class="controleer valign-text-bottom">Controleer</div>
+                </div>
+              </router-link>           
             </div>
           </div>
                     
@@ -152,4 +156,22 @@ export default {
     zoom: 55%
 
 
-</style>
+  .button-onder
+    height: 70px
+    width: 80%
+    background-color: black
+    border-radius: 35px
+
+  
+  .controleer-beneden
+    display: flex
+    justify-content: center
+    align-items: center
+    vertical-align: center
+    font-size: 30px
+    color: $white
+    margin-top: 1%!important
+  
+  
+  
+  </style>

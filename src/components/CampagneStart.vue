@@ -325,9 +325,15 @@ export default {
 
 
           </div>
-          <x-button2 :controleer="xButton2Props.controleer" />
+          <router-link to="/vraag1">
+            <div class="button-onder">
+              <div class="controleer-beneden valign-text-bottom">Controleer</div>
+            </div>
+          </router-link>        
         </div>
       </div>
+
+      
       <p class="nederlandsadviesn valign-text-bottom">{{ nederlandsadviesN }}</p>
     </div>
   </div>
@@ -389,52 +395,6 @@ export default {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-//sectie 2 begint hier
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
 
 
 

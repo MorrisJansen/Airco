@@ -29,12 +29,14 @@ export default {
   position: relative
 
 .controleer-1
-  display: flex
-  flex-direction: column
-  justify-content: flex-end
-  color: white
-  align-items: center
-  justify-content: center
-  align-content: center
-  margin: 0 auto
+  color: $white
+  font-family: $font-family-catamaran
+  font-size: 21.9px
+  font-weight: 800
+  letter-spacing: 0
+  line-height: normal
+  margin-top: -1.00px
+  position: relative
+  white-space: nowrap
+  width: fit-content
 </style>
