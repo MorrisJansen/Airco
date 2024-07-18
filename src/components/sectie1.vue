@@ -371,25 +371,31 @@ export default {
     zoom: 60%
     position: relative
     top: -0px
+    padding-left: 0
+    margin-left: 0
+
+  .frame-20
+    margin-left: 30px
 
   .layer_1
     position: relative
-    top: -250px
+    top: 150px
     zoom: 60%
-    padding-left: 20px
+    padding-left: 0px
+    zoom: 40%
+
+  .frame-11
+    zoom: 120%
 
 
   .overlap-group
     position: relative
     top: 85%
-    right: 70%
-    zoom: 60%
+    right: 35%
+    zoom: 70%
 
   .overlap-group6
     height: 400px
-
-
-
 
 
 

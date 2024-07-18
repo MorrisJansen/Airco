@@ -233,11 +233,7 @@ export default {
     top: 1650px
     left: 50%
 
-  .overlap-group
-    position: relative
-    top: 85%
-    right: 70%
-    zoom: 60%
+
 
 
   
