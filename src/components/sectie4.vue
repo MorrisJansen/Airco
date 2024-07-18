@@ -147,4 +147,9 @@ export default {
     zoom: 60%
 
 
+@media (max-width: 500px)
+  .controleer-of-wij-ac
+    zoom: 55%
+
+
 </style>

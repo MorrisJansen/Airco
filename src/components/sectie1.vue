@@ -366,9 +366,27 @@ export default {
     zoom: 78%
 
 
-@media (max-width: 450px)
+@media (max-width: 500px)
   .frame-13
-    zoom: 30%
+    zoom: 60%
+    position: relative
+    top: -0px
+
+  .layer_1
+    position: relative
+    top: -250px
+    zoom: 60%
+    padding-left: 20px
+
+
+  .overlap-group
+    position: relative
+    top: 50px
+    right: 885px
+    zoom: 40%
+
+  .overlap-group6
+    height: 400px
 
 
 

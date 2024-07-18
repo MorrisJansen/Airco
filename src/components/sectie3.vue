@@ -35,31 +35,17 @@ export default {
               <div class="frame-22-item valign-text-bottom catamaran-bold-white-22px">{{ airconditioningHee }}</div>
               <div class="frame-29">
                 <div class="frame-1">
-                  <img
-                    class="small-icons"
-                    src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons-3.svg"
-                    alt="Small icons"
-                  />
+                  <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons-3.svg" alt="Small icons"/>
                   <div class="verbeterde-luchtkwaliteit valign-text-middle catamaran-bold-white-22px">
                     {{ verbeterdeLuchtkwaliteit }}
                   </div>
                 </div>
                 <div class="frame-1">
-                  <img
-                    class="small-icons"
-                    src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons-3.svg"
-                    alt="Small icons"
-                  />
-                  <div class="betere-slaapkwaliteit valign-text-middle catamaran-bold-white-22px">
-                    {{ betereSlaapkwaliteit }}
-                  </div>
+                  <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons-3.svg" alt="Small icons"/>
+                  <div class="betere-slaapkwaliteit valign-text-middle catamaran-bold-white-22px">{{ betereSlaapkwaliteit }}</div>
                 </div>
                 <div class="frame-1">
-                  <img
-                    class="small-icons"
-                    src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons-3.svg"
-                    alt="Small icons"
-                  />
+                  <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons-3.svg" alt="Small icons"/>
                   <p class="geluidsstil-de-spli valign-text-middle catamaran-bold-white-22px">{{ geluidsstilDeSpli }}</p>
                 </div>
               </div>
@@ -203,5 +189,11 @@ export default {
     padding: 0
     height: 500px
     margin-top: 100px
+
+
+
+@media (max-width: 500px)
+  .overlap-group4
+    margin-top: 400px
 
 </style>

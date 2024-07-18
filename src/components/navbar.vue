@@ -131,6 +131,13 @@ export default {
   .container-tekst-rechts
     margin-top: 11%
 
+@media (max-width: 500px)
+  .container-advies-logo, .container-tekst-rechts
+    zoom: 40%
+
+  .container-tekst-rechts
+    margin-top: 20%!important
+
 
 
 </style>

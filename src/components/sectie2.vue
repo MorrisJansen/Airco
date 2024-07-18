@@ -210,18 +210,30 @@ export default {
     position: relative
     left: 53%
     transform: translate(-50%)
+
+
 @media (max-width: 500px)
   .overlap-group-container
     flex-direction: column
     align-items: center
+    margin: 0!important
+    gap: 20px
 
   .overlap-group7, .overlap-group3, .overlap-group5
     margin-top: 20px
-    margin-left: 0
+    margin: 0 auto
+    zoom: 70%
+
+  .hoe-werkt-het
+    zoom: 80%
 
 
+  .overlap-group5
+    position: absolute
+    top: 1650px
+    left: 50%
 
 
-
+  
 
 </style>

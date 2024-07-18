@@ -381,6 +381,13 @@ export default {
 
 
 
+@media (max-width: 500px)
+  .nederlandsadviesn
+    zoom: 60%
+
+
+
+
 
 
 

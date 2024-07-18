@@ -4,7 +4,7 @@ import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
 
 export default {
-  name: "vraag1x",
+  name: "vraag1",
   components: {
     LogoNlAdviesAirco,
 
@@ -156,8 +156,10 @@ export default {
 
 .achtergrond
   background-color: #FFE758
-  height: 60rem
+  max-height: 60rem
   width: 120rem
+  max-width: 100vw
+
 
 .overkoepelende-container
   display: flex
@@ -342,4 +344,14 @@ export default {
   font-style: normal
   font-weight: 400
   line-height: normal
+
+
+
+
+@media (max-width: 800px)
+  .achtergrond
+    zoom: 100%
+
+  .overkoepelende-container
+    zoom: 41%
   </style>
