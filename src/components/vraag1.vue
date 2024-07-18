@@ -354,4 +354,12 @@ export default {
 
   .overkoepelende-container
     zoom: 41%
+
+
+@media (max-width: 500px)
+  .overkoepelende-container
+    zoom: 30%
+
+  .achtergrond
+    height: 20rem!important
   </style>
