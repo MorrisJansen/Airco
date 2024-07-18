@@ -320,7 +320,7 @@ export default {
 
 
               <label class="postcode-label" for="postcode-input"></label>
-              <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" />
+              <input id="postcode-input" type="text" class="postcode-input-2" placeholder="Postcode" />
 
 
 

@@ -35,7 +35,7 @@ export default {
               <div class="frame-18">
     
                   <label class="postcode-label" for="postcode-input"></label>
-                  <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" />
+                  <input id="postcode-input" type="text" class="postcode-input-2" placeholder="Postcode" />
     
               </div>
               <router-link to="/vraag1">
@@ -106,6 +106,8 @@ export default {
   flex: 0 0 auto
   gap: 23px
   position: relative
+  width: 90vw
+  margin-left: 43.5%
 
 .frame-18
   align-items: flex-start
@@ -137,6 +139,43 @@ export default {
   margin-left: 13.0px
   margin-top: 53px
   min-width: 419px
+
+
+
+.button-onder
+  height: 60px
+  width: 20%
+  background-color: black
+  border-radius: 35px
+
+.controleer-beneden
+  align-items: center
+  font-size: 20px
+  color: $white
+  margin: auto 0
+
+.centreer
+  display: flex
+  justify-content: center
+  align-items: center
+  margin-top: 20px
+  font-family: $font-family-catamaran
+  font-weight: bold
+
+.postcode-input-2
+  align-items: center
+  background-color: $white
+  border: 1px solid
+  border-color: $bon-jour
+  gap: 10px
+  height: 56px
+  // width: 265px!important
+  padding: 5px 26px
+  font-size: 22px
+  width: 80%!important
+  margin-left: 100px
+
+
 
 
 @media (max-width: 1000px)
@@ -178,6 +217,8 @@ export default {
     margin-top: 33px
     font-family: $font-family-catamaran
     font-weight: bold
+
+
   
   
   
