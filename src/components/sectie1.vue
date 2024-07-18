@@ -381,12 +381,15 @@ export default {
 
   .overlap-group
     position: relative
-    top: 50px
-    right: 885px
-    zoom: 40%
+    top: 85%
+    right: 70%
+    zoom: 60%
 
   .overlap-group6
     height: 400px
+
+
+
 
 
 
