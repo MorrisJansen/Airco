@@ -165,7 +165,7 @@ export default {
 
 
 
-  .frame-11
+.frame-11
   align-items: flex-start
   display: inline-flex
   flex: 0 0 auto

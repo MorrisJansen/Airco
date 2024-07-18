@@ -155,7 +155,7 @@ export default {
 
 @media (max-width: 500px)
   .controleer-of-wij-ac
-    zoom: 55%
+    zoom: 52%
 
 
   .button-onder
