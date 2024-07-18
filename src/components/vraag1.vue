@@ -78,8 +78,8 @@ export default {
                         <div class="overkoepelende-input-container">
 
                             
-                          <div class="input-container">
-                            <label class="postcode-label full-width-mobiel" for="postcode-input"></label>
+                          <div class="input-container full-width-mobiel">
+                            <label class="postcode-label " for="postcode-input"></label>
                             <input id="postcode-input" type="text" class="huisnr-input" placeholder="Postcode">
                           </div>
                   
@@ -370,7 +370,6 @@ export default {
     display: block!important
   
   .full-width-mobiel
-    width: 110vw
-
+    width: 140vw!important
   
   </style>

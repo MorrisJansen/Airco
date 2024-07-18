@@ -28,19 +28,20 @@ export default {
     <div class="">
 
     <!-- navbar -->
-    <div class="flex-row">
-        <div class="overlap-group8">
+    <div class="navbar">
+      <div class="container-links">
+        <div class="container-advies-logo">
           <logo-nl-advies-airco
-            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-            :airconditioning="logoNLAdviesAircoProps.airconditioning"
-          />
+          :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
+          :airconditioning="logoNLAdviesAircoProps.airconditioning" />
         </div>
-        <p class="besparen-op-aircondi valign-text-bottom">
-          <span>
-            <span class="span0">{{ spanText1 }}</span><br>
-            <span class="catamaran-bold-supernova-22px">{{ spanText2 }}</span>
-          </span>
-        </p>
+      </div>
+        <div class="container-rechts">
+          <div class="container-tekst-rechts">
+            <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
+            <span class="tekst-geel-navbar">{{ spanText2 }}</span>
+          </div>
+        </div>
     </div>
 
 
