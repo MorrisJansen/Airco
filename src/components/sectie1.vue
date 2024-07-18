@@ -421,6 +421,7 @@ export default {
     display: block!important
 
   .postcode-input::placeholder
-    zoom: 110%!important
+    padding-top: 18px!important
+    font-size: 30px!important
 
 </style>
