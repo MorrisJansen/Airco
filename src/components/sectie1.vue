@@ -370,7 +370,7 @@ export default {
   .frame-13
     zoom: 60%
     position: relative
-    top: -200px
+    top: -80px
     padding-left: 0
     margin-left: 0
 
@@ -379,7 +379,7 @@ export default {
 
   .layer_1
     position: relative
-    top: -270px
+    top: -75px
     zoom: 60%
     padding-left: 0px
     zoom: 40%
@@ -424,10 +424,11 @@ export default {
     padding-top: 18px!important
     font-size: 30px!important
     line-height: 55px!important
+    position: relative!important
+    top: 3px!important
+
+  .bespaar-tot-40-op-de-aanschafprijs
     position: relative
-    top: 3px
-
-
-
-
+    top: 8px
+    
 </style>

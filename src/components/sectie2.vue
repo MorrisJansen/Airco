@@ -233,6 +233,9 @@ export default {
     top: 1650px
     left: 50%
 
+  .frame-26
+    margin-top: 120px
+
 
 
 
