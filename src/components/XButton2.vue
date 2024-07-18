@@ -1,6 +1,6 @@
 <template>
   <router-link to="/vraag1">
-    <div class="button">
+    <div class="button-onder">
       <div class="controleer valign-text-bottom">{{ controleer }}</div>
     </div>
   </router-link>

@@ -38,7 +38,7 @@ export default {
                   <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" />
     
               </div>
-              <x-button2 :controleer="xButton2Props.controleer" />
+              <x-button2  :controleer="xButton2Props.controleer" />
             </div>
           </div>
                     

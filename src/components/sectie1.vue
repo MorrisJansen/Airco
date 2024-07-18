@@ -82,7 +82,7 @@ export default {
                 <input id="postcode-input postcode-input1" type="text" class="postcode-input" placeholder="Postcode" />
                 
               <!-- controleer knop en klaar binnen 1 minuut tekst -->
-              <x-button :controleer="xButtonProps.controleer" class="postcode-button" />
+              <x-button :controleer="xButtonProps.controleer" class="" />
             </div>
             <div class="klaar-binnen-1-minuut valign-text-bottom label-text">Klaar binnen 1 minuut</div>
           </div>
@@ -395,12 +395,10 @@ export default {
 
   .button
     width: 109%
-    height: 70%
+    height: 60%
     position: relative
     right: 10px
 
-  .button:nth-child(1)
-    width: 98%!important
 
   .controleer
     font-size: 40px
