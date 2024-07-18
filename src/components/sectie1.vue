@@ -399,6 +399,9 @@ export default {
     position: relative
     right: 10px
 
+  .button:nth-child(1)
+    width: 98%!important
+
   .controleer
     font-size: 40px
 
