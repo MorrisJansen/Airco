@@ -372,6 +372,7 @@ export default {
     position: relative
     top: -80px
     margin-left: -60px
+    padding: 0 20px
 
   .frame-20
     margin-left: 30px

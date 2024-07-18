@@ -79,11 +79,11 @@ export default {
 
                             
                           <div class="input-container">
-                            <label class="postcode-label" for="postcode-input"></label>
+                            <label class="postcode-label full-width-mobiel" for="postcode-input"></label>
                             <input id="postcode-input" type="text" class="huisnr-input" placeholder="Postcode">
                           </div>
                   
-                          <div class="input-container">
+                          <div class="input-container full-width-mobiel">
                             <label class="huisnr-label" for="huisnr-input"></label>
                             <input id="huisnr-input" type="text" class="huisnr-input" placeholder="Huisnr.">
                           </div>
@@ -362,4 +362,15 @@ export default {
 
   .achtergrond
     height: 20rem!important
+
+  .input-container
+    display: block
+
+  .overkoepelende-input-container
+    display: block!important
+  
+  .full-width-mobiel
+    width: 110vw
+
+  
   </style>
