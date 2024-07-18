@@ -379,7 +379,7 @@ export default {
 
   .layer_1
     position: relative
-    top: 150px
+    top: -270px
     zoom: 60%
     padding-left: 0px
     zoom: 40%
@@ -416,11 +416,11 @@ export default {
 
   .postcode-input
     width: 110%!important
+    height: 5rem!important
     margin-bottom: 40px!important
     display: block!important
 
-  .postcode-button
-    margin-top: 40px!important
-
+  .postcode-input::placeholder
+    zoom: 110%!important
 
 </style>
