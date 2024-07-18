@@ -177,6 +177,7 @@ export default {
     align-items: center
     margin-top: 33px
     font-family: $font-family-catamaran
+    font-weight: bold
   
   
   
