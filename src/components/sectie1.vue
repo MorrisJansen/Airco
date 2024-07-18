@@ -395,8 +395,15 @@ export default {
 
   .button
     width: 109%
+    height: 70%
     position: relative
     right: 10px
+
+  .controleer
+    font-size: 40px
+
+  .klaar-binnen-1-minuut
+    margin-top: 50px
 
 
   .overlap-group
