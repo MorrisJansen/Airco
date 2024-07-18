@@ -390,9 +390,9 @@ export default {
 
   .overlap-group
     position: relative
-    top: 85%
-    right: 35%
-    zoom: 70%
+    top: 82%
+    right: 38%
+    zoom: 100%
 
   .overlap-group6
     height: 650px
@@ -423,5 +423,5 @@ export default {
   .postcode-input::placeholder
     padding-top: 18px!important
     font-size: 30px!important
-
+    line-height: 55px!important
 </style>
