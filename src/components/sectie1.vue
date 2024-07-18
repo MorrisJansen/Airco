@@ -415,7 +415,7 @@ export default {
     width: 100vw
 
   .container-advies-logo
-    zoom: 90%
+    zoom: 80%
 
 
   .frame-20, .frame-19
