@@ -370,7 +370,7 @@ export default {
   .frame-13
     zoom: 60%
     position: relative
-    top: -0px
+    top: -200px
     padding-left: 0
     margin-left: 0
 
@@ -395,10 +395,26 @@ export default {
     zoom: 70%
 
   .overlap-group6
-    height: 400px
+    height: 650px
 
 
 
+  .container-rechts
+    display: none
+
+  .container-links
+    width: 100vw
+
+  .container-advies-logo
+    zoom: 90%
+
+
+  .frame-20
+    display: block
+    width: 100vw
+
+  .postcode-input
+    width: 160vw!important
   
 
 
