@@ -419,6 +419,7 @@ export default {
     height: 5rem!important
     margin-bottom: 40px!important
     display: block!important
+    font-size: 30px!important
 
   .postcode-input::placeholder
     padding-top: 18px!important
@@ -430,5 +431,5 @@ export default {
   .bespaar-tot-40-op-de-aanschafprijs
     position: relative
     top: 8px
-    
+
 </style>

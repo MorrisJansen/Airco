@@ -230,7 +230,7 @@ export default {
 
   .overlap-group5
     position: absolute
-    top: 1650px
+    top: 2025px
     left: 50%
 
   .frame-26
