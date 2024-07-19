@@ -390,6 +390,7 @@ export default {
 
   .input-container
     display: block
+    margin-bottom: 30px
 
   .overkoepelende-input-container
     display: block!important
