@@ -385,7 +385,9 @@ export default {
     background-color: white
 
   .container-afbeelding
-    margin: auto 0
-  
+    height: 100%!important 
+    
+  img
+    height: 100%!important
   
   </style>
