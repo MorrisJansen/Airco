@@ -374,6 +374,9 @@ export default {
     padding-bottom: 1px
 
 
+  .afbeelding-van-pijl
+    zoom: 200%
+
   .vraag-hoeveel
     margin-left: 3rem!important
     zoom: 210%
