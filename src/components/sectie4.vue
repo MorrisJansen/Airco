@@ -141,6 +141,10 @@ export default {
   min-width: 419px
 
 
+.postcode-input-2
+  border-radius: 5px
+
+
 @media (min-width: 1000px)
   .button-onder
     height: 60px
@@ -226,7 +230,8 @@ export default {
     font-family: $font-family-catamaran
     font-weight: bold
 
-
+  .frame-15
+    zoom: 50%
   
   
   
