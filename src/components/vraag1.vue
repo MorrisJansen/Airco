@@ -112,9 +112,13 @@ export default {
 
                     </div>
 
+                    <div class="container-afbeelding-desktop">
+                      <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
+                    </div>
+                    
 
-                    <div class="container-afbeelding">
-                      <img src="@/components/vraag1-afbeelding.png" alt="">
+                    <div class="container-afbeelding-mobiel">
+                      <img id="afbeelding-border-mobiel" class="afbeelding-border-mobiel" src="./firstQuestion 2.png" alt="afbeelding mobiel">
                     </div>
                    
                 </div>
@@ -209,7 +213,6 @@ export default {
   background: #FFF
   gap: 2rem
   display: flex
-  padding-bottom: 100px
 
 .container-voor-gegevens
   width: 65%
@@ -356,6 +359,10 @@ export default {
   .overkoepelende-container
     zoom: 41%
 
+@media (min-width: 500px)
+  .container-afbeelding-mobiel
+    display: none
+
 
 @media (max-width: 500px)
   .overkoepelende-container
@@ -365,6 +372,10 @@ export default {
     height: 40rem!important
 
   .vraag1-container
+    padding-bottom: 100px
+
+
+  
 
   .input-container
     display: block
@@ -389,5 +400,18 @@ export default {
     
   img
     height: 100%!important
-  
+
+  .afbeelding-border
+    border: 4px black solid
+    z-index: 999999
+
+  #afbeelding-border
+    border: 4px solid black
+    z-index: 999999
+
+
+  .container-afbeelding-desktop
+    display: none
+
+
   </style>
