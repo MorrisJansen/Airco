@@ -374,6 +374,14 @@ export default {
     padding-bottom: 1px
 
 
+  .vraag-hoeveel
+    margin-left: 3rem!important
+
+  .vraag
+    margin-left: 3rem!important
+    
+  .container-inputs
+    margin-left: 3rem!important
   
 
   .input-container
@@ -395,7 +403,7 @@ export default {
     background-color: white
 
   .option-select
-    width: 256.5% !important
+    width: 254.5% !important
 
 
   .container-afbeelding
