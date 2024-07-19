@@ -371,7 +371,7 @@ export default {
     height: 40rem!important
 
   .vraag1-container
-    padding-bottom: 10px
+    padding-bottom: 1px
 
 
   
@@ -413,8 +413,8 @@ export default {
     display: none
 
   .afbeelding-mobiel
-    zoom: 80%
-    border-radius: 5px
+    zoom: 85%
+    border-radius: 1.875rem
 
 
   </style>
