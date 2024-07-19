@@ -78,17 +78,17 @@ export default {
                         <div class="overkoepelende-input-container">
 
                             
-                          <div class="input-container">
+                          <div class="input-container full-width-mobiel-vraag2">
                             <label class="postcode-label" for="postcode-input"></label>
                             <input id="postcode-input" type="text" class="huisnr-input" placeholder="Postcode">
                           </div>
                   
-                          <div class="input-container">
+                          <div class="input-container full-width-mobiel-vraag2">
                             <label class="huisnr-label" for="huisnr-input"></label>
                             <input id="huisnr-input" type="text" class="huisnr-input" placeholder="Huisnr.">
                           </div>
                   
-                          <div class="input-container full-width">
+                          <div class="input-container full-width full-width-mobiel-vraag2">
                             <label class="option-label" for="option-select"></label>
                             <select id="option-select" class="option-select">
                               <option value="" disabled selected>Straatnaam</option>
@@ -366,13 +366,6 @@ export default {
 
 
 
-
-
-
-
-
-
-
 .footer
   display: flex
   justify-content: center
@@ -386,6 +379,25 @@ export default {
   line-height: normal
 
 
+
+
+
+
+@media (max-width: 500px)
+  .overkoepelende-container
+    zoom: 30%
+
+  .achtergrond
+    height: 20rem!important
+
+  .input-container
+    display: block
+
+  .overkoepelende-input-container
+    display: block!important
+  
+  .full-width-mobiel-vraag2
+    width: 245vw!important
 
 
   </style>
