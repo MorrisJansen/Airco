@@ -55,7 +55,7 @@ export default {
                 </div>
 
 
-                <div class="vraag1-container">
+                <div class="vraag2-container">
                     <div class="container-voor-gegevens">
 
 
@@ -202,13 +202,14 @@ export default {
 
 
 
-.vraag1-container
+.vraag2-container
   width: 68rem
-  height: 592px
+  height: auto
   border-radius: 1.875rem
   background: #FFF
   gap: 2rem
   display: flex
+  padding-bottom: 100px
 
 .container-voor-gegevens
   width: 65%
@@ -358,7 +359,7 @@ export default {
 
 @media (max-width: 500px)
   .achtergrond-vraag2
-    height: 20rem!important
+    height: 40rem!important
 
   .overkoepelende-container-vraag2
     zoom: 30%
