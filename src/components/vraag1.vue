@@ -429,7 +429,7 @@ export default {
     zoom: 85%
     border-radius: 1.875rem
     width: 105%!important
-    margin-right: 40px
+    margin-right: 60px
     position: relative
     top: 15px
   .volgende
