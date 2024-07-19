@@ -46,8 +46,8 @@ export default {
 
 
 
-        <div class="achtergrond-vraag1">
-            <div class="overkoepelende-container">
+        <div class="achtergrond-vraag2">
+            <div class="overkoepelende-container-vraag2">
                 <div class="laadbalk-vraag2">
                     <div class="geladen-gedeelte-vraag2">
                         <div class="procent">66%</div>
@@ -357,11 +357,11 @@ export default {
 
 
 @media (max-width: 500px)
-  .overkoepelende-container
-    zoom: 30%
-
-  .achtergrond-vraag1
+  .achtergrond-vraag2
     height: 20rem!important
+
+  .overkoepelende-container-vraag2
+    zoom: 30%
 
   .input-container
     display: block
@@ -371,5 +371,9 @@ export default {
   
   .full-width-mobiel-vraag2
     width: 240vw!important
+    height: 150px
+
+
+
   
   </style>
