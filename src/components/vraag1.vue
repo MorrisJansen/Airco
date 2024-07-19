@@ -406,9 +406,8 @@ export default {
   .afbeelding-mobiel
     zoom: 85%
     border-radius: 1.875rem
-    width: 110%!important
-    position: relative
-    right: -40px
+    width: 105%!important
+    margin-right: 40px
 
 
   </style>
