@@ -399,5 +399,8 @@ export default {
   .full-width-mobiel-vraag2
     width: 245vw!important
 
+  .option-select
+    width: 57.5rem
+
 
   </style>
