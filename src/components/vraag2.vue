@@ -399,7 +399,7 @@ export default {
   .full-width-mobiel-vraag2
     width: 245vw!important
 
-  .postcode-input-vraag2, .huisnr-input-vraag2, .option-input-vraag2
+  .huisnr-input-vraag2, .option-select
     height: 200px!important
 
 
