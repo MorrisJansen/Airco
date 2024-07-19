@@ -80,12 +80,12 @@ export default {
                             
                           <div class="input-container full-width-mobiel-vraag2">
                             <label class="postcode-label" for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input" placeholder="Postcode">
+                            <input id="postcode-input" type="text" class="huisnr-input huisnr-input-vraag2" placeholder="Postcode">
                           </div>
                   
                           <div class="input-container full-width-mobiel-vraag2">
                             <label class="huisnr-label" for="huisnr-input"></label>
-                            <input id="huisnr-input" type="text" class="huisnr-input" placeholder="Huisnr.">
+                            <input id="huisnr-input" type="text" class="huisnr-input huisnr-input-vraag2" placeholder="Huisnr.">
                           </div>
                   
                           <div class="input-container full-width full-width-mobiel-vraag2">
@@ -399,7 +399,7 @@ export default {
   .full-width-mobiel-vraag2
     width: 245vw!important
 
-  .postcode-input, .huisnr-input, .option-input
+  .postcode-input-vraag2, .huisnr-input-vraag2, .option-input-vraag2
     height: 200px!important
 
 
