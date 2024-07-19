@@ -430,8 +430,8 @@ export default {
     border-radius: 1.875rem
     width: 105%!important
     margin-right: 40px
-    margin-top: 10px
-
+    position: relative
+    top: 15px
   .volgende
     margin-bottom: 50px
 
