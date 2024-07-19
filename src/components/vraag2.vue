@@ -4,7 +4,7 @@ import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
 
 export default {
-  name: "CampagneStart",
+  name: "vraag2",
   components: {
     LogoNlAdviesAirco,
 
@@ -25,7 +25,7 @@ export default {
 
 
 <template>
-    <div class="">
+    <div>
 
     <!-- navbar -->
     <div class="navbar">
@@ -46,10 +46,10 @@ export default {
 
 
 
-        <div class="achtergrond">
+        <div class="achtergrond-vraag1">
             <div class="overkoepelende-container">
                 <div class="laadbalk">
-                    <div class="geladen-gedeelte-2">
+                    <div class="geladen-gedeelte">
                         <div class="procent">66%</div>
                     </div>
                 </div>
@@ -78,17 +78,17 @@ export default {
                         <div class="overkoepelende-input-container">
 
                             
-                          <div class="input-container full-width-mobiel-vraag2">
-                            <label class="postcode-label" for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input huisnr-input-vraag2" placeholder="Postcode">
+                          <div class="input-container full-width-mobiel">
+                            <label class="postcode-label " for="postcode-input"></label>
+                            <input id="postcode-input" type="text" class="huisnr-input" placeholder="Postcode">
                           </div>
                   
-                          <div class="input-container full-width-mobiel-vraag2">
+                          <div class="input-container full-width-mobiel">
                             <label class="huisnr-label" for="huisnr-input"></label>
-                            <input id="huisnr-input" type="text" class="huisnr-input huisnr-input-vraag2" placeholder="Huisnr.">
+                            <input id="huisnr-input" type="text" class="huisnr-input" placeholder="Huisnr.">
                           </div>
                   
-                          <div class="input-container full-width full-width-mobiel-vraag2">
+                          <div class="input-container full-width">
                             <label class="option-label" for="option-select"></label>
                             <select id="option-select" class="option-select">
                               <option value="" disabled selected>Straatnaam</option>
@@ -114,7 +114,7 @@ export default {
 
 
                     <!-- <div class="container-afbeelding">
-                        <img src="@/components/vraag1-afbeelding.png" alt="">
+                      <img src="@/components/vraag1-afbeelding.png" alt="">
                     </div> -->
                    
                 </div>
@@ -142,48 +142,6 @@ export default {
   <style lang="sass">
   @import '../../variables'
 
-* 
-  box-sizing: border-box
-  padding: 0
-  margin: 0
-
-
-
-
-
-.flex-row
-  display: flex
-  align-items: center
-  align-self: flex-start
-  flex-wrap: wrap
-  min-width: 1761px
-  width: 100%
-  flex-shrink: 2
-
-
-.overlap-group8
-  align-items: flex-end
-  background-color: $primary-dark-blue
-  display: flex
-  height: 118px
-  min-width: 960px
-  padding: 26px 159px
-  position: relative
-
-.besparen-op-aircondi
-  color: transparent
-  font-family: $font-family-catamaran
-  font-size: $font-size-m
-  font-weight: 700
-  height: 51px
-  letter-spacing: 0
-  line-height: normal
-  margin-top: 9.0px
-  min-width: 316px
-  text-align: right
-
-.span0
-  color: $black
 
 
 
@@ -196,10 +154,12 @@ export default {
 
 
 
-.achtergrond
+.achtergrond-vraag1
   background-color: #FFE758
-  height: 60rem
+  max-height: 60rem
   width: 120rem
+  max-width: 100vw
+
 
 .overkoepelende-container
   display: flex
@@ -216,7 +176,7 @@ export default {
   border-radius: 2.5rem
   background: #FFF
 
-.geladen-gedeelte-2
+.geladen-gedeelte
   width: 45.2rem
   height: 1.5rem
   border-radius: 2.5rem
@@ -366,6 +326,13 @@ export default {
 
 
 
+
+
+
+
+
+
+
 .footer
   display: flex
   justify-content: center
@@ -381,13 +348,19 @@ export default {
 
 
 
+@media (max-width: 800px)
+  .achtergrond-vraag1
+    zoom: 100%
+
+  .overkoepelende-container
+    zoom: 41%
 
 
 @media (max-width: 500px)
   .overkoepelende-container
     zoom: 30%
 
-  .achtergrond
+  .achtergrond-vraag1
     height: 20rem!important
 
   .input-container
@@ -396,18 +369,7 @@ export default {
   .overkoepelende-input-container
     display: block!important
   
-  .full-width-mobiel-vraag2
-    width: 245vw!important
-
-  .huisnr-input-vraag2, .option-select
-    height: 200px!important
-
-
-  .option-select
-    width: 57.5rem!important
-    height: 200px
-
-
+  .full-width-mobiel
+    width: 140vw!important
   
-
   </style>

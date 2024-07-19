@@ -46,7 +46,7 @@ export default {
 
 
 
-        <div class="achtergrond">
+        <div class="achtergrond-vraag1">
             <div class="overkoepelende-container">
                 <div class="laadbalk">
                     <div class="geladen-gedeelte">
@@ -154,7 +154,7 @@ export default {
 
 
 
-.achtergrond
+.achtergrond-vraag1
   background-color: #FFE758
   max-height: 60rem
   width: 120rem
@@ -349,7 +349,7 @@ export default {
 
 
 @media (max-width: 800px)
-  .achtergrond
+  .achtergrond-vraag1
     zoom: 100%
 
   .overkoepelende-container
@@ -360,7 +360,7 @@ export default {
   .overkoepelende-container
     zoom: 30%
 
-  .achtergrond
+  .achtergrond-vraag1
     height: 20rem!important
 
   .input-container
