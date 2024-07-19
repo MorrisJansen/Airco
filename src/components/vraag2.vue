@@ -78,19 +78,19 @@ export default {
                         <div class="overkoepelende-input-container">
 
                             
-                          <div class="input-container full-width-mobiel">
+                          <div class="input-container">
                             <label class="postcode-label " for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input" placeholder="Postcode">
+                            <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag2" placeholder="Postcode">
                           </div>
                   
-                          <div class="input-container full-width-mobiel">
+                          <div class="input-container">
                             <label class="huisnr-label" for="huisnr-input"></label>
-                            <input id="huisnr-input" type="text" class="huisnr-input" placeholder="Huisnr.">
+                            <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag2" placeholder="Huisnr.">
                           </div>
                   
                           <div class="input-container full-width">
                             <label class="option-label" for="option-select"></label>
-                            <select id="option-select" class="option-select">
+                            <select id="option-select" class="option-select full-width-mobiel-vraag2">
                               <option value="" disabled selected>Straatnaam</option>
                               <option value="option1">Optie 1</option>
                               <option value="option2">Optie 2</option>
@@ -369,7 +369,7 @@ export default {
   .overkoepelende-input-container
     display: block!important
   
-  .full-width-mobiel
-    width: 140vw!important
+  .full-width-mobiel-vraag2
+    width: 240vw!important
   
   </style>
