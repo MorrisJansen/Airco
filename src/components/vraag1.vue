@@ -380,7 +380,7 @@ export default {
 
   .vraag
     margin-left: 3rem!important
-    zoom: 150%
+    zoom: 135%
 
   .container-inputs
     margin-left: 3rem!important
