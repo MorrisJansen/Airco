@@ -90,7 +90,7 @@ export default {
                   
                           <div class="input-container full-width">
                             <label class="option-label" for="option-select"></label>
-                            <select id="option-select" class="option-select full-width-mobiel-vraag2">
+                            <select id="option-select" class="option-select-vraag2 full-width-mobiel-vraag2">
                               <option value="" disabled selected>Straatnaam</option>
                               <option value="option1">Optie 1</option>
                               <option value="option2">Optie 2</option>
@@ -278,7 +278,7 @@ export default {
   font-size: 1rem
   color: $primary-dark-blue
 
-.option-select
+.option-select-vraag2
   width: calc(15.5rem * 2 + 1rem)
   height: 3.4rem
   padding: 0.5rem
@@ -373,6 +373,17 @@ export default {
   .full-width-mobiel-vraag2
     width: 240vw!important
     height: 150px!important
+
+  .full-width-mobiel-vraag2::placeholder
+    font-size: 42px!important
+    padding-left: 20px
+
+
+
+  .option-select-vraag2
+    font-size: 42px!important
+
+
 
 
 
