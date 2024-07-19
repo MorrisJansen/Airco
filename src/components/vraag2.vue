@@ -48,7 +48,7 @@ export default {
 
         <div class="achtergrond-vraag1">
             <div class="overkoepelende-container">
-                <div class="laadbalk">
+                <div class="laadbalk-vraag2">
                     <div class="geladen-gedeelte">
                         <div class="procent">66%</div>
                     </div>
@@ -167,7 +167,7 @@ export default {
   align-items: center
   gap: 6rem
 
-.laadbalk
+.laadbalk-vraag2
   margin: 0 auto
   width: 68rem
   height: 1.5rem
