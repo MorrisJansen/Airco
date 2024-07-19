@@ -377,6 +377,7 @@ export default {
     top: -80px
     margin-left:  20px
     padding: 0 20px
+    margin-top: 60px
 
   .frame-20
     margin-left: 20px

@@ -103,11 +103,12 @@ export default {
 .frame-19
   align-items: center
   display: inline-flex
-  flex: 0 0 auto
   gap: 23px
-  position: relative
-  width: 90vw
-  margin-left: 43.5%
+  // position: relative
+  // width: 90vw
+  left: 180px
+  margin: 0
+  padding: 0
 
 .frame-18
   align-items: flex-start

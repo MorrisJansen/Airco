@@ -136,7 +136,9 @@ export default {
   height: 567px
   position: relative
   width: 679px
-  right: 70px
+  right: 160px
+  top: 225px
+  zoom: 80%
 
 .rectangle-5
   height: 490px
@@ -154,9 +156,13 @@ export default {
   top: 267px
   width: 406px
 
-@media (max-width: 1700px)
+
+
+@media (max-width: 1500px)
   .overlap-group9
-    display: none
+    position: relative
+    right: 150px
+    zoom: 70%
 
   .overlap-group4
     width: 100vw
@@ -166,15 +172,31 @@ export default {
   .overlap-group4
     margin-top: 450px
 
+  .frame-22
+    position: relative
+    right: 130px
+
+  .overlap-group9
+    left: -400px
+    zoom: 60%
+
 @media (max-width: 1000px)
   .overlap-group4
     margin-top: 100px
+
+
+  .overlap-group9
+    zoom: 50%
+    left: -600px
+
+@media (max-width: 880px)
+  .overlap-group9
+    display: none
   
 @media (max-width: 825px)
   .overlap-group4
     margin-top: 100px
-    padding-left: 40px
-    padding-right: 40px
+
     
   .frame-22
     zoom: 100%
@@ -183,7 +205,7 @@ export default {
 @media (max-width: 600px)
   .frame-22
     zoom: 60%
-    margin-left: 30px
+    margin-left: 200px
 
   .overlap-group4
     padding: 0
