@@ -384,6 +384,8 @@ export default {
     padding-left: 20px
     background-color: white
 
+  .container-afbeelding
+    margin: auto 0
   
   
   </style>
