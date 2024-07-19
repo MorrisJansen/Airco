@@ -400,7 +400,7 @@ export default {
     width: 245vw!important
 
   .postcode-input, .huisnr-input, .option-input
-    height: 200px
+    height: 200px!important
 
 
   .option-select
