@@ -383,6 +383,7 @@ export default {
     zoom: 210%
     display: block
     padding: 10px 0
+    margin-top: 100px
 
   .vraag
     margin-left: 3rem!important
