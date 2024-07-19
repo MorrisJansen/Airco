@@ -399,7 +399,7 @@ export default {
   .full-width-mobiel-vraag2
     width: 245vw!important
 
-  .postcode-label, .huisnr-label, .option-label
+  .postcode-input, .huisnr-input, .option-input
     height: 200px
 
 
@@ -407,5 +407,7 @@ export default {
     width: 57.5rem
     height: 200px
 
+
+  
 
   </style>
