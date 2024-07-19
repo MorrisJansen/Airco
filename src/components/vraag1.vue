@@ -403,7 +403,7 @@ export default {
     background-color: white
 
   .option-select
-    width: 250.5% !important
+    width: 246.5% !important
 
 
   .container-afbeelding
