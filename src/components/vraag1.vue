@@ -375,7 +375,7 @@ export default {
 
 
   .pijl-vraag1
-    zoom: 400%
+    zoom: 300%
 
   .vraag-hoeveel
     margin-left: 3rem!important
@@ -417,8 +417,6 @@ export default {
   .container-afbeelding
     height: 100%!important 
     
-  img
-    height: 100%!important
 
   .container-afbeelding-desktop
     display: none
@@ -428,6 +426,9 @@ export default {
     border-radius: 1.875rem
     width: 105%!important
     margin-right: 40px
+
+  .volgende
+    margin-bottom: 50px
 
 
   </style>
