@@ -398,7 +398,10 @@ export default {
   
   .full-width-mobiel-vraag2
     width: 245vw!important
+
+  .postcode-label, .huisnr-label, .option-label
     height: 200px
+
 
   .option-select
     width: 57.5rem
