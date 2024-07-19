@@ -383,7 +383,7 @@ export default {
     display: block!important
   
   .full-width-mobiel
-    width: 140vw!important
+    width: 170vw!important
 
 
   .huisnr-input, .option-select
@@ -400,21 +400,13 @@ export default {
   img
     height: 100%!important
 
-  .afbeelding-border
-    border: 4px black solid
-    z-index: 999999
-
-  #afbeelding-border
-    border: 4px solid black
-    z-index: 999999
-
-
   .container-afbeelding-desktop
     display: none
 
   .afbeelding-mobiel
     zoom: 85%
     border-radius: 1.875rem
+    width: 120%!important
 
 
   </style>
