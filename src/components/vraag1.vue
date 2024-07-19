@@ -117,7 +117,7 @@ export default {
                     </div>
 
                     <div class="container-afbeelding-mobiel">
-                      <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion 2.png" alt="afbeelding mobiel">
+                      <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
                     </div>
                    
                 </div>
