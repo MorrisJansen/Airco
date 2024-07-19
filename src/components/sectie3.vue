@@ -205,7 +205,7 @@ export default {
 @media (max-width: 600px)
   .frame-22
     zoom: 60%
-    margin-left: 200px
+    margin-left: 160px
 
   .overlap-group4
     padding: 0
