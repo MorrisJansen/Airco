@@ -376,7 +376,7 @@ export default {
 
   .vraag-hoeveel
     margin-left: 3rem!important
-    zoom: 170%
+    zoom: 210%
 
   .vraag
     margin-left: 3rem!important
