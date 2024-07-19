@@ -80,12 +80,12 @@ export default {
                             
                           <div class="input-container full-width-mobiel">
                             <label class="postcode-label " for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input" placeholder="Postcode">
+                            <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode">
                           </div>
                   
                           <div class="input-container full-width-mobiel">
                             <label class="huisnr-label" for="huisnr-input"></label>
-                            <input id="huisnr-input" type="text" class="huisnr-input" placeholder="Huisnr.">
+                            <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Huisnr.">
                           </div>
                   
                           <div class="input-container full-width">
@@ -204,11 +204,12 @@ export default {
 
 .vraag1-container
   width: 68rem
-  height: 592px
+  height: auto
   border-radius: 1.875rem
   background: #FFF
   gap: 2rem
   display: flex
+  padding-bottom: 100px
 
 .container-voor-gegevens
   width: 65%
@@ -361,7 +362,9 @@ export default {
     zoom: 30%
 
   .achtergrond-vraag1
-    height: 20rem!important
+    height: 40rem!important
+
+  .vraag1-container
 
   .input-container
     display: block
@@ -371,5 +374,16 @@ export default {
   
   .full-width-mobiel
     width: 140vw!important
+
+
+  .huisnr-input, .option-select
+    height: 150px!important
+
+  .full-width-mobiel-vraag1, .option-select
+    font-size: 42px!important
+    padding-left: 20px
+    background-color: white
+
+  
   
   </style>

@@ -244,7 +244,7 @@ export default {
 
 .vraag1-container
   width: 68rem
-  height: 592px
+  height: auto
   border-radius: 1.875rem
   background: #FFF
   gap: 2rem
