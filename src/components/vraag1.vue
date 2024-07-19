@@ -376,6 +376,7 @@ export default {
 
   .pijl-vraag1
     zoom: 300%
+    margin-bottom: 100px
 
   .vraag-hoeveel
     margin-left: 3rem!important
