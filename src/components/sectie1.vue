@@ -136,7 +136,7 @@ export default {
 
 .layer_1
   height: 107px
-  margin-top: 258.99px
+  margin-top: 410px
   width: 93px
 
 .frame-13
@@ -243,12 +243,13 @@ export default {
   border: 1px solid
   border-color: $bon-jour
   gap: 10px
-  height: 66px
+  height: 100%
   // width: 265px!important
-  padding: 5px 26px
+  padding: 20px 26px
   position: relative
   left: -20px
   font-size: 22px
+  border-radius: 5px
 
 .postcode-input:placeholder 
   font-size: 22px
@@ -397,7 +398,7 @@ export default {
     width: 109%
     height: 60%
     position: relative
-    right: 10px
+    right: 17px
 
 
   .controleer

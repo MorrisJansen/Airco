@@ -192,7 +192,16 @@ export default {
 
 
 @media (max-width: 500px)
-  .controleer-of-wij-ac
+
+
+  .postcode-input-2
+    padding: 50px 10px
+    margin-bottom: 30px
+    width: 93%
+    position: relative
+    right: 24px
+    font-size: 60px
+    .controleer-of-wij-ac
     zoom: 52%
 
 

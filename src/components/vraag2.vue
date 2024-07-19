@@ -307,7 +307,7 @@ export default {
   flex-direction: column
   width: 15.5rem
 
-.postcode-input, .huisnr-input
+.postcode-input-vraag, .huisnr-input
   width: 100%
   height: 3.4rem
   padding: 0.5rem
