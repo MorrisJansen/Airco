@@ -376,14 +376,14 @@ export default {
 
   .pijl-vraag1
     zoom: 300%
-    margin-bottom: 100px
+    margin-bottom: 25px
 
   .vraag-hoeveel
     margin-left: 3rem!important
     zoom: 210%
     display: block
     padding: 10px 0
-    margin-top: 30px
+    margin-top: 25px
 
   .vraag
     margin-left: 3rem!important
