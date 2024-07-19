@@ -408,7 +408,7 @@ export default {
     border-radius: 1.875rem
     width: 110%!important
     position: relative
-    right: -20px
+    right: -40px
 
 
   </style>
