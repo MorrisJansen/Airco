@@ -379,7 +379,7 @@ export default {
 
   .vraag
     margin-left: 3rem!important
-    
+
   .container-inputs
     margin-left: 3rem!important
   
@@ -403,7 +403,7 @@ export default {
     background-color: white
 
   .option-select
-    width: 254.5% !important
+    width: 250.5% !important
 
 
   .container-afbeelding
