@@ -246,7 +246,7 @@ export default {
   line-height: 130%
   display: block!important
   margin-left: 5rem
-  width: 60%!important
+  width: 100%!important
 
   
 
@@ -376,9 +376,12 @@ export default {
 
   .vraag-hoeveel
     margin-left: 3rem!important
+    zoom: 120%
 
   .vraag
     margin-left: 3rem!important
+    zoom: 120%
+
 
   .container-inputs
     margin-left: 3rem!important
