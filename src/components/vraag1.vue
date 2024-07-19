@@ -368,7 +368,7 @@ export default {
     zoom: 30%
 
   .achtergrond-vraag1
-    height: 30rem!important
+    height: 26rem!important
 
   .vraag1-container
     padding-bottom: 1px
