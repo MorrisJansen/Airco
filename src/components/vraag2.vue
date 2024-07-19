@@ -75,7 +75,7 @@ export default {
 
 
                      <div class="container-inputs">
-                        <div class="overkoepelende-input-container">
+                        <div class="overkoepelende-input-container-vraag2">
 
                             
                           <div class="input-container">
@@ -154,14 +154,14 @@ export default {
 
 
 
-.achtergrond-vraag1
+.achtergrond-vraag2
   background-color: #FFE758
   max-height: 60rem
   width: 120rem
   max-width: 100vw
 
 
-.overkoepelende-container
+.overkoepelende-container-vraag2
   display: flex
   flex-direction: column
   align-items: center
@@ -256,7 +256,7 @@ export default {
   margin-left: 5rem
   max-width: 36rem
 
-.overkoepelende-input-container
+.overkoepelende-input-container-vraag2
   display: flex
   flex-wrap: wrap
   max-width: 36rem
@@ -349,10 +349,10 @@ export default {
 
 
 @media (max-width: 800px)
-  .achtergrond-vraag1
+  .achtergrond-vraag2
     zoom: 100%
 
-  .overkoepelende-container
+  .overkoepelende-container-vraag2
     zoom: 41%
 
 
@@ -366,12 +366,12 @@ export default {
   .input-container
     display: block
 
-  .overkoepelende-input-container
+  .overkoepelende-input-container-vraag2
     display: block!important
   
   .full-width-mobiel-vraag2
     width: 240vw!important
-    height: 150px
+    height: 150px!important
 
 
 
