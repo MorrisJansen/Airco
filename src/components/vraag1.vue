@@ -378,6 +378,7 @@ export default {
     margin-left: 3rem!important
     zoom: 210%
     display: block
+    padding: 10px 0
 
   .vraag
     margin-left: 3rem!important
