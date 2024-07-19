@@ -274,6 +274,7 @@ export default {
   margin-left: 5rem
 
 
+
 .vraag
   color: #000
   font-family: Catamaran

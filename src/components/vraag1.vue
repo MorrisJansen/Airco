@@ -376,11 +376,11 @@ export default {
 
   .vraag-hoeveel
     margin-left: 3rem!important
-    zoom: 120%
+    zoom: 170%
 
   .vraag
     margin-left: 3rem!important
-    zoom: 135%
+    zoom: 150%
 
   .container-inputs
     margin-left: 3rem!important
