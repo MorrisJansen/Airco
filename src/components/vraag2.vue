@@ -401,6 +401,7 @@ export default {
 
   .option-select
     width: 57.5rem
+    height: 200px
 
 
   </style>
