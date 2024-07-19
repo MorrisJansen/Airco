@@ -394,6 +394,10 @@ export default {
     padding-left: 20px
     background-color: white
 
+  .option-select
+    width: 256.5% !important
+
+
   .container-afbeelding
     height: 100%!important 
     
