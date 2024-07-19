@@ -49,7 +49,7 @@ export default {
         <div class="achtergrond-vraag1">
             <div class="overkoepelende-container">
                 <div class="laadbalk-vraag2">
-                    <div class="geladen-gedeelte">
+                    <div class="geladen-gedeelte-vraag2">
                         <div class="procent">66%</div>
                     </div>
                 </div>
@@ -176,7 +176,7 @@ export default {
   border-radius: 2.5rem
   background: #FFF
 
-.geladen-gedeelte
+.geladen-gedeelte-vraag2
   width: 45.2rem
   height: 1.5rem
   border-radius: 2.5rem
