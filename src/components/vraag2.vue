@@ -71,7 +71,7 @@ export default {
                     </div>
 
 
-                     <p class="vraag">Wat is jouw adres?</p>
+                     <p class="vraag2">Wat is jouw adres?</p>
 
 
                      <div class="container-inputs">
@@ -235,7 +235,7 @@ export default {
   margin-left: 5rem
 
 
-.vraag
+.vraag2
   color: #000
   font-family: Catamaran
   font-size: 2.8125rem
@@ -244,7 +244,7 @@ export default {
   line-height: 130%
   display: block!important
   margin-left: 5rem
-  width: 60%!important
+  width: 100%!important
 
   
 
@@ -358,6 +358,12 @@ export default {
 
 
 @media (max-width: 500px)
+
+  .vraag2
+    zoom: 180%
+    margin-left: 28%
+
+
   .achtergrond-vraag2
     height: 40rem!important
 
@@ -382,6 +388,8 @@ export default {
 
   .option-select-vraag2
     font-size: 42px!important
+    padding-left: 20px
+    background-color: white
 
 
 
