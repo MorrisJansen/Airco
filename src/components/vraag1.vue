@@ -368,7 +368,7 @@ export default {
     zoom: 30%
 
   .achtergrond-vraag1
-    height: 40rem!important
+    height: 30rem!important
 
   .vraag1-container
     padding-bottom: 1px
@@ -433,6 +433,8 @@ export default {
     position: relative
     top: 15px
     right: 25px
+
+
   .volgende
     margin-bottom: 50px
 
