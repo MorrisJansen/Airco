@@ -283,8 +283,6 @@ export default {
   line-height: 130%
   display: block!important
   margin-left: 5rem
-  width: 60%!important
-
   
 
 
