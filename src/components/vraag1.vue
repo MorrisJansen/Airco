@@ -115,10 +115,9 @@ export default {
                     <div class="container-afbeelding-desktop">
                       <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
                     </div>
-                    
 
                     <div class="container-afbeelding-mobiel">
-                      <img id="afbeelding-border-mobiel" class="afbeelding-border-mobiel" src="./firstQuestion 2.png" alt="afbeelding mobiel">
+                      <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion 2.png" alt="afbeelding mobiel">
                     </div>
                    
                 </div>
@@ -412,6 +411,9 @@ export default {
 
   .container-afbeelding-desktop
     display: none
+
+  .afbeelding-mobiel
+    zoom: 80%
 
 
   </style>
