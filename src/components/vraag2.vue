@@ -475,6 +475,7 @@ export default {
 
   .vraag2
     margin-left: 3rem!important
+    zoom: 110%
 
   .radio-input
     zoom: 220%!important
