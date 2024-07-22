@@ -159,7 +159,9 @@ export default {
 
 .achtergrond-vraag1
   background-color: #FFE758
-  max-height: 60rem
+  // max-height: 60rem
+  height: auto
+  padding-bottom: 2rem
   width: 120rem
   max-width: 100vw
 
@@ -207,7 +209,7 @@ export default {
 
 .vraag1-container
   width: 68rem
-  height: auto
+  height: 592px
   border-radius: 1.875rem
   background: #FFF
   gap: 2rem
@@ -431,7 +433,7 @@ export default {
     width: 105%!important
     margin-right: 40px
     position: relative
-    top: 15px
+    top: 12px
     right: 25px
 
 

@@ -55,7 +55,7 @@ export default {
                 </div>
 
 
-                <div class="vraag1-container">
+                <div class="vraag3-container">
                     <div class="container-voor-gegevens">
 
 
@@ -242,7 +242,7 @@ export default {
 
 
 
-.vraag1-container
+.vraag3-container
   width: 68rem
   height: auto
   border-radius: 1.875rem
