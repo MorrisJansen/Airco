@@ -85,30 +85,10 @@ export default {
                           <div class="container-inputs">
                             <div class="overkoepelende-input-container">
                               <form>
-                                <textarea class="textarea-veld" placeholder="Vul het aantal kamers in"></textarea>
+                                <input type="number" class="number-input-veld" placeholder="Vul het aantal kamers in" />
                               </form>
                             </div>
                           </div>
-<!--                             
-                          <div class="input-container full-width-mobiel">
-                            <label class="postcode-label " for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode">
-                          </div>
-                  
-                          <div class="input-container full-width-mobiel">
-                            <label class="huisnr-label" for="huisnr-input"></label>
-                            <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Huisnr.">
-                          </div>
-                  
-                          <div class="input-container full-width">
-                            <label class="option-label" for="option-select"></label>
-                            <select id="option-select" class="option-select">
-                              <option value="" disabled selected>Straatnaam</option>
-                              <option value="option1">Optie 1</option>
-                              <option value="option2">Optie 2</option>
-                              <option value="option3">Optie 3</option>
-                            </select>
-                          </div> -->
 
 
                         </div>
