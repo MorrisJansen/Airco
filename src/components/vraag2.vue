@@ -444,9 +444,11 @@ export default {
     right: 25px
 
 
+  .vraag2
+    margin-left: 3rem!important
 
   .radio-input
-    zoom: 180%!important
+    zoom: 220%!important
     max-width: 100%
 
 
