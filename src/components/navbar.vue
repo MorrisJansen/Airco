@@ -94,6 +94,19 @@ export default {
   margin-left: 10%
 
 
+@media (min-width: 2000px)
+  .tekst-zwart-navbar, .tekst-geel-navbar
+    margin-top: -12px
+    margin-right: 34%
+
+
+  .navbar
+    zoom: 150%
+
+  .container-advies-logo
+    margin-left: 22%
+
+  
 
 @media (max-width: 1100px)
   .container-tekst-rechts
@@ -102,10 +115,6 @@ export default {
 @media (max-width: 1000px)
   .container-advies-logo, .container-tekst-rechts
     zoom: 90%
-
-
-
-  // hier moet de sectie 1 komen met een zoom attribuut kijken of ik het zo responsive kan maken.
 
 
 @media (max-width: 850px)

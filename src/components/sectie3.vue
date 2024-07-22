@@ -157,6 +157,16 @@ export default {
   width: 406px
 
 
+@media (min-width: 2000px)
+  .overlap-group4
+    zoom: 150%
+    position: relative
+    left: 575px
+
+  .frame-22-item
+    max-width: 75%
+
+
 
 @media (max-width: 1500px)
   .overlap-group9

@@ -286,7 +286,11 @@ export default {
 
 
 
-
+@media (min-width: 2000px)
+  .container-sectie1
+    zoom: 150%
+    position: relative
+    left: 575px
 
 
 

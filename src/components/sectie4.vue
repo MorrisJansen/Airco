@@ -117,6 +117,14 @@ export default {
   // height: 55px
   position: relative
 
+.button-onder
+  padding-left: 150px
+  padding-right: 150px
+
+.centreer
+  font-size: 26px
+  margin-top: 17px!important
+
 .frame-16-1
   align-items: center
   background-color: $white
@@ -144,6 +152,11 @@ export default {
 
 .postcode-input-2
   border-radius: 5px
+
+
+@media (min-width: 2000px)
+  .frame-24
+    zoom: 150%
 
 
 @media (min-width: 1000px)
@@ -227,7 +240,8 @@ export default {
     display: flex
     justify-content: center
     align-items: center
-    margin-top: 33px
+    margin-top: 35px!important
+    font-size: 34px
     font-family: $font-family-catamaran
     font-weight: bold
 

@@ -185,6 +185,14 @@ export default {
   text-align: center
   width: 275px
 
+
+
+@media (min-width: 2000px)
+  .frame-26, .overlap-group-container
+    zoom: 150%!important
+
+
+
 @media (max-width: 1200px)
     .overlap-group7, .overlap-group3
         margin-left: 16%

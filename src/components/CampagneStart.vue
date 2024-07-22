@@ -388,7 +388,9 @@ export default {
   color: $black
 
 
-
+@media (min-width: 2000px)
+  .nederlandsadviesn
+    zoom: 150%
 
 @media (max-width: 500px)
   .nederlandsadviesn
