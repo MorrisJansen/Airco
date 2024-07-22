@@ -202,7 +202,7 @@ export default {
   background: #FFF
 
 .geladen-gedeelte-vraag2
-  width: 22.6rem
+  width: 45.2rem
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
