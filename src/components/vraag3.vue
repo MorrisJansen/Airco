@@ -73,7 +73,7 @@ export default {
                     </div>
 
 
-                     <p class="vraag">Wat is jouw adres?</p>
+                     <p class="vraag3">Wat is jouw adres?</p>
 
 
 
@@ -237,7 +237,7 @@ export default {
   margin-left: 5rem
 
 
-.vraag
+.vraag3
   color: #000
   font-family: Catamaran
   font-size: 2.8125rem
@@ -380,8 +380,8 @@ export default {
     position: relative
     right:  10px
 
-  .vraag
-    margin-left: 2rem!important
+  .vraag3
+    margin-left: 3rem!important
     zoom: 110%
 
   .container-inputs
