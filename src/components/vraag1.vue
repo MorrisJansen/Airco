@@ -410,8 +410,8 @@ export default {
     right:  10px
 
   .vraag
-    margin-left: 2rem!important
-    zoom: 110%
+    margin-left: 3rem!important
+    zoom: 110%!important
 
   .container-inputs
     margin-left: 3rem!important
