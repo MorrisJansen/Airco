@@ -60,7 +60,7 @@ export default {
 
 
                     <div class="afbeelding-van-pijl">
-                      <router-link to="./vraag1.vue">
+                      <router-link to="./vraag1">
                         <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="Arrows">
                                 <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
@@ -118,9 +118,9 @@ export default {
 
 
 
-                      <div class="volgende">
+                      <!-- <div class="volgende">
                         <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
-                      </div>
+                      </div> -->
                      
                   
 
@@ -220,7 +220,7 @@ export default {
 .radio-input
   display: flex
   width: 32rem
-  height: 3.4375rem
+  height: 4.6rem
   padding: 0.3125rem 1.625rem
   align-items: center
   gap: 1.25rem
@@ -309,30 +309,30 @@ export default {
 
 
 
-.volgende
-  display: flex
-  justify-content: end
-  margin-right: 5rem
-  margin-top: 1rem
+// .volgende
+//   display: flex
+//   justify-content: end
+//   margin-right: 5rem
+//   margin-top: 1rem
 
 
-.volgende-button
-  display: flex
-  padding: 0.5rem 2.8rem
-  justify-content: center
-  align-items: center
-  gap: 0.625rem
-  border-radius: 3.75rem
-  background: #FFCD02
-  color:  #1C1829
-  font-family: Catamaran
-  font-size: 1.36875rem!important
-  font-style: normal
-  font-weight: 800
-  line-height: normal
-  text-transform: uppercase
-  border: none
-  cursor: pointer
+// .volgende-button
+//   display: flex
+//   padding: 0.5rem 2.8rem
+//   justify-content: center
+//   align-items: center
+//   gap: 0.625rem
+//   border-radius: 3.75rem
+//   background: #FFCD02
+//   color:  #1C1829
+//   font-family: Catamaran
+//   font-size: 1.36875rem!important
+//   font-style: normal
+//   font-weight: 800
+//   line-height: normal
+//   text-transform: uppercase
+//   border: none
+//   cursor: pointer
 
 
 
@@ -444,16 +444,16 @@ export default {
     right: 25px
 
 
-  .volgende
-    margin-bottom: 50px
+//  .volgende
+//    margin-bottom: 50px
 
-  .volgende-button
-    width: 100%
-    position: relative
-    left: 50px
-    padding-top: 30px!important
-    padding-bottom: 30px!important
-    font-size: 38px!important
+//  .volgende-button
+//    width: 100%
+//    position: relative
+//    left: 50px
+//    padding-top: 30px!important
+//    padding-bottom: 30px!important
+//    font-size: 38px!important
 
 
   .footer
