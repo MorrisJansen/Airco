@@ -16,7 +16,7 @@ export default {
 ],
   methods: {
     navigateToNextPage() {
-        this.$router.push('./bedankt2');
+        this.$router.push('./analyse');
     }
   }
 };
@@ -60,11 +60,14 @@ export default {
 
 
                     <div class="afbeelding-van-pijl">
+                      <router-link to="./vraag2.vue">
                         <svg width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="Arrows">
-                                <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
-                            </g>
+                          <g id="Arrows">
+                              <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
+                          </g>
                         </svg>
+                      </router-link>
+                        
                     </div>
                     <div class="vraag-hoeveel">
                         <p>Vraag 3 van 3</p>

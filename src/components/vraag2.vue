@@ -4,7 +4,7 @@ import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
 
 export default {
-  name: "vraag2",
+  name: "vraag1",
   components: {
     LogoNlAdviesAirco,
 
@@ -46,61 +46,75 @@ export default {
 
 
 
-        <div class="achtergrond-vraag2">
-            <div class="overkoepelende-container-vraag2">
-                <div class="laadbalk-vraag2">
-                    <div class="geladen-gedeelte-vraag2">
-                        <div class="procent">66%</div>
+        <div class="achtergrond-vraag1">
+            <div class="overkoepelende-container">
+                <div class="laadbalk">
+                    <div class="geladen-gedeelte">
+                        <div class="procent">33%</div>
                     </div>
                 </div>
 
 
-                <div class="vraag2-container">
+                <div class="vraag1-container">
                     <div class="container-voor-gegevens">
 
 
                     <div class="afbeelding-van-pijl">
-                        <svg width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <router-link to="./vraag1.vue">
+                        <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="Arrows">
                                 <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
                             </g>
                         </svg>
+                      </router-link>
                     </div>
                     <div class="vraag-hoeveel">
                         <p>Vraag 2 van 3</p>
                     </div>
 
 
-                     <p class="vraag2">Wat is jouw adres?</p>
+                     <p class="vraag">Welk type airco ben je in geïnteresseerd?</p>
 
 
                      <div class="container-inputs">
-                        <div class="overkoepelende-input-container-vraag2">
+                        <div class="overkoepelende-input-container">
 
+
+                          <form>
+                            <label class="radio-input">
+                              <input type="radio" name="options" value="Option 1" v-model="selectedOption">
+                              <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                              </svg>
+                              <span class="text-input">
+                                Vaste airco met buitenunit (split airco)
+                              </span>
+                            </label>
+                            <label class="radio-input">
+                              <input type="radio" name="options" value="Option 2" v-model="selectedOption">
+                              <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                              </svg>
+                              <span class="text-input">
+                                Vaste airco zonder buitenunit (monoblock)
+                              </span>
+                            </label>
+                            <label class="radio-input">
+                              <input type="radio" name="options" value="Option 3" v-model="selectedOption">
+                              <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                              </svg>
+                              <span class="text-input">
+                                Ik wil graag advies
+                              </span>
+                            </label>
+                          </form>
                             
-                          <div class="input-container">
-                            <label class="postcode-label " for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag2" placeholder="Postcode">
-                          </div>
-                  
-                          <div class="input-container">
-                            <label class="huisnr-label" for="huisnr-input"></label>
-                            <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag2" placeholder="Huisnr.">
-                          </div>
-                  
-                          <div class="input-container full-width">
-                            <label class="option-label" for="option-select"></label>
-                            <select id="option-select" class="option-select-vraag2 full-width-mobiel-vraag2">
-                              <option value="" disabled selected>Straatnaam</option>
-                              <option value="option1">Optie 1</option>
-                              <option value="option2">Optie 2</option>
-                              <option value="option3">Optie 3</option>
-                            </select>
-                          </div>
 
 
                         </div>
                       </div>
+
 
 
 
@@ -112,10 +126,13 @@ export default {
 
                     </div>
 
+                    <div class="container-afbeelding-desktop">
+                      <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
+                    </div>
 
-                    <!-- <div class="container-afbeelding">
-                      <img src="@/components/vraag1-afbeelding.png" alt="">
-                    </div> -->
+                    <div class="container-afbeelding-mobiel">
+                      <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
+                    </div>
                    
                 </div>
 
@@ -154,20 +171,22 @@ export default {
 
 
 
-.achtergrond-vraag2
+.achtergrond-vraag1
   background-color: #FFE758
-  max-height: 60rem
+  // max-height: 60rem
+  height: auto
+  padding-bottom: 2rem
   width: 120rem
   max-width: 100vw
 
 
-.overkoepelende-container-vraag2
+.overkoepelende-container
   display: flex
   flex-direction: column
   align-items: center
   gap: 6rem
 
-.laadbalk-vraag2
+.laadbalk
   margin: 0 auto
   width: 68rem
   height: 1.5rem
@@ -176,8 +195,8 @@ export default {
   border-radius: 2.5rem
   background: #FFF
 
-.geladen-gedeelte-vraag2
-  width: 45.2rem
+.geladen-gedeelte
+  width: 22.6rem
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
@@ -198,18 +217,42 @@ export default {
 
 
 
+.radio-input
+  display: flex
+  width: 32rem
+  height: 3.4375rem
+  padding: 0.3125rem 1.625rem
+  align-items: center
+  gap: 1.25rem
+  border: 1px solid #E2E2E2
+  background: #FFF
+  margin-bottom: 1rem
+
+.radio-input:first-child
+  margin-top: 1rem
+
+
+.radio-input input[type="radio"] 
+    display: none
+
+.text-input
+  color: #000
+  font-family: Catamaran, sans-serif
+  font-size: 1.125rem
+  font-style: normal
+  font-weight: 400
+  line-height: normal
+  
 
 
 
-
-.vraag2-container
+.vraag1-container
   width: 68rem
-  height: auto
+  height: 592px
   border-radius: 1.875rem
   background: #FFF
   gap: 2rem
   display: flex
-  padding-bottom: 100px
 
 .container-voor-gegevens
   width: 65%
@@ -220,7 +263,7 @@ export default {
   height: 2rem
   width: 1.5625rem
   display: block
-  margin-top: 7.5rem
+  margin-top: 3rem!important
   margin-left: 5rem
 
 .vraag-hoeveel
@@ -235,7 +278,7 @@ export default {
   margin-left: 5rem
 
 
-.vraag2
+.vraag
   color: #000
   font-family: Catamaran
   font-size: 2.8125rem
@@ -257,42 +300,11 @@ export default {
   margin-left: 5rem
   max-width: 36rem
 
-.overkoepelende-input-container-vraag2
+.overkoepelende-input-container
   display: flex
   flex-wrap: wrap
   max-width: 36rem
   gap: 1rem
-
-.input-container
-  display: flex
-  flex-direction: column
-  width: 15.5rem
-
-.postcode-input-vraag, .huisnr-input
-  width: 100%
-  height: 3.4rem
-  padding: 0.5rem
-  border: 1px solid $bon-jour
-  border-radius: 0.25rem
-  font-family: $font-family-catamaran
-  font-size: 1rem
-  color: $primary-dark-blue
-
-.option-select-vraag2
-  width: calc(15.5rem * 2 + 1rem)
-  height: 3.4rem
-  padding: 0.5rem
-  border: 1px solid $bon-jour
-  border-radius: 0.25rem
-  font-family: $font-family-catamaran
-  font-size: 1rem
-  color: grey
-
-.postcode-label, .huisnr-label, .option-label
-  margin-bottom: 0.5rem
-  font-family: $font-family-catamaran
-  font-size: 1rem
-  color: $primary-dark-blue
 
 
 
@@ -314,7 +326,7 @@ export default {
   background: #FFCD02
   color:  #1C1829
   font-family: Catamaran
-  font-size: 1.36875rem
+  font-size: 1.36875rem!important
   font-style: normal
   font-weight: 800
   line-height: normal
@@ -350,50 +362,102 @@ export default {
 
 
 @media (max-width: 800px)
-  .achtergrond-vraag2
+  .achtergrond-vraag1
     zoom: 100%
 
-  .overkoepelende-container-vraag2
+  .overkoepelende-container
     zoom: 41%
+
+@media (min-width: 500px)
+  .container-afbeelding-mobiel
+    display: none
 
 
 @media (max-width: 500px)
-
-  .vraag2
-    zoom: 180%
-    margin-left: 28%
-
-
-  .achtergrond-vraag2
-    height: 40rem!important
-
-  .overkoepelende-container-vraag2
+  .overkoepelende-container
     zoom: 30%
 
-  .input-container
-    display: block
+  .achtergrond-vraag1
+    height: 26rem!important
 
-  .overkoepelende-input-container-vraag2
+  .vraag1-container
+    padding-bottom: 1px
+    height: 1060px
+
+
+  .laadbalk
+    margin: 0 auto
+    max-width: 100vw
+    height: 1.5rem
+    position: relative
+    top: 1rem!important
+    border-radius: 2.5rem
+    background: #FFF
+    zoom: 290%
+
+  .geladen-gedeelte
+    max-width: 40%
+
+
+  .afbeelding-van-pijl
+    margin-top: 4rem!important
+
+  .pijl-vraag1
+    zoom: 300%
+
+
+  .vraag-hoeveel
+    margin-left: 2rem!important
+    zoom: 210%
+    display: block
+    padding: 10px 0
+    margin-top: 15px
+    position: relative
+    right:  10px
+
+  .vraag
+    margin-left: 2rem!important
+    zoom: 150%
+
+  .container-inputs
+    margin-left: 3rem!important
+  
+
+  .overkoepelende-input-container
     display: block!important
   
-  .full-width-mobiel-vraag2
-    width: 240vw!important
-    height: 150px!important
 
-  .full-width-mobiel-vraag2::placeholder
-    font-size: 42px!important
-    padding-left: 20px
+  .container-afbeelding
+    height: 100%!important 
+    
+
+  .container-afbeelding-desktop
+    display: none
+
+  .afbeelding-mobiel
+    zoom: 85%
+    border-radius: 1.875rem
+    width: 105%!important
+    margin-right: 40px
+    position: relative
+    top: 12px
+    right: 25px
 
 
+  .volgende
+    margin-bottom: 50px
 
-  .option-select-vraag2
-    font-size: 42px!important
-    padding-left: 20px
-    background-color: white
+  .volgende-button
+    width: 100%
+    position: relative
+    left: 50px
+    padding-top: 30px!important
+    padding-bottom: 30px!important
+    font-size: 38px!important
 
 
+  .footer
+    text-align: center
 
 
-
-  
   </style>
