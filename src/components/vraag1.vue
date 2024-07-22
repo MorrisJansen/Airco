@@ -432,7 +432,7 @@ export default {
     height: 150px!important
 
   .full-width-mobiel-vraag1, .option-select
-    font-size: 42px!important
+    font-size: 45px!important
     padding-left: 20px
     background-color: white
 
