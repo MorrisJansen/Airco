@@ -227,7 +227,7 @@ export default {
     height: 100px
     width: 95%
     background-color: black
-    border-radius: 35px
+    border-radius: 60px
 
   
   .controleer-beneden

@@ -395,7 +395,6 @@ export default {
     transform: scaleX(-1)
     display: none
 
-
   .frame-11
     zoom: 120%
 
@@ -411,6 +410,9 @@ export default {
 
   .klaar-binnen-1-minuut
     margin-top: 70px
+    font-size: 20px!important
+    position: relative
+    left: 40px
 
 
   .overlap-group
