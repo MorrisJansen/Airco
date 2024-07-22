@@ -446,6 +446,8 @@ export default {
     width: 100%
     position: relative
     left: 50px
+    padding-top: 15px
+    padding-bottom: 15px
 
 
   </style>
