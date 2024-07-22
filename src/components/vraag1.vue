@@ -466,4 +466,8 @@ export default {
     padding-bottom: 30px!important
 
 
+  .footer
+    text-align: center
+
+
   </style>
