@@ -4,7 +4,7 @@ import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
 
 export default {
-  name: "CampagneStart",
+  name: "vraag1",
   components: {
     LogoNlAdviesAirco,
 
@@ -16,7 +16,7 @@ export default {
 ],
   methods: {
     navigateToNextPage() {
-        this.$router.push('./analyse');
+        this.$router.push('./vraag2');
     }
   }
 };
@@ -25,7 +25,7 @@ export default {
 
 
 <template>
-    <div class="">
+    <div>
 
     <!-- navbar -->
     <div class="navbar">
@@ -46,31 +46,30 @@ export default {
 
 
 
-        <div class="achtergrond">
+        <div class="achtergrond-vraag1">
             <div class="overkoepelende-container">
                 <div class="laadbalk">
-                    <div class="geladen-gedeelte-3">
-                        <div class="procent">100%</div>
+                    <div class="geladen-gedeelte">
+                        <div class="procent">33%</div>
                     </div>
                 </div>
 
 
-                <div class="vraag3-container">
+                <div class="vraag1-container">
                     <div class="container-voor-gegevens">
 
 
                     <div class="afbeelding-van-pijl">
-                      <router-link to="./vraag2">
-                        <svg width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <g id="Arrows">
-                              <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
-                          </g>
+                      <router-link to="./CampagneStart.vue">
+                        <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g id="Arrows">
+                                <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
+                            </g>
                         </svg>
                       </router-link>
-                        
                     </div>
                     <div class="vraag-hoeveel">
-                        <p>Vraag 3 van 3</p>
+                        <p>Vraag 1 van 3</p>
                     </div>
 
 
@@ -80,15 +79,25 @@ export default {
                      <div class="container-inputs">
                         <div class="overkoepelende-input-container">
 
-                            
-                          <div class="input-container">
-                            <label class="postcode-label" for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input" placeholder="Postcode">
+
+
+
+                          <div class="container-inputs">
+                            <div class="overkoepelende-input-container">
+                              <form>
+                                <textarea class="textarea-veld" placeholder="Vul het aantal kamers in"></textarea>
+                              </form>
+                            </div>
+                          </div>
+<!--                             
+                          <div class="input-container full-width-mobiel">
+                            <label class="postcode-label " for="postcode-input"></label>
+                            <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode">
                           </div>
                   
-                          <div class="input-container">
+                          <div class="input-container full-width-mobiel">
                             <label class="huisnr-label" for="huisnr-input"></label>
-                            <input id="huisnr-input" type="text" class="huisnr-input" placeholder="Huisnr.">
+                            <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Huisnr.">
                           </div>
                   
                           <div class="input-container full-width">
@@ -99,7 +108,7 @@ export default {
                               <option value="option2">Optie 2</option>
                               <option value="option3">Optie 3</option>
                             </select>
-                          </div>
+                          </div> -->
 
 
                         </div>
@@ -115,9 +124,12 @@ export default {
 
                     </div>
 
+                    <div class="container-afbeelding-desktop">
+                      <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
+                    </div>
 
-                    <div class="container-afbeelding">
-                        <img src="@/components/vraag1-afbeelding.png" alt="">
+                    <div class="container-afbeelding-mobiel">
+                      <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
                     </div>
                    
                 </div>
@@ -145,48 +157,6 @@ export default {
   <style lang="sass">
   @import '../../variables'
 
-* 
-  box-sizing: border-box
-  padding: 0
-  margin: 0
-
-
-
-
-
-.flex-row
-  display: flex
-  align-items: center
-  align-self: flex-start
-  flex-wrap: wrap
-  min-width: 1761px
-  width: 100%
-  flex-shrink: 2
-
-
-.overlap-group8
-  align-items: flex-end
-  background-color: $primary-dark-blue
-  display: flex
-  height: 118px
-  min-width: 960px
-  padding: 26px 159px
-  position: relative
-
-.besparen-op-aircondi
-  color: transparent
-  font-family: $font-family-catamaran
-  font-size: $font-size-m
-  font-weight: 700
-  height: 51px
-  letter-spacing: 0
-  line-height: normal
-  margin-top: 9.0px
-  min-width: 316px
-  text-align: right
-
-.span0
-  color: $black
 
 
 
@@ -199,10 +169,14 @@ export default {
 
 
 
-.achtergrond
+.achtergrond-vraag1
   background-color: #FFE758
-  height: 60rem
+  // max-height: 60rem
+  height: auto
+  padding-bottom: 2rem
   width: 120rem
+  max-width: 100vw
+
 
 .overkoepelende-container
   display: flex
@@ -219,8 +193,8 @@ export default {
   border-radius: 2.5rem
   background: #FFF
 
-.geladen-gedeelte-3
-  width: 68rem
+.geladen-gedeelte
+  width: 22.6rem
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
@@ -245,9 +219,9 @@ export default {
 
 
 
-.vraag3-container
+.vraag1-container
   width: 68rem
-  height: auto
+  height: 592px
   border-radius: 1.875rem
   background: #FFF
   gap: 2rem
@@ -277,7 +251,6 @@ export default {
   margin-left: 5rem
 
 
-
 .vraag
   color: #000
   font-family: Catamaran
@@ -287,6 +260,8 @@ export default {
   line-height: 130%
   display: block!important
   margin-left: 5rem
+  width: 100%!important
+
   
 
 
@@ -355,7 +330,7 @@ export default {
   background: #FFCD02
   color:  #1C1829
   font-family: Catamaran
-  font-size: 1.36875rem
+  font-size: 1.36875rem!important
   font-style: normal
   font-weight: 800
   line-height: normal
@@ -388,6 +363,124 @@ export default {
   line-height: normal
 
 
+
+
+@media (max-width: 800px)
+  .achtergrond-vraag1
+    zoom: 100%
+
+  .overkoepelende-container
+    zoom: 41%
+
+@media (min-width: 500px)
+  .container-afbeelding-mobiel
+    display: none
+
+
+@media (max-width: 500px)
+  .overkoepelende-container
+    zoom: 30%
+
+  .achtergrond-vraag1
+    height: 26rem!important
+
+  .vraag1-container
+    padding-bottom: 1px
+    height: 1060px
+
+
+  .laadbalk
+    margin: 0 auto
+    max-width: 100vw
+    height: 1.5rem
+    position: relative
+    top: 1rem!important
+    border-radius: 2.5rem
+    background: #FFF
+    zoom: 290%
+
+  .geladen-gedeelte
+    max-width: 40%
+
+
+  .afbeelding-van-pijl
+    margin-top: 4rem!important
+
+  .pijl-vraag1
+    zoom: 300%
+
+
+  .vraag-hoeveel
+    margin-left: 2rem!important
+    zoom: 210%
+    display: block
+    padding: 10px 0
+    margin-top: 15px
+    position: relative
+    right:  10px
+
+  .vraag
+    margin-left: 2rem!important
+    zoom: 110%
+
+  .container-inputs
+    margin-left: 3rem!important
+  
+
+  .input-container
+    display: block
+    margin-bottom: 30px
+
+  .overkoepelende-input-container
+    display: block!important
+  
+  .full-width-mobiel
+    width: 170vw!important
+
+
+  .huisnr-input, .option-select
+    height: 150px!important
+
+  .full-width-mobiel-vraag1, .option-select
+    font-size: 42px!important
+    padding-left: 20px
+    background-color: white
+
+  .option-select
+    width: 246.5% !important
+
+
+  .container-afbeelding
+    height: 100%!important 
+    
+
+  .container-afbeelding-desktop
+    display: none
+
+  .afbeelding-mobiel
+    zoom: 85%
+    border-radius: 1.875rem
+    width: 105%!important
+    margin-right: 40px
+    position: relative
+    top: 12px
+    right: 25px
+
+
+  .volgende
+    margin-bottom: 50px
+
+  .volgende-button
+    width: 100%
+    position: relative
+    left: 50px
+    padding-top: 30px!important
+    padding-bottom: 30px!important
+    font-size: 38px!important
+
+
+  .footer
+    text-align: center
 
 
   </style>
