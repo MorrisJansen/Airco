@@ -442,5 +442,10 @@ export default {
   .volgende
     margin-bottom: 50px
 
+  .volgende-button
+    width: 100%
+    position: relative
+    left: 50px
+
 
   </style>
