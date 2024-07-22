@@ -483,7 +483,7 @@ export default {
     padding: .3125rem 1.1rem
 
   .text-input
-    font-size: 20px
+    font-size: 22px
 
 
 
