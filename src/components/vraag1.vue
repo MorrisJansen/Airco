@@ -464,6 +464,7 @@ export default {
     left: 50px
     padding-top: 30px!important
     padding-bottom: 30px!important
+    font-size: 38px
 
 
   .footer
