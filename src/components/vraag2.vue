@@ -113,9 +113,9 @@ export default {
                     </div>
 
 
-                    <div class="container-afbeelding">
+                    <!-- <div class="container-afbeelding">
                       <img src="@/components/vraag1-afbeelding.png" alt="">
-                    </div>
+                    </div> -->
                    
                 </div>
 
