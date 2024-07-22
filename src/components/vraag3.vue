@@ -197,7 +197,7 @@ export default {
   display: flex
   width: 32rem
   height: 3.4375rem
-  padding: 0.3125rem 1.625rem
+  padding: 0.3125rem 1.125rem
   align-items: center
   gap: 1.25rem
   border: 1px solid #E2E2E2
@@ -396,7 +396,7 @@ export default {
 
   .input-vraag3
     zoom: 220%
-    max-width: 110%
+    max-width: 105%
     margin: 30px 0
     font-size: 22px
 
