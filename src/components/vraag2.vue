@@ -403,8 +403,8 @@ export default {
     background: #FFF
     zoom: 290%
 
-  .geladen-gedeelte
-    max-width: 40%
+  .geladen-gedeelte-vraag2
+    max-width: 70%
 
 
   .afbeelding-van-pijl
