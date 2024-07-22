@@ -73,7 +73,7 @@ export default {
                     </div>
 
 
-                     <p class="vraag">Welk type airco ben je in geïnteresseerd?</p>
+                     <p class="vraag2">Welk type airco ben je in geïnteresseerd?</p>
 
 
                      <div class="container-inputs">
@@ -278,7 +278,7 @@ export default {
   margin-left: 5rem
 
 
-.vraag
+.vraag2
   color: #000
   font-family: Catamaran
   font-size: 2.8125rem
@@ -446,22 +446,9 @@ export default {
 
 
   .radio-input
-    zoom: 120%!important
-  
-  .radio-input:first-child
-    margin-top: 1rem
-  
-  
-  .radio-input input[type="radio"] 
-      display: none
-  
-  .text-input
-    color: #000
-    font-family: Catamaran, sans-serif
-    font-size: 1.125rem
-    font-style: normal
-    font-weight: 400
-    line-height: normal
+    zoom: 180%!important
+    max-width: 100%
+
 
 
 //  .volgende
