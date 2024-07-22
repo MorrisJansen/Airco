@@ -377,6 +377,19 @@ export default {
     height: 1060px
 
 
+  .laadbalk
+    margin: 0 auto
+    max-width: 100vw
+    height: 1.5rem
+    position: relative
+    top: 1rem
+    border-radius: 2.5rem
+    background: #FFF
+    zoom: 290%
+
+  .geladen-gedeelte
+    max-width: 33%
+
 
   .afbeelding-van-pijl
     margin-top: 4rem!important
