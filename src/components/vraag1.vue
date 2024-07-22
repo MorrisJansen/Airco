@@ -374,7 +374,7 @@ export default {
 
   .vraag1-container
     padding-bottom: 1px
-    height: 1050px
+    height: 1060px
 
 
 
