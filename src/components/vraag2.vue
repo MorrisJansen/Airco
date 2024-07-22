@@ -81,27 +81,33 @@ export default {
 
 
                           <form>
+
+
                             <label class="radio-input">
                               <input type="radio" name="options" value="Option 1" v-model="selectedOption">
-                              <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
                               </svg>
                               <span class="text-input">
                                 Vaste airco met buitenunit (split airco)
                               </span>
                             </label>
+
+
                             <label class="radio-input">
                               <input type="radio" name="options" value="Option 2" v-model="selectedOption">
-                              <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
                               </svg>
                               <span class="text-input">
                                 Vaste airco zonder buitenunit (monoblock)
                               </span>
                             </label>
+
+
                             <label class="radio-input">
                               <input type="radio" name="options" value="Option 3" v-model="selectedOption">
-                              <svg width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
                               </svg>
                               <span class="text-input">
@@ -234,6 +240,8 @@ export default {
 
 .radio-input input[type="radio"] 
     display: none
+
+
 
 .text-input
   color: #000
@@ -442,6 +450,12 @@ export default {
     position: relative
     top: 12px
     right: 25px
+
+  .gele-rondje
+    min-width: 13px!important
+    min-height: 13px!important
+    max-width: 13px!important
+    min-width: 13px!important
 
 
   .vraag2
