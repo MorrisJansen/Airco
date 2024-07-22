@@ -378,6 +378,9 @@ export default {
 
 
 
+  .afbeelding-van-pijl
+    margin-top: 4rem!important
+
   .pijl-vraag1
     zoom: 300%
 
@@ -446,8 +449,8 @@ export default {
     width: 100%
     position: relative
     left: 50px
-    padding-top: 15px!important
-    padding-bottom: 15px!important
+    padding-top: 30px!important
+    padding-bottom: 30px!important
 
 
   </style>
