@@ -382,7 +382,7 @@ export default {
     max-width: 100vw
     height: 1.5rem
     position: relative
-    top: 1rem
+    top: 0.5rem
     border-radius: 2.5rem
     background: #FFF
     zoom: 290%
