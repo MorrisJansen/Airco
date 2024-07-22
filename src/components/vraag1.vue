@@ -388,7 +388,7 @@ export default {
     zoom: 290%
 
   .geladen-gedeelte
-    max-width: 33%
+    max-width: 40%
 
 
   .afbeelding-van-pijl
@@ -399,7 +399,7 @@ export default {
 
 
   .vraag-hoeveel
-    margin-left: 3rem!important
+    margin-left: 2rem!important
     zoom: 210%
     display: block
     padding: 10px 0
@@ -408,7 +408,7 @@ export default {
     right:  10px
 
   .vraag
-    margin-left: 3rem!important
+    margin-left: 2rem!important
     zoom: 150%
 
   .container-inputs
