@@ -4,6 +4,7 @@ import CampagneStart from './components/CampagneStart';
 import vraag1 from './components/vraag1.vue';
 import vraag2 from './components/vraag2.vue';
 import vraag3 from './components/vraag3.vue';
+import analyse from './components/analyse.vue';
 import navbar from './components/navbar.vue';
 import { campagneStartData } from './data';
 
@@ -33,6 +34,12 @@ export default new Router({
       component: vraag3,
       props: {...campagneStartData},
     },
+    {
+      path: '/analyse',
+      component: analyse,
+      props: {...campagneStartData},
+    },
+    
     {
       path: '/navbar',
       component: navbar,
