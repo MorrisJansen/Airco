@@ -480,7 +480,8 @@ export default {
   .radio-input
     zoom: 220%!important
     max-width: 100%
-    padding: .3125rem 1.1rem
+    padding: .3125rem 0.6rem
+    height: 120%
 
   .text-input
     font-size: 22px
