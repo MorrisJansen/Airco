@@ -82,38 +82,44 @@ export default {
 
                           <form>
 
-
+                            <router-link class="links-naar-vraag3" to="./vraag3">
                             <label class="radio-input">
-                              <input type="radio" name="options" value="Option 1" v-model="selectedOption">
-                              <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
-                              </svg>
-                              <span class="text-input">
-                                Vaste airco met buitenunit (split airco)
-                              </span>
+                                <input type="radio" name="options" value="Option 1" v-model="selectedOption">
+                                <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                                </svg>
+                                <span class="text-input">
+                                  Vaste airco met buitenunit (split airco)
+                                </span>
                             </label>
+                          </router-link>
 
 
+                            <router-link class="links-naar-vraag3" to="./vraag3">
                             <label class="radio-input">
-                              <input type="radio" name="options" value="Option 2" v-model="selectedOption">
-                              <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
-                              </svg>
-                              <span class="text-input">
-                                Vaste airco zonder buitenunit (monoblock)
-                              </span>
+                                <input type="radio" name="options" value="Option 2" v-model="selectedOption">
+                                <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                                </svg>
+                                <span class="text-input">
+                                  Vaste airco zonder buitenunit (monoblock)
+                                </span>
                             </label>
+                          </router-link>
 
 
+                            <router-link class="links-naar-vraag3" to="./vraag3">
                             <label class="radio-input">
-                              <input type="radio" name="options" value="Option 3" v-model="selectedOption">
-                              <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
-                              </svg>
-                              <span class="text-input">
-                                Ik wil graag advies
-                              </span>
+                                <input type="radio" name="options" value="Option 3" v-model="selectedOption">
+                                <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                  <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                                </svg>
+                                <span class="text-input">
+                                  Ik wil graag advies
+                                </span>
+
                             </label>
+                          </router-link>
                           </form>
                             
 
@@ -234,12 +240,21 @@ export default {
   background: #FFF
   margin-bottom: 1rem
 
+.radio-input:hover
+  cursor: pointer
+
+.links-naar-vraag3
+  text-decoration: none
+
 .radio-input:first-child
   margin-top: 1rem
 
 
 .radio-input input[type="radio"] 
     display: none
+
+
+
 
 
 
