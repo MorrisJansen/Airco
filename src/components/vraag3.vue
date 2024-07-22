@@ -49,8 +49,8 @@ export default {
         <div class="achtergrond-vraag1">
             <div class="overkoepelende-container">
                 <div class="laadbalk">
-                    <div class="geladen-gedeelte">
-                        <div class="procent">33%</div>
+                    <div class="geladen-gedeelte-vraag3">
+                        <div class="procent">100%</div>
                     </div>
                 </div>
 
@@ -60,7 +60,7 @@ export default {
 
 
                     <div class="afbeelding-van-pijl">
-                      <router-link to="./CampagneStart.vue">
+                      <router-link to="./vraag2">
                         <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <g id="Arrows">
                                 <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
@@ -69,11 +69,11 @@ export default {
                       </router-link>
                     </div>
                     <div class="vraag-hoeveel">
-                        <p>Vraag 1 van 3</p>
+                        <p>Vraag 3 van 3</p>
                     </div>
 
 
-                     <p class="vraag3">Wat is jouw adres?</p>
+                     <p class="vraag3">In hoeveel ruimtes wil je de airconditioning installeren?</p>
 
 
 
@@ -171,8 +171,8 @@ export default {
   border-radius: 2.5rem
   background: #FFF
 
-.geladen-gedeelte
-  width: 22.6rem
+.geladen-gedeelte-vraag3
+  width: 100%
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
@@ -383,6 +383,7 @@ export default {
   .vraag3
     margin-left: 3rem!important
     zoom: 110%
+    width: 70%
 
   .container-inputs
     margin-left: 3rem!important
@@ -391,6 +392,12 @@ export default {
   .input-container
     display: block
     margin-bottom: 30px
+
+
+  .input-vraag3
+    zoom: 220%
+    max-width: 100%
+    margin: 30px 0
 
   .overkoepelende-input-container
     display: block!important
