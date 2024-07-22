@@ -76,8 +76,7 @@ export default {
                      <p class="vraag">Wat is jouw adres?</p>
 
 
-                     <div class="container-inputs">
-                        <div class="overkoepelende-input-container">
+
 
 
 
@@ -85,14 +84,13 @@ export default {
                           <div class="container-inputs">
                             <div class="overkoepelende-input-container">
                               <form>
-                                <input type="number" class="number-input-veld" placeholder="Vul het aantal kamers in" />
+                                <input type="number" class="number-input-veld input-vraag3" placeholder="Vul het aantal kamers in" />
                               </form>
                             </div>
                           </div>
 
 
-                        </div>
-                      </div>
+
 
 
 
@@ -195,7 +193,15 @@ export default {
 
 
 
-
+.input-vraag3
+  display: flex
+  width: 32rem
+  height: 3.4375rem
+  padding: 0.3125rem 1.625rem
+  align-items: center
+  gap: 1.25rem
+  border: 1px solid #E2E2E2
+  background: #FFF
 
 
 
@@ -264,31 +270,6 @@ export default {
   flex-direction: column
   width: 15.5rem
 
-.postcode-input-vraag, .huisnr-input
-  width: 100%
-  height: 3.4rem
-  padding: 0.5rem
-  border: 1px solid $bon-jour
-  border-radius: 0.25rem
-  font-family: $font-family-catamaran
-  font-size: 1rem
-  color: $primary-dark-blue
-
-.option-select
-  width: calc(15.5rem * 2 + 1rem)
-  height: 3.4rem
-  padding: 0.5rem
-  border: 1px solid $bon-jour
-  border-radius: 0.25rem
-  font-family: $font-family-catamaran
-  font-size: 1rem
-  color: grey
-
-.postcode-label, .huisnr-label, .option-label
-  margin-bottom: 0.5rem
-  font-family: $font-family-catamaran
-  font-size: 1rem
-  color: $primary-dark-blue
 
 
 
@@ -413,21 +394,6 @@ export default {
 
   .overkoepelende-input-container
     display: block!important
-  
-  .full-width-mobiel
-    width: 170vw!important
-
-
-  .huisnr-input, .option-select
-    height: 150px!important
-
-  .full-width-mobiel-vraag1, .option-select
-    font-size: 42px!important
-    padding-left: 20px
-    background-color: white
-
-  .option-select
-    width: 246.5% !important
 
 
   .container-afbeelding
