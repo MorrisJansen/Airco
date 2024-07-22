@@ -396,9 +396,9 @@ export default {
 
   .input-vraag3
     zoom: 220%
-    max-width: 105%
+    max-width: 110%
     margin: 30px 0
-    font-size: 20px
+    font-size: 22px
 
   .overkoepelende-input-container
     display: block!important
