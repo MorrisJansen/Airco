@@ -287,7 +287,7 @@ export default {
   line-height: 130%
   display: block!important
   margin-left: 5rem
-  width: 100%!important
+  width: 70%!important
 
   
 
@@ -442,6 +442,26 @@ export default {
     position: relative
     top: 12px
     right: 25px
+
+
+
+  .radio-input
+    zoom: 120%!important
+  
+  .radio-input:first-child
+    margin-top: 1rem
+  
+  
+  .radio-input input[type="radio"] 
+      display: none
+  
+  .text-input
+    color: #000
+    font-family: Catamaran, sans-serif
+    font-size: 1.125rem
+    font-style: normal
+    font-weight: 400
+    line-height: normal
 
 
 //  .volgende
