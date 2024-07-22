@@ -398,7 +398,7 @@ export default {
     zoom: 220%
     max-width: 115%
     margin: 30px 0
-    font-size: 22px
+    font-size: 20px
 
   .overkoepelende-input-container
     display: block!important
