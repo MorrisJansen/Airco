@@ -73,7 +73,9 @@ export default {
                     </div>
 
 
-                     <p class="vraag3">In hoeveel ruimtes wil je de airconditioning installeren?</p>
+                     <p class="vraag3">In hoeveel ruimtes wil je<br class="mobiel">
+                       de airconditioning<br class="mobiel"> 
+                       installeren?</p>
 
 
 
@@ -84,7 +86,7 @@ export default {
                           <div class="container-inputs">
                             <div class="overkoepelende-input-container">
                               <form>
-                                <input type="number" class="number-input-veld input-vraag3" placeholder="Vul het aantal kamers in" />
+                                <input type="number" class="number-input-veld input-vraag3" placeholder="Vul het aantal ruimtes in" />
                               </form>
                             </div>
                           </div>
@@ -172,7 +174,7 @@ export default {
   background: #FFF
 
 .geladen-gedeelte-vraag3
-  width: 100%
+  width: 68rem!important
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
@@ -202,6 +204,8 @@ export default {
   gap: 1.25rem
   border: 1px solid #E2E2E2
   background: #FFF
+  font-size: 22px
+  margin: 1rem 0
 
 
 
@@ -326,6 +330,9 @@ export default {
 
 
 
+
+
+
 @media (max-width: 800px)
   .achtergrond-vraag1
     zoom: 100%
@@ -360,8 +367,8 @@ export default {
     background: #FFF
     zoom: 290%
 
-  .geladen-gedeelte
-    max-width: 40%
+  //.geladen-gedeelte
+   // max-width: 40%
 
 
   .afbeelding-van-pijl
@@ -437,4 +444,6 @@ export default {
     text-align: center
 
 
+  .mobiel
+    display: none
   </style>

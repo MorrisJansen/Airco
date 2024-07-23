@@ -54,20 +54,47 @@ export default {
 
 
 
-                <div class="vraag1-container">
-                    <div class="container-voor-gegevens">
+                <div class="formulier-container">
+
+
+                    <p class="titel-formulier">Bedankt, start nu ook met besparen!</p>
+
+
+                    <p class="subtitel-formulier">Ontvang gratis en vrijblijvend 3<br>
+                        airconditionging offertes met persoonlijk<br>
+                        advies van de beste partners/bedrijven uit jouw regio</p>
+
+
+                    <p class="mensen-gingen-voor">Al meer dan 1,2 miljoen mensen ging je voor.</p>
 
 
 
 
-                     <div class="container-inputs">
-                        <div class="overkoepelende-input-container">
 
-                            
-
-
-                        </div>
+                    <div class="form-container">
+                        <form>
+                          <div class="input-group">
+                            <div class="input-item">
+                              <label for="input1"></label>
+                              <input type="text" id="input1" placeholder="Input 1">
+                            </div>
+                            <div class="input-item">
+                              <label for="input2"></label>
+                              <input type="text" id="input2" placeholder="Input 2">
+                            </div>
+                          </div>
+                          <div class="input-item">
+                            <label for="input3"></label>
+                            <input type="text" id="input3" placeholder="Input 3">
+                          </div>
+                          <div class="input-item">
+                            <label for="input4"></label>
+                            <input type="text" id="input4" placeholder="Input 4">
+                          </div>
+                        </form>
                       </div>
+
+
 
 
 
@@ -75,9 +102,9 @@ export default {
                         <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
                       </div>
                      
+
                   
 
-                    </div>
 
                    
                 </div>
@@ -134,21 +161,92 @@ export default {
 
 
 
-
-
-.vraag1-container
+.formulier-container
   width: 68rem
   height: 592px
   border-radius: 1.875rem
   background: #FFF
-  gap: 2rem
+  margin-top: 4rem
+
+
+.titel-formulier
+  display: block
+  width: 100%
+  color: #1C1829
+  text-align: center
+  font-family: Catamaran
+  font-size: 2.8125rem
+  font-style: normal
+  font-weight: 800
+  line-height: 130%
+  text-align: center
+  margin-top: 2rem
+
+.subtitel-formulier
+  display: block
+  width: 100%
+  font-size: 32px
+  color: #1C1829
+  text-align: center
+  font-family: Catamaran
+  font-style: normal
+  font-weight: 800
+  line-height: 130%
+  text-align: center
+  margin-top: 2rem
+
+
+.mensen-gingen-voor
+  color: #FFCD02
+  text-align: center
+  leading-trim: both
+  text-edge: cap
+  font-family: Catamaran
+  font-size: 0.9375rem
+  font-style: normal
+  font-weight: 600
+  line-height: normal
+  margin-top: 1rem
+  
+
+
+// dit is voor het form zelf
+
+.form-container 
+  max-width: 600px
+  margin: 0 auto
+  padding: 20px
+  border: 1px solid #ccc
+  border-radius: 8px
+  background-color: #f9f9f9
+  
+  
+.form-container form 
   display: flex
+  flex-direction: column
+  gap: 20px
+  
+  
+.input-group 
+  display: flex
+  gap: 20px
 
-.container-voor-gegevens
-  width: 65%
-  height: 100%
+
+.input-item 
+  flex: 1
+  display: flex
+  flex-direction: column
 
 
+.input-item label 
+  margin-bottom: 8px
+  font-weight: bold
+
+.input-item input 
+  padding: 10px
+  border: 1px solid #ccc
+  border-radius: 4px
+  
 
 
 
@@ -225,7 +323,7 @@ export default {
   .achtergrond-vraag1
     height: 26rem!important
 
-  .vraag1-container
+  .formulier-container
     padding-bottom: 1px
     height: 1060px
 

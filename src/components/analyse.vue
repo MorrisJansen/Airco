@@ -190,11 +190,9 @@ export default {
   background: #FFF
 
 .geladen-gedeelte-vraag3
-  width: 100%
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
-  max-width: 70%
   margin: 0 auto
 
 .procent

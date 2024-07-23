@@ -387,6 +387,8 @@ export default {
 .span0
   color: $black
 
+.nederlandsadviesn
+  padding-bottom: 1.5rem
 
 @media (min-width: 2000px)
   .nederlandsadviesn
