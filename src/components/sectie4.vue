@@ -286,6 +286,12 @@ export default {
   .frame-15
     zoom: 50%
   
-  
+  .frame-18
+    width: 660px
+    right: 50px
+
+  .postcode-input-2
+    zoom: 78%
+    right: 53px
   
   </style>
