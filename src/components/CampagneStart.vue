@@ -28,7 +28,6 @@ export default {
   },
   data() {
     return {
-// dit is voor afbeelding van buitenaf inladen.
     };
   },
     props: [
