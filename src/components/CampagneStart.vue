@@ -28,7 +28,42 @@ export default {
   },
   data() {
     return {
+      postcode: '',  // Voeg postcode toe in data
     };
+  },
+  watch: {
+    postcode(newPostcode) {
+      if (newPostcode.length === 6) {
+        console.log('Postcode:', newPostcode);
+        localStorage.setItem('postcode', this.postcode);
+      }
+    }
+  },
+  methods: {
+    // async checkPostcode() {
+    //   const pattern = /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/;
+    //   if (!pattern.test(this.postcode)) {
+    //     alert('Ongeldige postcode.');
+    //     return false;
+    //   }
+
+    //   const data = { postcode: this.postcode };
+    //   try {
+    //     const response = await axios.post('your-api-endpoint', data);
+
+    //     if (response.data.isValid) {
+    //       alert('Wij zijn actief in jouw regio.');
+    //       return true;
+    //     } else {
+    //       alert('Wij zijn helaas niet actief in jouw regio.');
+    //       return false;
+    //     }
+    //   } catch (error) {
+    //     console.error('Error during API request:', error);
+    //     alert('Er is iets misgegaan bij het controleren van de postcode.');
+    //     return false;
+    //   }
+    // },
   },
     props: [
     "spanText1",
@@ -167,7 +202,7 @@ export default {
           <div class="frame-14">
             <div class="frame-20">
               <label class="postcode-label" for="postcode-input"></label>
-                <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" />
+                <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" v-model="postcode" />
                 
               <!-- controleer knop en klaar binnen 1 minuut tekst -->
               <x-button :controleer="xButtonProps.controleer" />

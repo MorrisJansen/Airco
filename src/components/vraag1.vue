@@ -14,6 +14,11 @@ export default {
     "spanText2",
     "logoNLAdviesAircoProps",  
 ],
+data() {
+    return {
+      postcode: localStorage.getItem('postcode') || '',
+    };
+  },
   methods: {
     navigateToNextPage() {
         this.$router.push('./vraag2');
@@ -82,7 +87,7 @@ export default {
                             
                           <div class="input-container full-width-mobiel">
                             <label class="postcode-label " for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode">
+                            <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode" :value="postcode">
                           </div>
                   
                           <div class="input-container full-width-mobiel">
