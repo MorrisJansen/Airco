@@ -196,8 +196,47 @@ export default {
 
 
 @media (max-width: 1000px)
+
+
+  .frame-15, .frame-19
+    zoom: 80%
+
   .controleer-of-wij-ac
     zoom: 80%
+
+
+
+  .button-onder
+    height: 60px
+    width: 20%
+    background-color: black
+    border-radius: 35px
+
+  .controleer-beneden
+    align-items: center
+    font-size: 20px
+    color: $white
+    margin: auto 0
+
+  .centreer
+    display: flex
+    justify-content: center
+    align-items: center
+    margin-top: 20px
+    font-family: $font-family-catamaran
+    font-weight: bold
+
+  .postcode-input-2
+    align-items: center
+    background-color: $white
+    border: 1px solid
+    border-color: $bon-jour
+    gap: 10px
+    height: 56px
+    padding: 5px 26px
+    font-size: 22px
+    width: 80%!important
+    margin-left: 100px
 
 @media (max-width: 800px)
   .controleer-of-wij-ac
