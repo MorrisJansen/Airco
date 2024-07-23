@@ -74,7 +74,6 @@ export default {
   justify-content: center
   padding: 127px 158px
   position: relative
-  //width: 1920px
   width: 100vw
 
 .frame-15

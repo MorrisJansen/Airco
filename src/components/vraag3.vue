@@ -333,12 +333,7 @@ export default {
 
 
 
-@media (max-width: 800px)
-  .achtergrond-vraag1
-    zoom: 100%
 
-  .overkoepelende-container
-    zoom: 41%
 
 @media (min-width: 500px)
   .container-afbeelding-mobiel

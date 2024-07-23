@@ -353,14 +353,38 @@ export default {
   line-height: normal
 
 
+@media (max-width: 1150px)
+  .overkoepelende-container
+    zoom: 80%
+
+@media (max-width: 900px)
+  .overkoepelende-container
+    zoom: 70%
+
+
 
 
 @media (max-width: 800px)
-  .achtergrond-vraag1
-    zoom: 100%
-
   .overkoepelende-container
-    zoom: 41%
+    zoom: 65%
+
+@media (max-width: 720px)
+  .overkoepelende-container
+    zoom: 60%
+
+@media (max-width: 680px)
+  .overkoepelende-container
+    zoom: 55%
+
+@media (max-width: 630px)
+  .overkoepelende-container
+    zoom: 50%
+
+@media (max-width: 560px)
+  .overkoepelende-container
+    zoom: 45%
+
+
 
 @media (min-width: 500px)
   .container-afbeelding-mobiel

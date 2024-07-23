@@ -101,8 +101,8 @@ export default {
 
 
 
-                      <div class="volgende">
-                        <button class="volgende-button" @click="navigateToNextPage">aanvraag afronden</button>
+                      <div class="volgende-formulier">
+                        <button class="volgende-button-formulier" @click="navigateToNextPage">aanvraag afronden</button>
                       </div>
                      
 
@@ -268,14 +268,14 @@ export default {
 
 
 
-.volgende
+.volgende-formulier
   display: flex
   justify-content: center
   margin-right: 5rem
   margin-top: 1rem
 
 
-.volgende-button
+.volgende-button-formulier
   display: flex
   padding: 0.5rem 2.8rem
   justify-content: center
