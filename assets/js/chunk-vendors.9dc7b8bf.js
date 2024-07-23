@@ -39,7 +39,7 @@ var createPropertyDescriptor = __webpack_require__("5c6c");
 var toIndexedObject = __webpack_require__("fc6a");
 var toPropertyKey = __webpack_require__("a04b");
 var hasOwn = __webpack_require__("1a2d");
-var IE8_DOM_DEFINE = __webpack_require__("0cfb3");
+var IE8_DOM_DEFINE = __webpack_require__("0cfb");
 
 // eslint-disable-next-line es/no-object-getownpropertydescriptor -- safe
 var $getOwnPropertyDescriptor = Object.getOwnPropertyDescriptor;
@@ -74,7 +74,7 @@ module.exports = function (obj) {
 
 /***/ }),
 
-/***/ "0cfb3":
+/***/ "0cfb":
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -12440,7 +12440,7 @@ module.exports = isForced;
 "use strict";
 
 var DESCRIPTORS = __webpack_require__("83ab");
-var IE8_DOM_DEFINE = __webpack_require__("0cfb3");
+var IE8_DOM_DEFINE = __webpack_require__("0cfb");
 var V8_PROTOTYPE_DEFINE_BUG = __webpack_require__("aed9");
 var anObject = __webpack_require__("825a");
 var toPropertyKey = __webpack_require__("a04b");
@@ -13040,4 +13040,4 @@ module.exports = NATIVE_SYMBOL
 /***/ })
 
 }]);
-//# sourceMappingURL=chunk-vendors.07ce350b.js.map
+//# sourceMappingURL=chunk-vendors.9dc7b8bf.js.map
