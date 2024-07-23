@@ -292,7 +292,8 @@ export default {
 
   .postcode-input-2
     zoom: 58%
-    right: 41px
-    width: 76%!important
+    right: 39px
+    width: 81%!important
+    padding: 4rem
   
   </style>
