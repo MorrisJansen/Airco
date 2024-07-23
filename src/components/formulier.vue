@@ -4,7 +4,7 @@ import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
 
 export default {
-  name: "vraag1",
+  name: "formulier",
   components: {
     LogoNlAdviesAirco,
 
@@ -16,7 +16,7 @@ export default {
 ],
   methods: {
     navigateToNextPage() {
-        this.$router.push('./vraag2');
+        this.$router.push('./einde');
     }
   }
 };
@@ -76,21 +76,24 @@ export default {
                           <div class="input-group">
                             <div class="input-item">
                               <label for="input1"></label>
-                              <input type="text" id="input1" placeholder="Input 1">
+                              <input class="input-voornaam" type="text" id="input1" placeholder="Voornaam">
                             </div>
                             <div class="input-item">
                               <label for="input2"></label>
-                              <input type="text" id="input2" placeholder="Input 2">
+                              <input class="input-achternaam" type="text" id="input2" placeholder="Achternaam">
                             </div>
                           </div>
+                         <div class="input-group">
                           <div class="input-item">
                             <label for="input3"></label>
-                            <input type="text" id="input3" placeholder="Input 3">
+                            <input class="input-telefoonnummer" type="text" id="input3" placeholder="Telefoonnummer">
                           </div>
                           <div class="input-item">
                             <label for="input4"></label>
-                            <input type="text" id="input4" placeholder="Input 4">
+                            <input class="input-email" type="text" id="input4" placeholder="E-mailadres">
                           </div>
+                         </div>
+                          
                         </form>
                       </div>
 
@@ -99,11 +102,11 @@ export default {
 
 
                       <div class="volgende">
-                        <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
+                        <button class="volgende-button" @click="navigateToNextPage">aanvraag afronden</button>
                       </div>
                      
 
-                  
+                  <p class="footer-formulier">Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,<br>persoonlijk advies en offertes van onze partners.<br>Dit is is volledig vrijblijvend, je zit dus nergens aan vast.</p>
 
 
                    
@@ -163,7 +166,7 @@ export default {
 
 .formulier-container
   width: 68rem
-  height: 592px
+  height: auto
   border-radius: 1.875rem
   background: #FFF
   margin-top: 4rem
@@ -207,6 +210,7 @@ export default {
   font-weight: 600
   line-height: normal
   margin-top: 1rem
+  margin-bottom: 2rem
   
 
 
@@ -216,27 +220,22 @@ export default {
   max-width: 600px
   margin: 0 auto
   padding: 20px
-  border: 1px solid #ccc
-  border-radius: 8px
-  background-color: #f9f9f9
-  
-  
+
+
 .form-container form 
   display: flex
   flex-direction: column
   gap: 20px
-  
-  
+
+
 .input-group 
   display: flex
   gap: 20px
-
 
 .input-item 
   flex: 1
   display: flex
   flex-direction: column
-
 
 .input-item label 
   margin-bottom: 8px
@@ -246,9 +245,12 @@ export default {
   padding: 10px
   border: 1px solid #ccc
   border-radius: 4px
-  
 
 
+
+.input-voornaam, .input-achternaam, .input-telefoonnummer, .input-email
+  height: 3.4rem
+  width: 15rem
 
 
 
@@ -268,7 +270,7 @@ export default {
 
 .volgende
   display: flex
-  justify-content: end
+  justify-content: center
   margin-right: 5rem
   margin-top: 1rem
 
@@ -290,8 +292,21 @@ export default {
   text-transform: uppercase
   border: none
   cursor: pointer
+  width:  33.5rem
+  position: relative
+  left: 1.5rem
 
-
+.footer-formulier
+  color: #000
+  text-align: center
+  font-family: Catamaran
+  font-size: 1rem
+  font-style: normal
+  font-weight: 400
+  line-height: normal
+  padding: 2.5rem 25%
+  margin-right: 15px
+  padding-bottom: 4rem!important
 
 .footer
   display: flex
