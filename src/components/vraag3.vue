@@ -359,7 +359,7 @@ export default {
 
   .laadbalk
     margin: 0 auto
-    max-width: 100vw
+    max-width: 100vw!important
     height: 1.5rem
     position: relative
     top: 1rem!important
@@ -367,8 +367,8 @@ export default {
     background: #FFF
     zoom: 290%
 
-  //.geladen-gedeelte
-   // max-width: 40%
+  .geladen-gedeelte-vraag3
+    max-width: 100%
 
 
   .afbeelding-van-pijl
