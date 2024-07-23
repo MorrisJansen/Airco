@@ -1,4 +1,5 @@
 <script>
+import axios from 'axios';
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 import XButton from "./XButton";
 import Frame6 from "./Frame6";
@@ -11,9 +12,6 @@ import sectie2 from "./sectie2.vue";
 import sectie3 from "./sectie3.vue";
 import sectie4 from "./sectie4.vue";
 
-
-
-
 export default {
   name: "CampagneStart",
   components: {
@@ -25,47 +23,45 @@ export default {
     XButton2,
     Navbar,
     Sectie1,
+    sectie2,
+    sectie3,
+    sectie4,
   },
   data() {
     return {
       postcode: '',  // Voeg postcode toe in data
+      errorMessage: '' // Voeg een errorMessage toe om foutmeldingen weer te geven
     };
+  },
+  methods: {
+    async checkPostcode() {
+      const pattern = /^[1-9][0-9]{3}\s?[-]?[a-zA-Z]{2}$/;
+      if (!pattern.test(this.postcode)) {
+        this.errorMessage = 'Ongeldige postcode.';
+        return false;
+      }
+
+      this.errorMessage = '';
+      return true;
+    },
+    async navigateToNextPage() {
+      const isValid = await this.checkPostcode();
+      if (isValid) {
+        this.$router.push('/vraag1');
+      } else {
+        console.error('Postcode niet geldig:', this.errorMessage);
+      }
+    }
   },
   watch: {
     postcode(newPostcode) {
       if (newPostcode.length === 6) {
         console.log('Postcode:', newPostcode);
-        localStorage.setItem('postcode', this.postcode);
+        localStorage.setItem('postcode', newPostcode);
       }
     }
   },
-  methods: {
-    // async checkPostcode() {
-    //   const pattern = /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/;
-    //   if (!pattern.test(this.postcode)) {
-    //     alert('Ongeldige postcode.');
-    //     return false;
-    //   }
-
-    //   const data = { postcode: this.postcode };
-    //   try {
-    //     const response = await axios.post('your-api-endpoint', data);
-
-    //     if (response.data.isValid) {
-    //       alert('Wij zijn actief in jouw regio.');
-    //       return true;
-    //     } else {
-    //       alert('Wij zijn helaas niet actief in jouw regio.');
-    //       return false;
-    //     }
-    //   } catch (error) {
-    //     console.error('Error during API request:', error);
-    //     alert('Er is iets misgegaan bij het controleren van de postcode.');
-    //     return false;
-    //   }
-    // },
-  },
-    props: [
+  props: [
     "spanText1",
     "spanText2",
     "overlapGroup6",
@@ -103,7 +99,6 @@ export default {
   ],
 };
 </script>
-
 
 
 
@@ -205,7 +200,7 @@ export default {
                 <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" v-model="postcode" />
                 
               <!-- controleer knop en klaar binnen 1 minuut tekst -->
-              <x-button :controleer="xButtonProps.controleer" />
+              <x-button :controleer="controleer" @button-click="navigateToNextPage"></x-button>
             </div>
             <div class="klaar-binnen-1-minuut valign-text-bottom label-text">Klaar binnen 1 minuut</div>
           </div>

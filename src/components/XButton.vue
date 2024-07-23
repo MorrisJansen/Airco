@@ -1,19 +1,23 @@
 <template>
-
-
-
-  <router-link to="/vraag1">
-    <div class="button">
-      <div class="controleer valign-text-bottom">{{ controleer }}</div>
+  <div>
+    <button @click="handleClick" class="button">
+      <div class="controleer valign-text-bottom">Controleer</div>
+    </button>
+    <div v-if="errorMessage" class="error-message">
+      {{ errorMessage }}
     </div>
-  </router-link>
-
+  </div>
 </template>
 
 <script>
 export default {
   name: "XButton",
   props: ["controleer"],
+  methods: {
+    handleClick() {
+      this.$emit('button-click');
+    }
+  }
 };
 </script>
 
