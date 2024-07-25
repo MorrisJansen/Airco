@@ -60,12 +60,6 @@ data() {
 
               <progressiebalk :currentPage="currentPage" :totalPages="totalPages" />
 
-                <!-- <div class="laadbalk">
-                    <div class="geladen-gedeelte-vraag3">
-                        <div class="procent">100%</div>
-                    </div>
-                </div> -->
-
 
                 <div class="vraag1-container">
                     <div class="container-voor-gegevens">

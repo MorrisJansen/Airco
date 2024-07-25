@@ -58,11 +58,7 @@ data() {
 
 
               <progressiebalk :currentPage="currentPage" />
-                <!-- <div class="laadbalk">
-                    <div class="geladen-gedeelte-vraag2">
-                        <div class="procent">66%</div>
-                    </div>
-                </div> -->
+
 
 
                 <div class="vraag1-container">
