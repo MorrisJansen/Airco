@@ -1,5 +1,6 @@
 <script>
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
+import progressiebalk from "./progressiebalk.vue";
 
 
 
@@ -7,6 +8,7 @@ export default {
   name: "vraag1",
   components: {
     LogoNlAdviesAirco,
+    progressiebalk,
 
   },
   props: [
@@ -14,6 +16,12 @@ export default {
     "spanText2",
     "logoNLAdviesAircoProps",  
 ],
+data() {
+    return {
+      currentPage:  3,
+      totalpages: 3,
+    };
+  },
   methods: {
     navigateToNextPage() {
         this.$router.push('./analyse');
@@ -48,11 +56,15 @@ export default {
 
         <div class="achtergrond-vraag1">
             <div class="overkoepelende-container">
-                <div class="laadbalk">
+
+
+              <progressiebalk :currentPage="currentPage" :totalPages="totalPages" />
+
+                <!-- <div class="laadbalk">
                     <div class="geladen-gedeelte-vraag3">
                         <div class="procent">100%</div>
                     </div>
-                </div>
+                </div> -->
 
 
                 <div class="vraag1-container">

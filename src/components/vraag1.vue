@@ -1,5 +1,6 @@
 <script>
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
+import progressiebalk from "./progressiebalk.vue";
 
 
 
@@ -7,6 +8,7 @@ export default {
   name: "vraag1",
   components: {
     LogoNlAdviesAirco,
+    progressiebalk,
 
   },
   props: [
@@ -17,6 +19,7 @@ export default {
 data() {
     return {
       postcode: localStorage.getItem('postcode') || '',
+      currentPage:  1,
     };
   },
   methods: {
@@ -53,11 +56,15 @@ data() {
 
         <div class="achtergrond-vraag1">
             <div class="overkoepelende-container">
-                <div class="laadbalk">
+
+
+
+              <progressiebalk :currentPage="currentPage" />
+              <!-- <div class="laadbalk">
                     <div class="geladen-gedeelte">
                         <div class="procent">33%</div>
                     </div>
-                </div>
+                </div> -->
 
 
                 <div class="vraag1-container">
@@ -177,7 +184,7 @@ data() {
   display: flex
   flex-direction: column
   align-items: center
-  gap: 6rem
+  gap: 1rem
 
 .laadbalk
   margin: 0 auto
@@ -193,6 +200,8 @@ data() {
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
+  animation: fadeIn 5s ease
+  scroll-behavior: smooth
 
 .procent
   color: #FFF
