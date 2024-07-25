@@ -186,7 +186,7 @@ data() {
   position: relative
   top: 4rem
   border-radius: 2.5rem
-  background: #FFF
+  background: #F4F4F4!important
 
 .geladen-gedeelte
   width: 22.6rem

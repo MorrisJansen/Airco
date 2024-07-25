@@ -3,9 +3,6 @@
     <button @click="handleClick" class="button">
       <div class="controleer valign-text-bottom">Controleer</div>
     </button>
-    <div v-if="errorMessage" class="error-message">
-      {{ errorMessage }}
-    </div>
   </div>
 </template>
 
@@ -34,6 +31,7 @@ export default {
   justify-content: center
   padding: 20px 50px
   position: relative
+  border: none
 
 .controleer
   color: $primary-dark-blue

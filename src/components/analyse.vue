@@ -57,9 +57,9 @@ export default {
 
 
 
-                <div class="laadbalk">
-                  <div class="geladen-gedeelte-vraag3">
-                      <div class="procent">100%</div>
+                <div class="laadbalk-analyse">
+                  <div class="geladen-gedeelte-vraag-analyse">
+                      <div class="procent">43%</div>
                   </div>
               </div>
 
@@ -171,8 +171,6 @@ export default {
   font-size: 45px
   color: #000
   text-align: center
-  leading-trim: both
-  text-edge: cap
   font-family: Catamaran
   font-size: 2.8125rem
   font-style: normal
@@ -182,23 +180,22 @@ export default {
 
 
 
-.laadbalk
+.laadbalk-analyse
   margin: 0 auto
-  width: 68rem
+  width: 44rem
   height: 1.5rem
   border-radius: 2.5rem
-  background: #FFF
+  background: #f4f4f4
+  margin-top: 2rem
 
-.geladen-gedeelte-vraag3
+.geladen-gedeelte-vraag-analyse
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
-  margin: 0 auto
+  width: 20rem
 
 .procent
   color: #FFF
-  leading-trim: both
-  text-edge: cap
   font-family: Catamaran
   font-size: 0.9375rem
   font-style: normal
@@ -211,12 +208,13 @@ export default {
 
 .lijst-analyse
   display: block
-  padding-top: 7rem
-  position: relative
-  left: 30%
+  padding-top: 3rem
+  //position: relative
+  //left: 30%
   list-style: inside
   font-family: Catamaran, sans-serif
   font-weight: 700
+  margin-left: 30%
 
 
 .lijst-items-analyse
@@ -226,7 +224,7 @@ export default {
 
 .woningscan
   margin-top: 4rem
-  font-size: 40px
+  font-size: 35px
   font-family: Catamaran
   font-weight: 700
   text-align: center

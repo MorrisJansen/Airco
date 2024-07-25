@@ -199,8 +199,12 @@ export default {
               <label class="postcode-label" for="postcode-input"></label>
                 <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" v-model="postcode" />
                 
+
               <!-- controleer knop en klaar binnen 1 minuut tekst -->
               <x-button :controleer="controleer" @button-click="navigateToNextPage"></x-button>
+            </div>
+            <div v-if="errorMessage" class="error-message">
+              {{ errorMessage }}
             </div>
             <div class="klaar-binnen-1-minuut valign-text-bottom label-text">Klaar binnen 1 minuut</div>
           </div>
@@ -419,6 +423,16 @@ export default {
 .nederlandsadviesn
   padding-bottom: 1.5rem
 
+
+
+.error-message 
+  position: relative
+  right: 310px
+  top: 33px
+  color: red
+  font-size: 22px
+  font-weight: bold
+  font-family: 'Catamaran'
 @media (min-width: 2000px)
   .nederlandsadviesn
     zoom: 150%

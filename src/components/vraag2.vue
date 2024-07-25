@@ -411,7 +411,7 @@ export default {
     position: relative
     top: 1rem!important
     border-radius: 2.5rem
-    background: #FFF
+    background: #F4F4F4!important
     zoom: 290%
 
   .geladen-gedeelte-vraag2

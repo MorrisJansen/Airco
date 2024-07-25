@@ -7,6 +7,7 @@ import vraag3 from './components/vraag3.vue';
 import analyse from './components/analyse.vue';
 import formulier from './components/formulier.vue';
 import navbar from './components/navbar.vue';
+import postcode from './components/postcode.vue';
 import { campagneStartData } from './data';
 
 Vue.use(Router);
@@ -45,10 +46,14 @@ export default new Router({
       component: formulier,
       props: {...campagneStartData},
     },
-    
     {
       path: '/navbar',
       component: navbar,
+      props: {...campagneStartData},
+    },
+    {
+      path: '/postcode',
+      component: postcode,
       props: {...campagneStartData},
     },
     {
