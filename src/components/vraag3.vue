@@ -28,16 +28,18 @@ export default {
     };
   },
   methods: {
-  navigateToNextPage() {
-    if (this.selectedOption) {
-      addAntwoord({ vraag: 'vraag3', antwoord: this.selectedOption });
-      console.log(`Selected option for vraag3: ${this.selectedOption}`);
-      this.$router.push('./formulier');
-    } else {
-      alert("Selecteer een optie voordat je doorgaat.");
+    navigateToNextPage() {
+      if (this.selectedOption) {
+        // Voeg het antwoord toe aan de antwoorden
+        addAntwoord({ vraag: 'vraag3', antwoord: this.selectedOption });
+        console.log(`Selected option for vraag3: ${this.selectedOption}`);
+        // Navigeer naar de volgende pagina
+        this.$router.push('./formulier');
+      } else {
+        alert("Selecteer een optie voordat je doorgaat.");
+      }
     }
-  },
-}
+  }
 };
 </script>
 

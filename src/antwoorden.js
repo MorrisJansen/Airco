@@ -1,11 +1,16 @@
-// In antwoorden.js
-let antwoorden = [];
+// Object om de antwoorden op te slaan
+let antwoorden = {
+  vraag1: null,
+  vraag2: null,
+  vraag3: null,
+};
 
-export function addAntwoord(answer) {
-  console.log('Adding answer:', answer); // Log de input
-  antwoorden.push(answer);
+// Functie om een antwoord toe te voegen
+export function addAntwoord(vraag, antwoordId) {
+  antwoorden[vraag] = antwoordId;
 }
 
+// Functie om alle antwoorden op te halen
 export function getAntwoorden() {
   return antwoorden;
 }

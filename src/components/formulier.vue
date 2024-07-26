@@ -46,12 +46,10 @@ export default {
       const antwoordenData = this.$props.antwoorden || {}; // Zorg ervoor dat antwoordenData niet undefined is
 
       const answers = [
-        5109,
-        5112,
-        5121
-        // antwoordenData.vraag2 ? antwoordenData.vraag2.id, 
-        // antwoordenData.vraag3 ? antwoordenData.vraag3.id
-      ];
+        5109, 
+        antwoordenData.vraag2 ? antwoordenData.vraag2.id : null, // Antwoord voor vraag 2
+        antwoordenData.vraag3 ? antwoordenData.vraag3.id : null // Antwoord voor vraag 3
+      ].filter(id => id !== null); // Verwijder null waarden
 
       const leadData = {
         language: 'nl_NL',
@@ -93,15 +91,15 @@ export default {
       .then(responseData => {
         console.log('API Response Data:', responseData);
 
-        if (response.status === 201) {
+        if (responseData.status === 201) { // Verander response.status naar responseData.status
           console.log('Lead successfully created.');
           this.$router.push('./einde');
-        } else if (response.status === 400) {
+        } else if (responseData.status === 400) { // Verander response.status naar responseData.status
           console.log('Bad request. Please check the parameters.');
-        } else if (response.status === 401) {
+        } else if (responseData.status === 401) { // Verander response.status naar responseData.status
           console.log('Unauthorized. Please check your credentials.');
         } else {
-          console.log('Unexpected error:', response.status);
+          console.log('Unexpected error:', responseData.status); // Verander response.status naar responseData.status
         }
       })
       .catch(error => {

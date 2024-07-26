@@ -25,20 +25,13 @@ export default {
       geselecteerdAntwoordId: null,
     };
   },
-  watch: {
-    geselecteerdAntwoordId(newVal) {
-      if (newVal !== null) {
-        addAntwoord(newVal);
-          console.log(this.antwoordOpties)
-          this.$router.push('/vraag3');
-      }
-    }
-  },
   methods: {
     selectOption(optionText) {
       const answerId = this.antwoordOpties[optionText];
       if (answerId) {
-        this.geselecteerdAntwoordId = answerId; // Triggers de watch functie
+        this.geselecteerdAntwoordId = answerId;
+        addAntwoord('vraag2', answerId); // Antwoord toevoegen
+        this.$router.push('/vraag3');
       } else {
         console.error('Onbekende optie geselecteerd:', optionText);
       }
