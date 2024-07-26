@@ -1,168 +1,134 @@
 <script>
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 import progressiebalk from "./progressiebalk.vue";
-
-
+import { addAntwoord, getAntwoorden } from "../antwoorden.js";
 
 export default {
   name: "vraag1",
   components: {
     LogoNlAdviesAirco,
     progressiebalk,
-
   },
-  props: [
-    "spanText1",
-    "spanText2",
-    "logoNLAdviesAircoProps",  
-],
-data() {
+  props: {
+    spanText1: String,
+    spanText2: String,
+    logoNLAdviesAircoProps: Object,  
+  },
+  data() {
     return {
-      postcode: localStorage.getItem('postcode') || '',
-      currentPage:  1,
+      formData: {
+        zip: localStorage.getItem('postcode') || '',
+        house_number: '',
+        street: '',
+      },
+      currentPage: 1,
     };
   },
   methods: {
     navigateToNextPage() {
-        this.$router.push('./vraag2');
+      // Validatie van house_number
+      if (!this.formData.house_number || isNaN(this.formData.house_number)) {
+        alert('Voer een geldig huisnummer in.');
+        return;
+      }
+
+      // Voeg de antwoorden toe aan de antwoorden object
+      addAntwoord({
+        zip: this.formData.zip,
+        house_number: this.formData.house_number,
+        street: this.formData.street,
+      });
+
+      // Voor debuggen, log de antwoorden naar de console
+      console.log('Antwoorden na toevoegen:', getAntwoorden());
+
+      // Navigeer naar de volgende vraag
+      this.$router.push('/vraag2');
     }
   }
 };
 </script>
 
-
-
 <template>
-    <div>
-
+  <div>
     <!-- navbar -->
     <div class="navbar">
       <div class="container-links">
         <div class="container-advies-logo">
           <logo-nl-advies-airco
-          :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-          :airconditioning="logoNLAdviesAircoProps.airconditioning" />
+            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
+            :airconditioning="logoNLAdviesAircoProps.airconditioning" />
         </div>
       </div>
-        <div class="container-rechts">
-          <div class="container-tekst-rechts">
-            <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
-            <span class="tekst-geel-navbar">{{ spanText2 }}</span>
-          </div>
+      <div class="container-rechts">
+        <div class="container-tekst-rechts">
+          <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
+          <span class="tekst-geel-navbar">{{ spanText2 }}</span>
         </div>
+      </div>
     </div>
 
-
-
-        <div class="achtergrond-vraag1">
-            <div class="overkoepelende-container">
-
-
-
-              <progressiebalk :currentPage="currentPage" />
-]
-
-
-                <div class="vraag1-container">
-                    <div class="container-voor-gegevens">
-
-
-                    <div class="afbeelding-van-pijl">
-                      <router-link to="./CampagneStart.vue">
-                        <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="Arrows">
-                                <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
-                            </g>
-                        </svg>
-                      </router-link>
-                    </div>
-                    <div class="vraag-hoeveel">
-                        <p>Vraag 1 van 3</p>
-                    </div>
-
-
-                     <p class="vraag">Wat is jouw adres?</p>
-
-
-                     <div class="container-inputs">
-                        <div class="overkoepelende-input-container">
-
-                            
-                          <div class="input-container full-width-mobiel">
-                            <label class="postcode-label " for="postcode-input"></label>
-                            <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode" :value="postcode">
-                          </div>
-                  
-                          <div class="input-container full-width-mobiel">
-                            <label class="huisnr-label" for="huisnr-input"></label>
-                            <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Huisnr.">
-                          </div>
-                  
-                          <div class="input-container full-width">
-                            <label class="option-label" for="option-select"></label>
-                            <select id="option-select" class="option-select">
-                              <option value="" disabled selected>Straatnaam</option>
-                              <option value="option1">Optie 1</option>
-                              <option value="option2">Optie 2</option>
-                              <option value="option3">Optie 3</option>
-                            </select>
-                          </div>
-
-
-                        </div>
-                      </div>
-
-
-
-                      <div class="volgende">
-                        <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
-                      </div>
-                     
-                  
-
-                    </div>
-
-                    <div class="container-afbeelding-desktop">
-                      <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
-                    </div>
-
-                    <div class="container-afbeelding-mobiel">
-                      <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
-                    </div>
-                   
+    <div class="achtergrond-vraag1">
+      <div class="overkoepelende-container">
+        <progressiebalk :currentPage="currentPage" />
+        <div class="vraag1-container">
+          <div class="container-voor-gegevens">
+            <div class="afbeelding-van-pijl">
+              <router-link to="./CampagneStart.vue">
+                <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Arrows">
+                    <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
+                  </g>
+                </svg>
+              </router-link>
+            </div>
+            <div class="vraag-hoeveel">
+              <p>Vraag 1 van 3</p>
+            </div>
+            <p class="vraag">Wat is jouw adres?</p>
+            <div class="container-inputs">
+              <div class="overkoepelende-input-container">
+                <div class="input-container full-width-mobiel">
+                  <label class="postcode-label" for="postcode-input"></label>
+                  <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode" v-model="formData.zip">
                 </div>
-
-
-           </div>
+                <div class="input-container full-width-mobiel">
+                  <label class="huisnr-label" for="huisnr-input"></label>
+                  <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Huisnr." v-model="formData.house_number">
+                </div>
+                <div class="input-container full-width">
+                  <label class="option-label" for="option-select"></label>
+                  <select id="option-select" class="option-select" v-model="formData.street">
+                    <option value="" disabled selected>Straatnaam</option>
+                    <option value="option1">Optie 1</option>
+                    <option value="option2">Optie 2</option>
+                    <option value="option3">Optie 3</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="volgende">
+              <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
+            </div>
+          </div>
+          <div class="container-afbeelding-desktop">
+            <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
+          </div>
+          <div class="container-afbeelding-mobiel">
+            <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
+          </div>
         </div>
+      </div>
+    </div>
+    <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
+  </div>
+</template>
 
 
-        <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
-
-
-
-
-
-
-</div>
-
-
-
-  </template>
-  
 
   
   <style lang="sass">
   @import '../../variables'
-
-
-
-
-
-
-
-
-
 
 
 

@@ -1,143 +1,123 @@
 <script>
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 import progressiebalk from "./progressiebalk.vue";
-
-
+import { addAntwoord } from "../antwoorden.js";
 
 export default {
-  name: "vraag1",
+  name: "vraag3",
   components: {
     LogoNlAdviesAirco,
     progressiebalk,
-
   },
   props: [
     "spanText1",
     "spanText2",
-    "logoNLAdviesAircoProps",  
-],
-data() {
+    "logoNLAdviesAircoProps",
+  ],
+  data() {
     return {
-      currentPage:  3,
-      totalpages: 3,
+      currentPage: 3,
+      totalPages: 3,
+      selectedOption: '',
+      opties: [
+        { id: 5121, label: '1' },
+        { id: 5124, label: '2' },
+        { id: 5127, label: '3+' },
+        { id: 5130, label: 'Weet ik niet' },
+      ],
     };
   },
   methods: {
-    navigateToNextPage() {
-        this.$router.push('./analyse');
+  navigateToNextPage() {
+    if (this.selectedOption) {
+      addAntwoord({ vraag: 'vraag3', antwoord: this.selectedOption });
+      console.log(`Selected option for vraag3: ${this.selectedOption}`);
+      this.$router.push('./formulier');
+    } else {
+      alert("Selecteer een optie voordat je doorgaat.");
     }
-  }
+  },
+}
 };
 </script>
 
-
-
 <template>
-    <div>
-
+  <div>
     <!-- navbar -->
     <div class="navbar">
       <div class="container-links">
         <div class="container-advies-logo">
           <logo-nl-advies-airco
-          :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-          :airconditioning="logoNLAdviesAircoProps.airconditioning" />
+            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
+            :airconditioning="logoNLAdviesAircoProps.airconditioning"
+          />
         </div>
       </div>
-        <div class="container-rechts">
-          <div class="container-tekst-rechts">
-            <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
-            <span class="tekst-geel-navbar">{{ spanText2 }}</span>
-          </div>
+      <div class="container-rechts">
+        <div class="container-tekst-rechts">
+          <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
+          <span class="tekst-geel-navbar">{{ spanText2 }}</span>
         </div>
+      </div>
     </div>
 
+    <div class="achtergrond-vraag1">
+      <div class="overkoepelende-container">
+        <progressiebalk :currentPage="currentPage" :totalPages="totalPages" />
 
+        <div class="vraag1-container">
+          <div class="container-voor-gegevens">
+            <div class="afbeelding-van-pijl">
+              <router-link to="./vraag2">
+                <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Arrows">
+                    <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
+                  </g>
+                </svg>
+              </router-link>
+            </div>
+            <div class="vraag-hoeveel">
+              <p>Vraag 3 van 3</p>
+            </div>
 
-        <div class="achtergrond-vraag1">
-            <div class="overkoepelende-container">
+            <p class="vraag3">
+              In hoeveel ruimtes wil je
+              <br class="mobiel"> de airconditioning
+              <br class="mobiel"> installeren?
+            </p>
 
+            <div class="container-inputs">
+              <div class="overkoepelende-input-container">
+                <form>
+                  <select class="select-vraag3" v-model="selectedOption">
+                    <option value="" disabled>Selecteer een optie</option>
+                    <option v-for="optie in opties" :key="optie.id" :value="optie.id">
+                      {{ optie.label }}
+                    </option>
+                  </select>
+                </form>
+              </div>
+            </div>
 
-              <progressiebalk :currentPage="currentPage" :totalPages="totalPages" />
+            <div class="volgende">
+              <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
+            </div>
+          </div>
 
+          <div class="container-afbeelding-desktop">
+            <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
+          </div>
 
-                <div class="vraag1-container">
-                    <div class="container-voor-gegevens">
-
-
-                    <div class="afbeelding-van-pijl">
-                      <router-link to="./vraag2">
-                        <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="Arrows">
-                                <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
-                            </g>
-                        </svg>
-                      </router-link>
-                    </div>
-                    <div class="vraag-hoeveel">
-                        <p>Vraag 3 van 3</p>
-                    </div>
-
-
-                     <p class="vraag3">In hoeveel ruimtes wil je<br class="mobiel">
-                       de airconditioning<br class="mobiel"> 
-                       installeren?</p>
-
-
-
-
-
-
-
-                          <div class="container-inputs">
-                            <div class="overkoepelende-input-container">
-                              <form>
-                                <input type="number" class="number-input-veld input-vraag3" placeholder="Vul het aantal ruimtes in" />
-                              </form>
-                            </div>
-                          </div>
-
-
-
-
-
-
-                      <div class="volgende">
-                        <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
-                      </div>
-                     
-                  
-
-                    </div>
-
-                    <div class="container-afbeelding-desktop">
-                      <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
-                    </div>
-
-                    <div class="container-afbeelding-mobiel">
-                      <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
-                    </div>
-                   
-                </div>
-
-
-           </div>
+          <div class="container-afbeelding-mobiel">
+            <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
+          </div>
         </div>
+      </div>
+    </div>
 
-
-        <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
-
-
-
-
-
-
-</div>
-
-
-
-  </template>
-  
+    <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
+  </div>
+</template>
 
   
   <style lang="sass">
@@ -150,7 +130,23 @@ data() {
 
 
 
+  
+.select-vraag3
+  display: flex
+  width: 32rem
+  height: 3.4375rem
+  padding: 0.3125rem 1.125rem
+  align-items: center
+  gap: 1.25rem
+  border: 1px solid #E2E2E2
+  background: #FFF
+  font-size: 22px
+  margin: 1rem 0
+  border-radius: 4px
+  color: grey
 
+option
+  color: grey
 
 
 

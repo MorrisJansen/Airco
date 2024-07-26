@@ -1,176 +1,143 @@
 <script>
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 import progressiebalk from "./progressiebalk.vue";
-
-
+import { addAntwoord } from "../antwoorden.js";
 
 export default {
-  name: "vraag1",
+  name: "vraag2",
   components: {
     LogoNlAdviesAirco,
     progressiebalk,
-
   },
   props: [
     "spanText1",
     "spanText2",
-    "logoNLAdviesAircoProps",  
-],
-data() {
+    "logoNLAdviesAircoProps",
+  ],
+  data() {
     return {
-      currentPage:  2,
+      currentPage: 2,
+      antwoordOpties: {
+        'Vaste airco met buitenunit (split airco)': 5112,
+        'Vaste airco zonder buitenunit (monoblock)': 5115,
+        'Ik wil graag advies': 5118
+      },
+      geselecteerdAntwoordId: null,
     };
   },
+  watch: {
+    geselecteerdAntwoordId(newVal) {
+      if (newVal !== null) {
+        addAntwoord(newVal);
+          console.log(this.antwoordOpties)
+          this.$router.push('/vraag3');
+      }
+    }
+  },
   methods: {
-    navigateToNextPage() {
-        this.$router.push('./vraag3');
+    selectOption(optionText) {
+      const answerId = this.antwoordOpties[optionText];
+      if (answerId) {
+        this.geselecteerdAntwoordId = answerId; // Triggers de watch functie
+      } else {
+        console.error('Onbekende optie geselecteerd:', optionText);
+      }
     }
   }
 };
 </script>
 
-
-
 <template>
-    <div>
-
+  <div>
     <!-- navbar -->
     <div class="navbar">
       <div class="container-links">
         <div class="container-advies-logo">
           <logo-nl-advies-airco
-          :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-          :airconditioning="logoNLAdviesAircoProps.airconditioning" />
+            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
+            :airconditioning="logoNLAdviesAircoProps.airconditioning"
+          />
         </div>
       </div>
-        <div class="container-rechts">
-          <div class="container-tekst-rechts">
-            <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
-            <span class="tekst-geel-navbar">{{ spanText2 }}</span>
-          </div>
+      <div class="container-rechts">
+        <div class="container-tekst-rechts">
+          <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
+          <span class="tekst-geel-navbar">{{ spanText2 }}</span>
         </div>
+      </div>
     </div>
 
+    <div class="achtergrond-vraag1">
+      <div class="overkoepelende-container">
+        <progressiebalk :currentPage="currentPage" />
 
+        <div class="vraag1-container">
+          <div class="container-voor-gegevens">
+            <div class="afbeelding-van-pijl">
+              <router-link to="./vraag1">
+                <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Arrows">
+                    <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
+                  </g>
+                </svg>
+              </router-link>
+            </div>
+            <div class="vraag-hoeveel">
+              <p>Vraag 2 van 3</p>
+            </div>
 
-        <div class="achtergrond-vraag1">
-            <div class="overkoepelende-container">
+            <p class="vraag2">Welk type airco ben je geïnteresseerd in?</p>
 
+            <div class="container-inputs">
+              <div class="overkoepelende-input-container">
+                <form>
+                  <label class="radio-input" @click="selectOption('Vaste airco met buitenunit (split airco)')">
+                    <input type="radio" name="options" value="Vaste airco met buitenunit (split airco)">
+                    <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                    </svg>
+                    <span class="text-input">Vaste airco met buitenunit (split airco)</span>
+                  </label>
 
-              <progressiebalk :currentPage="currentPage" />
+                  <label class="radio-input" @click="selectOption('Vaste airco zonder buitenunit (monoblock)')">
+                    <input type="radio" name="options" value="Vaste airco zonder buitenunit (monoblock)">
+                    <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                    </svg>
+                    <span class="text-input">Vaste airco zonder buitenunit (monoblock)</span>
+                  </label>
 
+                  <label class="radio-input" @click="selectOption('Ik wil graag advies')">
+                    <input type="radio" name="options" value="Ik wil graag advies">
+                    <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
+                    </svg>
+                    <span class="text-input">Ik wil graag advies</span>
+                  </label>
+                </form>
+              </div>
+            </div>
 
+          </div>
 
-                <div class="vraag1-container">
-                    <div class="container-voor-gegevens">
+          <div class="container-afbeelding-desktop">
+            <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
+          </div>
 
-
-                    <div class="afbeelding-van-pijl">
-                      <router-link to="./vraag1">
-                        <svg class="pijl-vraag1" width="32" height="25" viewBox="0 0 32 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <g id="Arrows">
-                                <path id="Vector" d="M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z" fill="#FFCD02"/>
-                            </g>
-                        </svg>
-                      </router-link>
-                    </div>
-                    <div class="vraag-hoeveel">
-                        <p>Vraag 2 van 3</p>
-                    </div>
-
-
-                     <p class="vraag2">Welk type airco ben je in geïnteresseerd?</p>
-
-
-                     <div class="container-inputs">
-                        <div class="overkoepelende-input-container">
-
-
-                          <form>
-
-                            <router-link class="links-naar-vraag3" to="./vraag3">
-                            <label class="radio-input">
-                                <input type="radio" name="options" value="Option 1" v-model="selectedOption">
-                                <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
-                                </svg>
-                                <span class="text-input">
-                                  Vaste airco met buitenunit (split airco)
-                                </span>
-                            </label>
-                          </router-link>
-
-
-                            <router-link class="links-naar-vraag3" to="./vraag3">
-                            <label class="radio-input">
-                                <input type="radio" name="options" value="Option 2" v-model="selectedOption">
-                                <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
-                                </svg>
-                                <span class="text-input">
-                                  Vaste airco zonder buitenunit (monoblock)
-                                </span>
-                            </label>
-                          </router-link>
-
-
-                            <router-link class="links-naar-vraag3" to="./vraag3">
-                            <label class="radio-input">
-                                <input type="radio" name="options" value="Option 3" v-model="selectedOption">
-                                <svg class="gele-rondje" width="18" height="19" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                  <circle id="Ellipse 5" cx="9" cy="9.5" r="9" fill="#FFCD02"/>
-                                </svg>
-                                <span class="text-input">
-                                  Ik wil graag advies
-                                </span>
-
-                            </label>
-                          </router-link>
-                          </form>
-                            
-
-
-                        </div>
-                      </div>
-
-
-
-
-                      <!-- <div class="volgende">
-                        <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
-                      </div> -->
-                     
-                  
-
-                    </div>
-
-                    <div class="container-afbeelding-desktop">
-                      <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
-                    </div>
-
-                    <div class="container-afbeelding-mobiel">
-                      <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
-                    </div>
-                   
-                </div>
-
-
-           </div>
+          <div class="container-afbeelding-mobiel">
+            <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
+          </div>
         </div>
+      </div>
+    </div>
 
-
-        <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
-
-
-
-
-
-
-</div>
+    <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
+  </div>
+</template>
 
 
 
-  </template>
+
   
 
   
