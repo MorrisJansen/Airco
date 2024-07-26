@@ -174,6 +174,13 @@ module.exports = __webpack_require__("56d7");
 
 /***/ }),
 
+/***/ "0514":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "0a4f":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -243,12 +250,23 @@ module.exports = __webpack_require__("56d7");
 
 /***/ }),
 
-/***/ "3192":
+/***/ "2df3":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_2344de67_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("de65");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_2344de67_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_2344de67_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag1_vue_vue_type_style_index_0_id_5a91ea82_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("0514");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag1_vue_vue_type_style_index_0_id_5a91ea82_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag1_vue_vue_type_style_index_0_id_5a91ea82_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
+/***/ "4309":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag2_vue_vue_type_style_index_0_id_98829d24_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("eb28");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag2_vue_vue_type_style_index_0_id_98829d24_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag2_vue_vue_type_style_index_0_id_98829d24_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
 
 
@@ -1576,8 +1594,8 @@ var CampagneStart_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var CampagneStart = (CampagneStart_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag1.vue?vue&type=template&id=a036e862
-var vraag1vue_type_template_id_a036e862_render = function render() {
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag1.vue?vue&type=template&id=5a91ea82
+var vraag1vue_type_template_id_5a91ea82_render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c('div', [_c('div', {
@@ -1607,7 +1625,7 @@ var vraag1vue_type_template_id_a036e862_render = function render() {
     attrs: {
       "currentPage": _vm.currentPage
     }
-  }), _vm._v(" ] "), _c('div', {
+  }), _c('div', {
     staticClass: "vraag1-container"
   }, [_c('div', {
     staticClass: "container-voor-gegevens"
@@ -1650,6 +1668,12 @@ var vraag1vue_type_template_id_a036e862_render = function render() {
       "for": "postcode-input"
     }
   }), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.formData.zip,
+      expression: "formData.zip"
+    }],
     staticClass: "huisnr-input full-width-mobiel-vraag1",
     attrs: {
       "id": "postcode-input",
@@ -1657,29 +1681,15 @@ var vraag1vue_type_template_id_a036e862_render = function render() {
       "placeholder": "Postcode"
     },
     domProps: {
-      "value": _vm.postcode
-    }
-  })]), _vm._m(1), _vm._m(2)])]), _c('div', {
-    staticClass: "volgende"
-  }, [_c('button', {
-    staticClass: "volgende-button",
+      "value": _vm.formData.zip
+    },
     on: {
-      "click": _vm.navigateToNextPage
+      "input": function ($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.formData, "zip", $event.target.value);
+      }
     }
-  }, [_vm._v("Volgende")])])]), _vm._m(3), _vm._m(4)])], 1)]), _c('p', {
-    staticClass: "footer"
-  }, [_vm._v("© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy")])]);
-};
-var vraag1vue_type_template_id_a036e862_staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c('div', {
-    staticClass: "vraag-hoeveel"
-  }, [_c('p', [_vm._v("Vraag 1 van 3")])]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c('div', {
+  })]), _c('div', {
     staticClass: "input-container full-width-mobiel"
   }, [_c('label', {
     staticClass: "huisnr-label",
@@ -1687,17 +1697,28 @@ var vraag1vue_type_template_id_a036e862_staticRenderFns = [function () {
       "for": "huisnr-input"
     }
   }), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.formData.house_number,
+      expression: "formData.house_number"
+    }],
     staticClass: "huisnr-input full-width-mobiel-vraag1",
     attrs: {
       "id": "huisnr-input",
       "type": "text",
       "placeholder": "Huisnr."
+    },
+    domProps: {
+      "value": _vm.formData.house_number
+    },
+    on: {
+      "input": function ($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.formData, "house_number", $event.target.value);
+      }
     }
-  })]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c('div', {
+  })]), _c('div', {
     staticClass: "input-container full-width"
   }, [_c('label', {
     staticClass: "option-label",
@@ -1705,9 +1726,26 @@ var vraag1vue_type_template_id_a036e862_staticRenderFns = [function () {
       "for": "option-select"
     }
   }), _c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.formData.street,
+      expression: "formData.street"
+    }],
     staticClass: "option-select",
     attrs: {
       "id": "option-select"
+    },
+    on: {
+      "change": function ($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.$set(_vm.formData, "street", $event.target.multiple ? $$selectedVal : $$selectedVal[0]);
+      }
     }
   }, [_c('option', {
     attrs: {
@@ -1727,7 +1765,23 @@ var vraag1vue_type_template_id_a036e862_staticRenderFns = [function () {
     attrs: {
       "value": "option3"
     }
-  }, [_vm._v("Optie 3")])])]);
+  }, [_vm._v("Optie 3")])])])])]), _c('div', {
+    staticClass: "volgende"
+  }, [_c('button', {
+    staticClass: "volgende-button",
+    on: {
+      "click": _vm.navigateToNextPage
+    }
+  }, [_vm._v("Volgende")])])]), _vm._m(1), _vm._m(2)])], 1)]), _c('p', {
+    staticClass: "footer"
+  }, [_vm._v("© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy")])]);
+};
+var vraag1vue_type_template_id_5a91ea82_staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('div', {
+    staticClass: "vraag-hoeveel"
+  }, [_c('p', [_vm._v("Vraag 1 van 3")])]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -1756,7 +1810,7 @@ var vraag1vue_type_template_id_a036e862_staticRenderFns = [function () {
   })]);
 }];
 
-// CONCATENATED MODULE: ./src/components/vraag1.vue?vue&type=template&id=a036e862
+// CONCATENATED MODULE: ./src/components/vraag1.vue?vue&type=template&id=5a91ea82
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/progressiebalk.vue?vue&type=template&id=c65def4a&scoped=true
 var progressiebalkvue_type_template_id_c65def4a_scoped_true_render = function render() {
@@ -1858,7 +1912,19 @@ var progressiebalk_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var progressiebalk = (progressiebalk_component.exports);
+// CONCATENATED MODULE: ./src/antwoorden.js
+
+// In antwoorden.js
+let antwoorden = [];
+function addAntwoord(answer) {
+  console.log('Adding answer:', answer); // Log de input
+  antwoorden.push(answer);
+}
+function getAntwoorden() {
+  return antwoorden;
+}
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag1.vue?vue&type=script&lang=js
+
 
 
 
@@ -1868,23 +1934,48 @@ var progressiebalk_component = Object(componentNormalizer["a" /* default */])(
     LogoNlAdviesAirco: LogoNlAdviesAirco,
     progressiebalk: progressiebalk
   },
-  props: ["spanText1", "spanText2", "logoNLAdviesAircoProps"],
+  props: {
+    spanText1: String,
+    spanText2: String,
+    logoNLAdviesAircoProps: Object
+  },
   data() {
     return {
-      postcode: localStorage.getItem('postcode') || '',
+      formData: {
+        zip: localStorage.getItem('postcode') || '',
+        house_number: '',
+        street: ''
+      },
       currentPage: 1
     };
   },
   methods: {
     navigateToNextPage() {
-      this.$router.push('./vraag2');
+      // Validatie van house_number
+      if (!this.formData.house_number || isNaN(this.formData.house_number)) {
+        alert('Voer een geldig huisnummer in.');
+        return;
+      }
+
+      // Voeg de antwoorden toe aan de antwoorden object
+      addAntwoord({
+        zip: this.formData.zip,
+        house_number: this.formData.house_number,
+        street: this.formData.street
+      });
+
+      // Voor debuggen, log de antwoorden naar de console
+      console.log('Antwoorden na toevoegen:', getAntwoorden());
+
+      // Navigeer naar de volgende vraag
+      this.$router.push('/vraag2');
     }
   }
 });
 // CONCATENATED MODULE: ./src/components/vraag1.vue?vue&type=script&lang=js
  /* harmony default export */ var components_vraag1vue_type_script_lang_js = (vraag1vue_type_script_lang_js); 
-// EXTERNAL MODULE: ./src/components/vraag1.vue?vue&type=style&index=0&id=a036e862&prod&lang=sass
-var vraag1vue_type_style_index_0_id_a036e862_prod_lang_sass = __webpack_require__("9de3");
+// EXTERNAL MODULE: ./src/components/vraag1.vue?vue&type=style&index=0&id=5a91ea82&prod&lang=sass
+var vraag1vue_type_style_index_0_id_5a91ea82_prod_lang_sass = __webpack_require__("2df3");
 
 // CONCATENATED MODULE: ./src/components/vraag1.vue
 
@@ -1897,8 +1988,8 @@ var vraag1vue_type_style_index_0_id_a036e862_prod_lang_sass = __webpack_require_
 
 var vraag1_component = Object(componentNormalizer["a" /* default */])(
   components_vraag1vue_type_script_lang_js,
-  vraag1vue_type_template_id_a036e862_render,
-  vraag1vue_type_template_id_a036e862_staticRenderFns,
+  vraag1vue_type_template_id_5a91ea82_render,
+  vraag1vue_type_template_id_5a91ea82_staticRenderFns,
   false,
   null,
   null,
@@ -1907,8 +1998,8 @@ var vraag1_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var vraag1 = (vraag1_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag2.vue?vue&type=template&id=2c30b397
-var vraag2vue_type_template_id_2c30b397_render = function render() {
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag2.vue?vue&type=template&id=98829d24
+var vraag2vue_type_template_id_98829d24_render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c('div', [_c('div', {
@@ -1969,36 +2060,22 @@ var vraag2vue_type_template_id_2c30b397_render = function render() {
     }
   })])])])], 1), _vm._m(0), _c('p', {
     staticClass: "vraag2"
-  }, [_vm._v("Welk type airco ben je in geïnteresseerd?")]), _c('div', {
+  }, [_vm._v("Welk type airco ben je geïnteresseerd in?")]), _c('div', {
     staticClass: "container-inputs"
   }, [_c('div', {
     staticClass: "overkoepelende-input-container"
-  }, [_c('form', [_c('router-link', {
-    staticClass: "links-naar-vraag3",
-    attrs: {
-      "to": "./vraag3"
+  }, [_c('form', [_c('label', {
+    staticClass: "radio-input",
+    on: {
+      "click": function ($event) {
+        _vm.selectOption('Vaste airco met buitenunit (split airco)');
+      }
     }
-  }, [_c('label', {
-    staticClass: "radio-input"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.selectedOption,
-      expression: "selectedOption"
-    }],
     attrs: {
       "type": "radio",
       "name": "options",
-      "value": "Option 1"
-    },
-    domProps: {
-      "checked": _vm._q(_vm.selectedOption, "Option 1")
-    },
-    on: {
-      "change": function ($event) {
-        _vm.selectedOption = "Option 1";
-      }
+      "value": "Vaste airco met buitenunit (split airco)"
     }
   }), _c('svg', {
     staticClass: "gele-rondje",
@@ -2019,32 +2096,18 @@ var vraag2vue_type_template_id_2c30b397_render = function render() {
     }
   })]), _c('span', {
     staticClass: "text-input"
-  }, [_vm._v(" Vaste airco met buitenunit (split airco) ")])])]), _c('router-link', {
-    staticClass: "links-naar-vraag3",
-    attrs: {
-      "to": "./vraag3"
+  }, [_vm._v("Vaste airco met buitenunit (split airco)")])]), _c('label', {
+    staticClass: "radio-input",
+    on: {
+      "click": function ($event) {
+        _vm.selectOption('Vaste airco zonder buitenunit (monoblock)');
+      }
     }
-  }, [_c('label', {
-    staticClass: "radio-input"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.selectedOption,
-      expression: "selectedOption"
-    }],
     attrs: {
       "type": "radio",
       "name": "options",
-      "value": "Option 2"
-    },
-    domProps: {
-      "checked": _vm._q(_vm.selectedOption, "Option 2")
-    },
-    on: {
-      "change": function ($event) {
-        _vm.selectedOption = "Option 2";
-      }
+      "value": "Vaste airco zonder buitenunit (monoblock)"
     }
   }), _c('svg', {
     staticClass: "gele-rondje",
@@ -2065,32 +2128,18 @@ var vraag2vue_type_template_id_2c30b397_render = function render() {
     }
   })]), _c('span', {
     staticClass: "text-input"
-  }, [_vm._v(" Vaste airco zonder buitenunit (monoblock) ")])])]), _c('router-link', {
-    staticClass: "links-naar-vraag3",
-    attrs: {
-      "to": "./vraag3"
+  }, [_vm._v("Vaste airco zonder buitenunit (monoblock)")])]), _c('label', {
+    staticClass: "radio-input",
+    on: {
+      "click": function ($event) {
+        return _vm.selectOption('Ik wil graag advies');
+      }
     }
-  }, [_c('label', {
-    staticClass: "radio-input"
   }, [_c('input', {
-    directives: [{
-      name: "model",
-      rawName: "v-model",
-      value: _vm.selectedOption,
-      expression: "selectedOption"
-    }],
     attrs: {
       "type": "radio",
       "name": "options",
-      "value": "Option 3"
-    },
-    domProps: {
-      "checked": _vm._q(_vm.selectedOption, "Option 3")
-    },
-    on: {
-      "change": function ($event) {
-        _vm.selectedOption = "Option 3";
-      }
+      "value": "Ik wil graag advies"
     }
   }), _c('svg', {
     staticClass: "gele-rondje",
@@ -2111,11 +2160,11 @@ var vraag2vue_type_template_id_2c30b397_render = function render() {
     }
   })]), _c('span', {
     staticClass: "text-input"
-  }, [_vm._v(" Ik wil graag advies ")])])])], 1)])])]), _vm._m(1), _vm._m(2)])], 1)]), _c('p', {
+  }, [_vm._v("Ik wil graag advies")])])])])])]), _vm._m(1), _vm._m(2)])], 1)]), _c('p', {
     staticClass: "footer"
   }, [_vm._v("© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy")])]);
 };
-var vraag2vue_type_template_id_2c30b397_staticRenderFns = [function () {
+var vraag2vue_type_template_id_98829d24_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c('div', {
@@ -2149,14 +2198,15 @@ var vraag2vue_type_template_id_2c30b397_staticRenderFns = [function () {
   })]);
 }];
 
-// CONCATENATED MODULE: ./src/components/vraag2.vue?vue&type=template&id=2c30b397
+// CONCATENATED MODULE: ./src/components/vraag2.vue?vue&type=template&id=98829d24
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag2.vue?vue&type=script&lang=js
 
 
 
+
 /* harmony default export */ var vraag2vue_type_script_lang_js = ({
-  name: "vraag1",
+  name: "vraag2",
   components: {
     LogoNlAdviesAirco: LogoNlAdviesAirco,
     progressiebalk: progressiebalk
@@ -2164,19 +2214,39 @@ var vraag2vue_type_template_id_2c30b397_staticRenderFns = [function () {
   props: ["spanText1", "spanText2", "logoNLAdviesAircoProps"],
   data() {
     return {
-      currentPage: 2
+      currentPage: 2,
+      antwoordOpties: {
+        'Vaste airco met buitenunit (split airco)': 5112,
+        'Vaste airco zonder buitenunit (monoblock)': 5115,
+        'Ik wil graag advies': 5118
+      },
+      geselecteerdAntwoordId: null
     };
   },
+  watch: {
+    geselecteerdAntwoordId(newVal) {
+      if (newVal !== null) {
+        addAntwoord(newVal);
+        console.log(this.antwoordOpties);
+        this.$router.push('/vraag3');
+      }
+    }
+  },
   methods: {
-    navigateToNextPage() {
-      this.$router.push('./vraag3');
+    selectOption(optionText) {
+      const answerId = this.antwoordOpties[optionText];
+      if (answerId) {
+        this.geselecteerdAntwoordId = answerId; // Triggers de watch functie
+      } else {
+        console.error('Onbekende optie geselecteerd:', optionText);
+      }
     }
   }
 });
 // CONCATENATED MODULE: ./src/components/vraag2.vue?vue&type=script&lang=js
  /* harmony default export */ var components_vraag2vue_type_script_lang_js = (vraag2vue_type_script_lang_js); 
-// EXTERNAL MODULE: ./src/components/vraag2.vue?vue&type=style&index=0&id=2c30b397&prod&lang=sass
-var vraag2vue_type_style_index_0_id_2c30b397_prod_lang_sass = __webpack_require__("bd33");
+// EXTERNAL MODULE: ./src/components/vraag2.vue?vue&type=style&index=0&id=98829d24&prod&lang=sass
+var vraag2vue_type_style_index_0_id_98829d24_prod_lang_sass = __webpack_require__("4309");
 
 // CONCATENATED MODULE: ./src/components/vraag2.vue
 
@@ -2189,8 +2259,8 @@ var vraag2vue_type_style_index_0_id_2c30b397_prod_lang_sass = __webpack_require_
 
 var vraag2_component = Object(componentNormalizer["a" /* default */])(
   components_vraag2vue_type_script_lang_js,
-  vraag2vue_type_template_id_2c30b397_render,
-  vraag2vue_type_template_id_2c30b397_staticRenderFns,
+  vraag2vue_type_template_id_98829d24_render,
+  vraag2vue_type_template_id_98829d24_staticRenderFns,
   false,
   null,
   null,
@@ -2199,8 +2269,8 @@ var vraag2_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var vraag2 = (vraag2_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag3.vue?vue&type=template&id=6b4b046f
-var vraag3vue_type_template_id_6b4b046f_render = function render() {
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag3.vue?vue&type=template&id=5f4b5413
+var vraag3vue_type_template_id_5f4b5413_render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c('div', [_c('div', {
@@ -2260,18 +2330,53 @@ var vraag3vue_type_template_id_6b4b046f_render = function render() {
       "d": "M0.570872 11.1186L11.0923 0.571695L13.8454 0.571695L13.8454 3.33452L6.65089 10.5469L30.0508 10.5469L32 12.4999L30.0508 14.4531L6.65089 14.4531L13.8454 21.6654L13.8454 24.4284L12.47 25L11.0923 24.4284L0.570872 13.8816L0.570872 11.1186Z",
       "fill": "#FFCD02"
     }
-  })])])])], 1), _vm._m(0), _vm._m(1), _vm._m(2), _c('div', {
+  })])])])], 1), _vm._m(0), _vm._m(1), _c('div', {
+    staticClass: "container-inputs"
+  }, [_c('div', {
+    staticClass: "overkoepelende-input-container"
+  }, [_c('form', [_c('select', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.selectedOption,
+      expression: "selectedOption"
+    }],
+    staticClass: "select-vraag3",
+    on: {
+      "change": function ($event) {
+        var $$selectedVal = Array.prototype.filter.call($event.target.options, function (o) {
+          return o.selected;
+        }).map(function (o) {
+          var val = "_value" in o ? o._value : o.value;
+          return val;
+        });
+        _vm.selectedOption = $event.target.multiple ? $$selectedVal : $$selectedVal[0];
+      }
+    }
+  }, [_c('option', {
+    attrs: {
+      "value": "",
+      "disabled": ""
+    }
+  }, [_vm._v("Selecteer een optie")]), _vm._l(_vm.opties, function (optie) {
+    return _c('option', {
+      key: optie.id,
+      domProps: {
+        "value": optie.id
+      }
+    }, [_vm._v(" " + _vm._s(optie.label) + " ")]);
+  })], 2)])])]), _c('div', {
     staticClass: "volgende"
   }, [_c('button', {
     staticClass: "volgende-button",
     on: {
       "click": _vm.navigateToNextPage
     }
-  }, [_vm._v("Volgende")])])]), _vm._m(3), _vm._m(4)])], 1)]), _c('p', {
+  }, [_vm._v("Volgende")])])]), _vm._m(2), _vm._m(3)])], 1)]), _c('p', {
     staticClass: "footer"
   }, [_vm._v("© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy")])]);
 };
-var vraag3vue_type_template_id_6b4b046f_staticRenderFns = [function () {
+var vraag3vue_type_template_id_5f4b5413_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c('div', {
@@ -2282,25 +2387,11 @@ var vraag3vue_type_template_id_6b4b046f_staticRenderFns = [function () {
     _c = _vm._self._c;
   return _c('p', {
     staticClass: "vraag3"
-  }, [_vm._v("In hoeveel ruimtes wil je"), _c('br', {
+  }, [_vm._v(" In hoeveel ruimtes wil je "), _c('br', {
     staticClass: "mobiel"
-  }), _vm._v(" de airconditioning"), _c('br', {
+  }), _vm._v(" de airconditioning "), _c('br', {
     staticClass: "mobiel"
-  }), _vm._v(" installeren?")]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c('div', {
-    staticClass: "container-inputs"
-  }, [_c('div', {
-    staticClass: "overkoepelende-input-container"
-  }, [_c('form', [_c('input', {
-    staticClass: "number-input-veld input-vraag3",
-    attrs: {
-      "type": "number",
-      "placeholder": "Vul het aantal ruimtes in"
-    }
-  })])])]);
+  }), _vm._v(" installeren? ")]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
@@ -2329,14 +2420,15 @@ var vraag3vue_type_template_id_6b4b046f_staticRenderFns = [function () {
   })]);
 }];
 
-// CONCATENATED MODULE: ./src/components/vraag3.vue?vue&type=template&id=6b4b046f
+// CONCATENATED MODULE: ./src/components/vraag3.vue?vue&type=template&id=5f4b5413
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/vraag3.vue?vue&type=script&lang=js
 
 
 
+
 /* harmony default export */ var vraag3vue_type_script_lang_js = ({
-  name: "vraag1",
+  name: "vraag3",
   components: {
     LogoNlAdviesAirco: LogoNlAdviesAirco,
     progressiebalk: progressiebalk
@@ -2345,19 +2437,42 @@ var vraag3vue_type_template_id_6b4b046f_staticRenderFns = [function () {
   data() {
     return {
       currentPage: 3,
-      totalpages: 3
+      totalPages: 3,
+      selectedOption: '',
+      opties: [{
+        id: 5121,
+        label: '1'
+      }, {
+        id: 5124,
+        label: '2'
+      }, {
+        id: 5127,
+        label: '3+'
+      }, {
+        id: 5130,
+        label: 'Weet ik niet'
+      }]
     };
   },
   methods: {
     navigateToNextPage() {
-      this.$router.push('./analyse');
+      if (this.selectedOption) {
+        addAntwoord({
+          vraag: 'vraag3',
+          antwoord: this.selectedOption
+        });
+        console.log(`Selected option for vraag3: ${this.selectedOption}`);
+        this.$router.push('./formulier');
+      } else {
+        alert("Selecteer een optie voordat je doorgaat.");
+      }
     }
   }
 });
 // CONCATENATED MODULE: ./src/components/vraag3.vue?vue&type=script&lang=js
  /* harmony default export */ var components_vraag3vue_type_script_lang_js = (vraag3vue_type_script_lang_js); 
-// EXTERNAL MODULE: ./src/components/vraag3.vue?vue&type=style&index=0&id=6b4b046f&prod&lang=sass
-var vraag3vue_type_style_index_0_id_6b4b046f_prod_lang_sass = __webpack_require__("f3c8");
+// EXTERNAL MODULE: ./src/components/vraag3.vue?vue&type=style&index=0&id=5f4b5413&prod&lang=sass
+var vraag3vue_type_style_index_0_id_5f4b5413_prod_lang_sass = __webpack_require__("b34f");
 
 // CONCATENATED MODULE: ./src/components/vraag3.vue
 
@@ -2370,8 +2485,8 @@ var vraag3vue_type_style_index_0_id_6b4b046f_prod_lang_sass = __webpack_require_
 
 var vraag3_component = Object(componentNormalizer["a" /* default */])(
   components_vraag3vue_type_script_lang_js,
-  vraag3vue_type_template_id_6b4b046f_render,
-  vraag3vue_type_template_id_6b4b046f_staticRenderFns,
+  vraag3vue_type_template_id_5f4b5413_render,
+  vraag3vue_type_template_id_5f4b5413_staticRenderFns,
   false,
   null,
   null,
@@ -2484,8 +2599,8 @@ var analyse_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var analyse = (analyse_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/formulier.vue?vue&type=template&id=2344de67
-var formuliervue_type_template_id_2344de67_render = function render() {
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/formulier.vue?vue&type=template&id=694d0d20
+var formuliervue_type_template_id_694d0d20_render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c('div', [_c('div', {
@@ -2517,27 +2632,7 @@ var formuliervue_type_template_id_2344de67_render = function render() {
     staticClass: "titel-formulier"
   }, [_vm._v("Bedankt, start nu ook met besparen!")]), _vm._m(0), _c('p', {
     staticClass: "mensen-gingen-voor"
-  }, [_vm._v("Al meer dan 1,2 miljoen mensen ging je voor.")]), _vm._m(1), _c('div', {
-    staticClass: "volgende-formulier"
-  }, [_c('button', {
-    staticClass: "volgende-button-formulier",
-    on: {
-      "click": _vm.navigateToNextPage
-    }
-  }, [_vm._v("aanvraag afronden")])]), _vm._m(2)])])]), _c('p', {
-    staticClass: "footer"
-  }, [_vm._v("© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy")])]);
-};
-var formuliervue_type_template_id_2344de67_staticRenderFns = [function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c('p', {
-    staticClass: "subtitel-formulier"
-  }, [_vm._v("Ontvang gratis en vrijblijvend 3"), _c('br'), _vm._v(" airconditionging offertes met persoonlijk"), _c('br'), _vm._v(" advies van de beste partners/bedrijven uit jouw regio")]);
-}, function () {
-  var _vm = this,
-    _c = _vm._self._c;
-  return _c('div', {
+  }, [_vm._v("Al meer dan 1,2 miljoen mensen ging je voor.")]), _c('div', {
     staticClass: "form-container"
   }, [_c('form', [_c('div', {
     staticClass: "input-group"
@@ -2545,27 +2640,57 @@ var formuliervue_type_template_id_2344de67_staticRenderFns = [function () {
     staticClass: "input-item"
   }, [_c('label', {
     attrs: {
-      "for": "input1"
+      "for": "input-voornaam"
     }
-  }), _c('input', {
+  }, [_vm._v("Voornaam")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.formData.firstname,
+      expression: "formData.firstname"
+    }],
     staticClass: "input-voornaam",
     attrs: {
       "type": "text",
-      "id": "input1",
+      "id": "input-voornaam",
       "placeholder": "Voornaam"
+    },
+    domProps: {
+      "value": _vm.formData.firstname
+    },
+    on: {
+      "input": function ($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.formData, "firstname", $event.target.value);
+      }
     }
   })]), _c('div', {
     staticClass: "input-item"
   }, [_c('label', {
     attrs: {
-      "for": "input2"
+      "for": "input-achternaam"
     }
-  }), _c('input', {
+  }, [_vm._v("Achternaam")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.formData.lastname,
+      expression: "formData.lastname"
+    }],
     staticClass: "input-achternaam",
     attrs: {
       "type": "text",
-      "id": "input2",
+      "id": "input-achternaam",
       "placeholder": "Achternaam"
+    },
+    domProps: {
+      "value": _vm.formData.lastname
+    },
+    on: {
+      "input": function ($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.formData, "lastname", $event.target.value);
+      }
     }
   })])]), _c('div', {
     staticClass: "input-group"
@@ -2573,40 +2698,91 @@ var formuliervue_type_template_id_2344de67_staticRenderFns = [function () {
     staticClass: "input-item"
   }, [_c('label', {
     attrs: {
-      "for": "input3"
+      "for": "input-telefoon"
     }
-  }), _c('input', {
-    staticClass: "input-telefoonnummer",
+  }, [_vm._v("Telefoonnummer")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.formData.phone_number,
+      expression: "formData.phone_number"
+    }],
+    staticClass: "input-telefoon",
     attrs: {
       "type": "text",
-      "id": "input3",
+      "id": "input-telefoon",
       "placeholder": "Telefoonnummer"
+    },
+    domProps: {
+      "value": _vm.formData.phone_number
+    },
+    on: {
+      "input": function ($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.formData, "phone_number", $event.target.value);
+      }
     }
   })]), _c('div', {
     staticClass: "input-item"
   }, [_c('label', {
     attrs: {
-      "for": "input4"
+      "for": "input-email"
     }
-  }), _c('input', {
+  }, [_vm._v("E-mailadres")]), _c('input', {
+    directives: [{
+      name: "model",
+      rawName: "v-model",
+      value: _vm.formData.email,
+      expression: "formData.email"
+    }],
     staticClass: "input-email",
     attrs: {
       "type": "text",
-      "id": "input4",
+      "id": "input-email",
       "placeholder": "E-mailadres"
+    },
+    domProps: {
+      "value": _vm.formData.email
+    },
+    on: {
+      "input": function ($event) {
+        if ($event.target.composing) return;
+        _vm.$set(_vm.formData, "email", $event.target.value);
+      }
     }
-  })])])])]);
+  })])])])]), _c('div', {
+    staticClass: "volgende-formulier"
+  }, [_c('button', {
+    staticClass: "volgende-button-formulier",
+    on: {
+      "click": _vm.afronden
+    }
+  }, [_vm._v("Aanvraag afronden")])]), _vm._m(1)])])]), _c('p', {
+    staticClass: "footer"
+  }, [_vm._v("© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy")])]);
+};
+var formuliervue_type_template_id_694d0d20_staticRenderFns = [function () {
+  var _vm = this,
+    _c = _vm._self._c;
+  return _c('p', {
+    staticClass: "subtitel-formulier"
+  }, [_vm._v(" Ontvang gratis en vrijblijvend 3"), _c('br'), _vm._v(" airconditioning offertes met persoonlijk"), _c('br'), _vm._v(" advies van de beste partners/bedrijven uit jouw regio ")]);
 }, function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c('p', {
     staticClass: "footer-formulier"
-  }, [_vm._v("Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,"), _c('br'), _vm._v("persoonlijk advies en offertes van onze partners."), _c('br'), _vm._v("Dit is is volledig vrijblijvend, je zit dus nergens aan vast.")]);
+  }, [_vm._v("Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,"), _c('br'), _vm._v("persoonlijk advies en offertes van onze partners."), _c('br'), _vm._v("Dit is volledig vrijblijvend, je zit dus nergens aan vast.")]);
 }];
 
-// CONCATENATED MODULE: ./src/components/formulier.vue?vue&type=template&id=2344de67
+// CONCATENATED MODULE: ./src/components/formulier.vue?vue&type=template&id=694d0d20
+
+// EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-exception.stack.js
+var web_dom_exception_stack = __webpack_require__("b7ef");
 
 // CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/thread-loader/dist/cjs.js!./node_modules/babel-loader/lib!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/formulier.vue?vue&type=script&lang=js
+
+
 
 
 /* harmony default export */ var formuliervue_type_script_lang_js = ({
@@ -2614,17 +2790,98 @@ var formuliervue_type_template_id_2344de67_staticRenderFns = [function () {
   components: {
     LogoNlAdviesAirco: LogoNlAdviesAirco
   },
-  props: ["spanText1", "spanText2", "logoNLAdviesAircoProps"],
+  data() {
+    return {
+      formData: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone_number: '',
+        street: 'nds',
+        house_number: '1466',
+        city: 'Rotterdam',
+        zip: '3030br'
+      }
+    };
+  },
+  props: ["spanText1", "spanText2", "logoNLAdviesAircoProps", "antwoorden" // Zorg ervoor dat deze prop correct is toegevoegd
+  ],
+  mounted() {
+    // Vul formData met antwoorden als ze beschikbaar zijn
+    const antwoordenData = getAntwoorden();
+    if (antwoordenData && antwoordenData.vraag1) {
+      this.formData.street = antwoordenData.vraag1.street || '';
+      this.formData.house_number = antwoordenData.vraag1.house_number || '';
+      this.formData.zip = antwoordenData.vraag1.zip || '';
+    }
+  },
   methods: {
-    navigateToNextPage() {
-      this.$router.push('./einde');
+    afronden() {
+      const username = '185';
+      const password = 'ab8221d4a3170d89542880459abf79817ae367c2';
+      const authHeader = 'Basic ' + btoa(username + ':' + password);
+      const apiUrl = 'https://leadgen.republish.nl/api/sponsors/2394/leads';
+      const antwoordenData = this.$props.antwoorden || {}; // Zorg ervoor dat antwoordenData niet undefined is
+
+      const answers = [5109, 5112, 5121
+      // antwoordenData.vraag2 ? antwoordenData.vraag2.id, 
+      // antwoordenData.vraag3 ? antwoordenData.vraag3.id
+      ];
+      const leadData = {
+        language: 'nl_NL',
+        publisher_id: 'Morris de publisher :)',
+        site_subid: 'id=5',
+        site_custom_url: 'http://yourwebsite.com',
+        site_custom_name: 'Your Source Offer Name',
+        ip: 'userIPAddress',
+        optin_timestamp: new Date().toISOString().slice(0, 19).replace('T', ' '),
+        firstname: this.formData.firstname,
+        lastname: this.formData.lastname,
+        email: this.formData.email,
+        gender: 'male',
+        house_number: this.formData.house_number,
+        street: this.formData.street,
+        city: this.formData.city,
+        zip: this.formData.zip,
+        phone_number: this.formData.phone_number,
+        answers: answers
+      };
+      console.log('Preparing to send the following data to the API:');
+      console.log('API URL:', apiUrl);
+      console.log('Authorization Header:', authHeader);
+      console.log('Lead Data:', leadData);
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': authHeader,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(leadData)
+      }).then(response => {
+        console.log('Response Status:', response.status);
+        return response.json(); // Verwerkt de response
+      }).then(responseData => {
+        console.log('API Response Data:', responseData);
+        if (response.status === 201) {
+          console.log('Lead successfully created.');
+          this.$router.push('./einde');
+        } else if (response.status === 400) {
+          console.log('Bad request. Please check the parameters.');
+        } else if (response.status === 401) {
+          console.log('Unauthorized. Please check your credentials.');
+        } else {
+          console.log('Unexpected error:', response.status);
+        }
+      }).catch(error => {
+        console.error('Error:', error);
+      });
     }
   }
 });
 // CONCATENATED MODULE: ./src/components/formulier.vue?vue&type=script&lang=js
  /* harmony default export */ var components_formuliervue_type_script_lang_js = (formuliervue_type_script_lang_js); 
-// EXTERNAL MODULE: ./src/components/formulier.vue?vue&type=style&index=0&id=2344de67&prod&lang=sass
-var formuliervue_type_style_index_0_id_2344de67_prod_lang_sass = __webpack_require__("3192");
+// EXTERNAL MODULE: ./src/components/formulier.vue?vue&type=style&index=0&id=694d0d20&prod&lang=sass
+var formuliervue_type_style_index_0_id_694d0d20_prod_lang_sass = __webpack_require__("7006");
 
 // CONCATENATED MODULE: ./src/components/formulier.vue
 
@@ -2637,8 +2894,8 @@ var formuliervue_type_style_index_0_id_2344de67_prod_lang_sass = __webpack_requi
 
 var formulier_component = Object(componentNormalizer["a" /* default */])(
   components_formuliervue_type_script_lang_js,
-  formuliervue_type_template_id_2344de67_render,
-  formuliervue_type_template_id_2344de67_staticRenderFns,
+  formuliervue_type_template_id_694d0d20_render,
+  formuliervue_type_template_id_694d0d20_staticRenderFns,
   false,
   null,
   null,
@@ -2994,6 +3251,17 @@ new vue_runtime_esm["a" /* default */]({
 
 /***/ }),
 
+/***/ "7006":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_694d0d20_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("a477");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_694d0d20_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_694d0d20_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "7259":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3044,21 +3312,17 @@ new vue_runtime_esm["a" /* default */]({
 
 /***/ }),
 
-/***/ "9b47":
+/***/ "a412":
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
 
-/***/ "9de3":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "a477":
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag1_vue_vue_type_style_index_0_id_a036e862_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("c8a8");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag1_vue_vue_type_style_index_0_id_a036e862_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag1_vue_vue_type_style_index_0_id_a036e862_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
+// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -3073,6 +3337,17 @@ new vue_runtime_esm["a" /* default */]({
 
 /***/ }),
 
+/***/ "b34f":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag3_vue_vue_type_style_index_0_id_5f4b5413_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("a412");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag3_vue_vue_type_style_index_0_id_5f4b5413_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag3_vue_vue_type_style_index_0_id_5f4b5413_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "b4a5":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3081,24 +3356,6 @@ new vue_runtime_esm["a" /* default */]({
 /* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_XButton2_vue_vue_type_style_index_0_id_78db891c_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_XButton2_vue_vue_type_style_index_0_id_78db891c_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
 
-
-/***/ }),
-
-/***/ "bd33":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag2_vue_vue_type_style_index_0_id_2c30b397_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("9b47");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag2_vue_vue_type_style_index_0_id_2c30b397_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag2_vue_vue_type_style_index_0_id_2c30b397_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
-/***/ "c8a8":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -3138,13 +3395,6 @@ new vue_runtime_esm["a" /* default */]({
 
 /***/ }),
 
-/***/ "de65":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
-
-/***/ }),
-
 /***/ "de67":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3170,25 +3420,14 @@ module.exports = __webpack_require__.p + "assets/img/firstQuestion.b563951f.png"
 
 /***/ }),
 
-/***/ "f3aa":
+/***/ "eb28":
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
 
 /***/ }),
 
-/***/ "f3c8":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag3_vue_vue_type_style_index_0_id_6b4b046f_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("f6b2");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag3_vue_vue_type_style_index_0_id_6b4b046f_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_vraag3_vue_vue_type_style_index_0_id_6b4b046f_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
-/***/ "f6b2":
+/***/ "f3aa":
 /***/ (function(module, exports, __webpack_require__) {
 
 // extracted by mini-css-extract-plugin
@@ -3203,4 +3442,4 @@ module.exports = __webpack_require__.p + "assets/img/firstQuestion.b563951f.png"
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.74a3c09d.js.map
+//# sourceMappingURL=app.db64c02a.js.map
