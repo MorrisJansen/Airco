@@ -30,8 +30,8 @@ export default {
   },
   data() {
     return {
-      zip: '',  // Voeg postcode toe in data
-      errorMessage: '' // Voeg een errorMessage toe om foutmeldingen weer te geven
+      zip: '',  
+      errorMessage: ''
     };
   },
   methods: {

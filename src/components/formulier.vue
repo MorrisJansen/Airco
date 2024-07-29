@@ -118,6 +118,12 @@ export default {
         ...this.formData.answers,
       ];
 
+      const now = new Date();
+
+      now.setHours(now.getHours() + 2);
+
+      const optinTimestamp = now.toISOString().slice(0, 19).replace('T', ' ');
+
       const leadData = {
         language: 'nl_NL',
         publisher_id: 'Morris de publisher :)',
@@ -125,7 +131,7 @@ export default {
         site_custom_url: 'http://yourwebsite.com',
         site_custom_name: 'Airco',
         ip: 'userIPAddress',
-        optin_timestamp: new Date().toISOString().slice(0, 19).replace('T', ' '),
+        optin_timestamp: optinTimestamp,
         firstname: this.formData.firstname,
         lastname: this.formData.lastname,
         email: this.formData.email,
@@ -199,7 +205,6 @@ export default {
 
 .achtergrond-vraag1
   background-color: #FFE758
-  // max-height: 60rem
   height: auto
   padding-bottom: 2rem
   width: 120rem
