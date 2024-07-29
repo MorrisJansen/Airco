@@ -1,16 +1,15 @@
-// Object om de antwoorden op te slaan
-let antwoorden = {
-  vraag1: null,
-  vraag2: null,
-  vraag3: null,
-};
+let antwoorden = JSON.parse(localStorage.getItem('antwoorden')) || [];
 
-// Functie om een antwoord toe te voegen
-export function addAntwoord(vraag, antwoordId) {
-  antwoorden[vraag] = antwoordId;
+export function addAntwoord(antwoord) {
+  const existingAnswerIndex = antwoorden.findIndex(a => a.question === antwoord.question);
+  if (existingAnswerIndex !== -1) {
+    antwoorden[existingAnswerIndex] = antwoord;
+  } else {
+    antwoorden.push(antwoord);
+  }
+  localStorage.setItem('antwoorden', JSON.stringify(antwoorden));
 }
 
-// Functie om alle antwoorden op te halen
 export function getAntwoorden() {
-  return antwoorden;
+  return JSON.parse(localStorage.getItem('antwoorden')) || [];
 }
