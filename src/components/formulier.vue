@@ -79,10 +79,10 @@ export default {
         lastname: '',
         email: '',
         phone_number: '',
-        street: localStorage.getItem('street') || '',
-        house_number: localStorage.getItem('house_number') || '',
+        street: sessionStorage.getItem('street') || '',
+        house_number: sessionStorage.getItem('house_number') || '',
         city: 'Rotterdam',
-        zip: localStorage.getItem('zip') || '',
+        zip: sessionStorage.getItem('zip') || '',
         answers: [5109]
       }
     };

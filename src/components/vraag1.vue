@@ -17,7 +17,7 @@ export default {
   data() {
     return {
       formData: {
-        zip: localStorage.getItem('postcode') || '',
+        zip: sessionStorage.getItem('postcode') || '',
         house_number: '',
         street: '',
       },
@@ -41,6 +41,11 @@ export default {
 
       // Voor debuggen, log de antwoorden naar de console
       console.log('Antwoorden na toevoegen:', getAntwoorden());
+
+      // Sla de gegevens op in sessionStorage
+      sessionStorage.setItem('postcode', this.formData.zip);
+      sessionStorage.setItem('house_number', this.formData.house_number);
+      sessionStorage.setItem('street', this.formData.street);
 
       // Navigeer naar de volgende vraag
       this.$router.push('/vraag2');
@@ -123,7 +128,6 @@ export default {
     <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
   </div>
 </template>
-
 
 
   
