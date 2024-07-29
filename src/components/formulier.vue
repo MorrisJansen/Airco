@@ -32,21 +32,21 @@
             <form>
               <div class="input-group">
                 <div class="input-item">
-                  <label for="input-voornaam">Voornaam</label>
+                  <label for="input-voornaam"></label>
                   <input class="input-voornaam" v-model="formData.firstname" type="text" id="input-voornaam" placeholder="Voornaam">
                 </div>
                 <div class="input-item">
-                  <label for="input-achternaam">Achternaam</label>
+                  <label for="input-achternaam"></label>
                   <input class="input-achternaam" v-model="formData.lastname" type="text" id="input-achternaam" placeholder="Achternaam">
                 </div>
               </div>
               <div class="input-group">
                 <div class="input-item">
-                  <label for="input-telefoon">Telefoonnummer</label>
+                  <label for="input-telefoon"></label>
                   <input class="input-telefoon" v-model="formData.phone_number" type="text" id="input-telefoon" placeholder="Telefoonnummer">
                 </div>
                 <div class="input-item">
-                  <label for="input-email">E-mailadres</label>
+                  <label for="input-email"></label>
                   <input class="input-email" v-model="formData.email" type="text" id="input-email" placeholder="E-mailadres">
                 </div>
               </div>
@@ -303,7 +303,7 @@ export default {
 
 
 
-.input-voornaam, .input-achternaam, .input-telefoonnummer, .input-email
+.input-voornaam, .input-achternaam, .input-telefoon, .input-email
   height: 3.4rem
   width: 15rem
 
