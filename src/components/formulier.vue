@@ -83,7 +83,7 @@ export default {
         house_number: sessionStorage.getItem('house_number') || '',
         city: 'Rotterdam',
         zip: sessionStorage.getItem('zip') || '',
-        answers: [5109]
+        answers: [5109,]
       }
     };
   },
@@ -153,20 +153,20 @@ export default {
       })
       .then(response => {
         console.log('Response Status:', response.status);
-        return response.json(); // Verwerkt de response
+        return response.json();
       })
       .then(responseData => {
         console.log('API Response Data:', responseData);
 
-        if (responseData.status === 201) { // Verander response.status naar responseData.status
+        if (responseData.status === 201) {
           console.log('Lead successfully created.');
           this.$router.push('./einde');
-        } else if (responseData.status === 400) { // Verander response.status naar responseData.status
+        } else if (responseData.status === 400) {
           console.log('Bad request. Please check the parameters.');
-        } else if (responseData.status === 401) { // Verander response.status naar responseData.status
+        } else if (responseData.status === 401) {
           console.log('Unauthorized. Please check your credentials.');
         } else {
-          console.log('Unexpected error:', responseData.status); // Verander response.status naar responseData.status
+          console.log('Unexpected error:', responseData.status);
         }
       })
       .catch(error => {

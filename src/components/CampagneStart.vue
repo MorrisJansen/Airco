@@ -11,6 +11,7 @@ import Sectie1 from './sectie1.vue';
 import sectie2 from "./sectie2.vue";
 import sectie3 from "./sectie3.vue";
 import sectie4 from "./sectie4.vue";
+import { BIconFileZip } from 'bootstrap-vue';
 
 export default {
   name: "CampagneStart",
@@ -29,14 +30,14 @@ export default {
   },
   data() {
     return {
-      postcode: '',  // Voeg postcode toe in data
+      zip: '',  // Voeg postcode toe in data
       errorMessage: '' // Voeg een errorMessage toe om foutmeldingen weer te geven
     };
   },
   methods: {
     async checkPostcode() {
       const pattern = /^[1-9][0-9]{3}\s?[-]?[a-zA-Z]{2}$/;
-      if (!pattern.test(this.postcode)) {
+      if (!pattern.test(this.zip)) {
         this.errorMessage = 'Ongeldige postcode.';
         return false;
       }
@@ -47,6 +48,9 @@ export default {
     async navigateToNextPage() {
       const isValid = await this.checkPostcode();
       if (isValid) {
+        // Opslaan in sessionStorage
+        sessionStorage.setItem('zip', this.zip);
+        console.log(this.zip);
         this.$router.push('/vraag1');
       } else {
         console.error('Postcode niet geldig:', this.errorMessage);
@@ -57,7 +61,7 @@ export default {
     postcode(newPostcode) {
       if (newPostcode.length === 6) {
         console.log('Postcode:', newPostcode);
-        localStorage.setItem('postcode', newPostcode);
+        sessionStorage.setItem('zip', newPostcode); // Gebruik sessionStorage
       }
     }
   },
@@ -197,7 +201,7 @@ export default {
           <div class="frame-14">
             <div class="frame-20">
               <label class="postcode-label" for="postcode-input"></label>
-                <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" v-model="postcode" />
+                <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" v-model="zip" />
                 
 
               <!-- controleer knop en klaar binnen 1 minuut tekst -->
