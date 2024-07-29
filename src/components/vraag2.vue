@@ -17,7 +17,7 @@
         </div>
       </div>
     </div>
-
+    <!-- even een comment toevoegen zodat ik wellicht weer kan pushen naar github -->
     <div class="achtergrond-vraag1">
       <div class="overkoepelende-container">
         <progressiebalk :currentPage="currentPage" />
