@@ -430,7 +430,7 @@ export default {
     cursor: pointer
     width:  33.5rem
     position: relative
-    left: 1.5rem
+    left: 2.5rem
   
 
   .formulier-footer-formulier 
@@ -468,7 +468,7 @@ export default {
 
   @media (max-width: 500px) 
     .formulier-achtergrond-vraag1 
-      height: 90rem !important
+      height: 80rem !important
       padding-bottom: 2rem
       width: 100%
     
@@ -482,6 +482,9 @@ export default {
     .formulier-form-container form 
       flex-direction: column
       gap: 20px
+
+    .titel-formulier
+      font-size: 2rem
     
 
     .formulier-input-group 
@@ -510,7 +513,30 @@ export default {
     .formulier-footer 
       text-align: center
       font-size: 0.875rem
+
+
+
+    .subtitel-formulier
+      font-size: 16px
+
+    .titel-formulier
+      font-size: 22px!important
+
+    .mensen-gingen-voor
+      font-size: 13px
+
+
     
+  .formulier-volgende-button-formulier
+   left: 0
+    
+  .formulier-volgende-formulier
+    display: block
+    margin: 0
+
+  .formulier-volgende-button-formulier
+    font-size: 1.15rem!important
+
   
 
 
