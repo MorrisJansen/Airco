@@ -30,10 +30,8 @@ export default {
   methods: {
     navigateToNextPage() {
       if (this.selectedOption) {
-        // Voeg het antwoord toe aan de antwoorden
-        addAntwoord('vraag3', { id: this.selectedOption }); // Correct the answer format
+        addAntwoord('vraag3', { id: this.selectedOption });
         console.log(`Selected option for vraag3: ${this.selectedOption}`);
-        // Navigeer naar de volgende pagina
         this.$router.push('./formulier');
       } else {
         alert("Selecteer een optie voordat je doorgaat.");
@@ -42,9 +40,6 @@ export default {
   }
 };
 </script>
-
-
-
 
 
 

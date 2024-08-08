@@ -293,7 +293,8 @@ export default {
     color: red
     font-size: 0.875rem
     margin-bottom: 5%
-    padding-bottom: 20px
+    padding-bottom: 10px
+    margin-top: -10px
     width: 99%
     margin-left: 115%
 
@@ -531,5 +532,27 @@ export default {
   .footer
     text-align: center
 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .input-item
+    display: block
+    width: 100%
 
   </style>
