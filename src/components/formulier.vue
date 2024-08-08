@@ -1,3 +1,70 @@
+<template>
+  <div>
+    <div class="navbar">
+      <div class="container-links">
+        <div class="container-advies-logo">
+          <logo-nl-advies-airco
+            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
+            :airconditioning="logoNLAdviesAircoProps.airconditioning" />
+        </div>
+      </div>
+      <div class="container-rechts">
+        <div class="container-tekst-rechts">
+          <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
+          <span class="tekst-geel-navbar">{{ spanText2 }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="achtergrond-vraag1">
+      <div class="overkoepelende-container">
+        <div class="formulier-container">
+          <p class="titel-formulier">Bedankt, start nu ook met besparen!</p>
+          <p class="subtitel-formulier">
+            Ontvang gratis en vrijblijvend 3<br>
+            airconditioning offertes met persoonlijk<br>
+            advies van de beste partners/bedrijven uit jouw regio
+          </p>
+          <p class="mensen-gingen-voor">Al meer dan 1,2 miljoen mensen ging je voor.</p>
+          <div class="form-container">
+            <form @submit.prevent="afronden">
+              <div class="input-group">
+                <div class="input-item">
+                  <label for="input-voornaam"></label>
+                  <input class="input-voornaam" v-model="formData.firstname" type="text" id="input-voornaam" placeholder="Voornaam">
+                  <span v-if="errors.firstname" class="error-message">{{ errors.firstname }}</span>
+                </div>
+                <div class="input-item">
+                  <label for="input-achternaam"></label>
+                  <input class="input-achternaam" v-model="formData.lastname" type="text" id="input-achternaam" placeholder="Achternaam">
+                  <span v-if="errors.lastname" class="error-message">{{ errors.lastname }}</span>
+                </div>
+              </div>
+              <div class="input-group">
+                <div class="input-item">
+                  <label for="input-telefoon"></label>
+                  <input class="input-telefoon" v-model="formData.phone_number" type="text" id="input-telefoon" placeholder="Telefoonnummer">
+                  <span v-if="errors.phone_number" class="error-message">{{ errors.phone_number }}</span>
+                </div>
+                <div class="input-item">
+                  <label for="input-email"></label>
+                  <input class="input-email" v-model="formData.email" type="text" id="input-email" placeholder="E-mailadres">
+                  <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
+                </div>
+              </div>
+              <div class="volgende-formulier">
+                <button class="volgende-button-formulier" type="submit">Aanvraag afronden</button>
+              </div>
+            </form>
+          </div>
+          <p class="footer-formulier">Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,<br>persoonlijk advies en offertes van onze partners.<br>Dit is volledig vrijblijvend, je zit dus nergens aan vast.</p>
+        </div>
+      </div>
+    </div>
+    <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
+  </div>
+</template>
+
 <script>
 import { getAntwoorden } from "../antwoorden";
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
@@ -16,8 +83,14 @@ export default {
         phone_number: '',
         street: localStorage.getItem('selectedStreet') || '',
         house_number: localStorage.getItem('huisnummer') || '',
-        city: localStorage.getItem('city') ||'',
+        city: localStorage.getItem('city') || '',
         zip: localStorage.getItem('postcode') || '',
+      },
+      errors: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone_number: '',
       }
     };
   },
@@ -37,7 +110,100 @@ export default {
     }
   },
   methods: {
+    validateFirstname() {
+      console.log("Validating voornaam:", this.formData.firstname);
+      const regex = /^[a-zA-Z\s.,'-]{1,}$/;
+      if (!this.formData.firstname.match(regex)) {
+        this.errors.firstname = 'Ongeldige voornaam. Gebruik alleen letters, spaties en leestekens.';
+        return false;
+      }
+      this.errors.firstname = '';
+      return true;
+    },
+    validateLastname() {
+      console.log("Validating achternaam:", this.formData.lastname);
+      const regex = /^[a-zA-Z\s.,'-]{1,}$/;
+      if (!this.formData.lastname.match(regex)) {
+        this.errors.lastname = 'Ongeldige achternaam. Gebruik alleen letters, spaties en leestekens.';
+        return false;
+      }
+      this.errors.lastname = '';
+      return true;
+    },
+    validateEmail() {
+      console.log("Validating email:", this.formData.email);
+      const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const containsApostrophe = /'/;
+
+      if (!this.formData.email.match(regex) || this.formData.email.match(containsApostrophe)) {
+        this.errors.email = 'Ongeldig e-mailadres.';
+        return false;
+      }
+
+      this.errors.email = '';
+      return true;
+    },
+    validateAndFormatPhoneNumber(phoneNumber) {
+      phoneNumber = phoneNumber.replace(/[^0-9+]/g, '');
+
+      const dutchRegex = /^(06[0-9]{8}|[+]{0,1}31[0]?[0-9]{9,10}|0031[0]?[0-9]{9,10})$/;
+      
+      if (!phoneNumber.match(dutchRegex)) {
+        console.error('Ongeldig telefoonnummer');
+        return null;
+      }
+
+      phoneNumber = phoneNumber.replace(/^0+/, '');
+
+      if (phoneNumber.startsWith('0') && (phoneNumber.length === 10 || phoneNumber.length === 11)) {
+        phoneNumber = '+31' + phoneNumber.substring(1);
+      } else if (phoneNumber.startsWith('6') && phoneNumber.length === 9) {
+        phoneNumber = '+31' + phoneNumber;
+      } else if (phoneNumber.startsWith('31') && phoneNumber.length === 11) {
+        phoneNumber = '+' + phoneNumber;
+      } else if (phoneNumber.startsWith('+31')) {
+      } else if (phoneNumber.startsWith('0031')) {
+        phoneNumber = '+' + phoneNumber.substring(2);
+      } else {
+        console.error('Ongeldig telefoonnummer');
+        return null;
+      }
+
+      if (phoneNumber.length !== 12) {
+        console.error('Telefoonnummer moet in het formaat +31XXXXXXXXX zijn.');
+        return null;
+      }
+
+      return phoneNumber;
+    },
+    validatePhoneNumber() {
+      console.log("Validating telefoonnummer:", this.formData.phone_number);
+      const phoneNumber = this.validateAndFormatPhoneNumber(this.formData.phone_number);
+
+      if (!phoneNumber) {
+        console.error('Ongeldig telefoonnummer.');
+        this.errors.phone_number = 'Ongeldig telefoonnummer.';
+        return false;
+      }
+
+      this.errors.phone_number = '';
+      this.formData.phone_number = phoneNumber; // Update the phone number to the formatted version
+      return true;
+    },
+    validateForm() {
+      const isFirstnameValid = this.validateFirstname();
+      const isLastnameValid = this.validateLastname();
+      const isEmailValid = this.validateEmail();
+      const isPhoneNumberValid = this.validatePhoneNumber();
+
+      return isFirstnameValid && isLastnameValid && isEmailValid && isPhoneNumberValid;
+    },
     afronden() {
+      if (!this.validateForm()) {
+        console.error('Formulier bevat ongeldige waarden.');
+        return;
+      }
+
       const username = '185';
       const password = 'ab8221d4a3170d89542880459abf79817ae367c2';
       const authHeader = 'Basic ' + btoa(username + ':' + password);
@@ -115,81 +281,6 @@ export default {
 
 
 
-
-
-
-
-
-
-<template>
-  <div>
-    <!-- navbar -->
-    <div class="navbar">
-      <div class="container-links">
-        <div class="container-advies-logo">
-          <logo-nl-advies-airco
-            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-            :airconditioning="logoNLAdviesAircoProps.airconditioning"
-          />
-        </div>
-      </div>
-      <div class="container-rechts">
-        <div class="container-tekst-rechts">
-          <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
-          <span class="tekst-geel-navbar">{{ spanText2 }}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="achtergrond-vraag1">
-      <div class="overkoepelende-container">
-        <div class="formulier-container">
-          <p class="titel-formulier">Bedankt, start nu ook met besparen!</p>
-          <p class="subtitel-formulier">
-            Ontvang gratis en vrijblijvend 3<br>
-            airconditioning offertes met persoonlijk<br>
-            advies van de beste partners/bedrijven uit jouw regio
-          </p>
-          <p class="mensen-gingen-voor">Al meer dan 1,2 miljoen mensen ging je voor.</p>
-          <div class="form-container">
-            <form>
-              <div class="input-group">
-                <div class="input-item">
-                  <label for="input-voornaam"></label>
-                  <input class="input-voornaam" v-model="formData.firstname" type="text" id="input-voornaam" placeholder="Voornaam">
-                </div>
-                <div class="input-item">
-                  <label for="input-achternaam"></label>
-                  <input class="input-achternaam" v-model="formData.lastname" type="text" id="input-achternaam" placeholder="Achternaam">
-                </div>
-              </div>
-              <div class="input-group">
-                <div class="input-item">
-                  <label for="input-telefoon"></label>
-                  <input class="input-telefoon" v-model="formData.phone_number" type="text" id="input-telefoon" placeholder="Telefoonnummer">
-                </div>
-                <div class="input-item">
-                  <label for="input-email"></label>
-                  <input class="input-email" v-model="formData.email" type="text" id="input-email" placeholder="E-mailadres">
-                </div>
-              </div>
-            </form>
-          </div>
-          <div class="volgende-formulier">
-            <button class="volgende-button-formulier" @click="afronden">Aanvraag afronden</button>
-          </div>
-          <p class="footer-formulier">Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,<br>persoonlijk advies en offertes van onze partners.<br>Dit is volledig vrijblijvend, je zit dus nergens aan vast.</p>
-        </div>
-      </div>
-    </div>
-    <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
-  </div>
-</template>
-
-
-
-
-
   
 
   
@@ -198,7 +289,15 @@ export default {
 
 
 
+  .error-message 
+    color: red
+    font-size: 0.875rem
+    margin-bottom: 5%
+    padding-bottom: 20px
+    width: 99%
+    margin-left: 115%
 
+  
 
 
 
@@ -387,8 +486,6 @@ export default {
   .achtergrond-vraag1
     zoom: 100%
 
-  .overkoepelende-container
-    zoom: 41%
 
 
 @media (max-width: 500px)

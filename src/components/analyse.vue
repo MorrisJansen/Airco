@@ -245,9 +245,6 @@ export default {
 
 
 
-@media (max-width: 800px)
-  .overkoepelende-container
-    zoom: 41%
 
 @media (min-width: 500px)
 

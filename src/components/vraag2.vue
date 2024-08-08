@@ -366,7 +366,6 @@ export default {
 
 
 
-@media (max-width: 800px)
 
 
 @media (min-width: 500px)
