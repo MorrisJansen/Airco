@@ -468,7 +468,7 @@ export default {
 
   @media (max-width: 500px) 
     .formulier-achtergrond-vraag1 
-      height: 80rem !important
+      height: 61rem !important
       padding-bottom: 2rem
       width: 100%
     
@@ -524,18 +524,22 @@ export default {
 
     .mensen-gingen-voor
       font-size: 13px
+      margin-bottom: 0
 
 
     
-  .formulier-volgende-button-formulier
-   left: 0
-    
-  .formulier-volgende-formulier
-    display: block
-    margin: 0
+    .formulier-volgende-button-formulier
+      left: 0
+      
+    .formulier-volgende-formulier
+      display: block
+      margin: 0
 
-  .formulier-volgende-button-formulier
-    font-size: 1.15rem!important
+    .formulier-volgende-button-formulier
+      font-size: 1rem!important
+
+    .formulier-footer-formulier
+      padding: 5px 5%
 
   
 
