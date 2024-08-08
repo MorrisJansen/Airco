@@ -11,7 +11,6 @@ import Sectie1 from './sectie1.vue';
 import sectie2 from "./sectie2.vue";
 import sectie3 from "./sectie3.vue";
 import sectie4 from "./sectie4.vue";
-import { BIconFileZip } from 'bootstrap-vue';
 
 export default {
   name: "CampagneStart",
@@ -58,10 +57,10 @@ export default {
     }
   },
   watch: {
-    postcode(newPostcode) {
-      if (newPostcode.length === 6) {
-        console.log('Postcode:', newPostcode);
-        sessionStorage.setItem('zip', newPostcode); // Gebruik sessionStorage
+    zip(newZip) {
+      if (newZip.length === 6) {
+        console.log('Postcode:', newZip);
+        sessionStorage.setItem('zip', newZip);
       }
     }
   },
@@ -103,9 +102,6 @@ export default {
   ],
 };
 </script>
-
-
-
 
 
 
@@ -352,27 +348,21 @@ export default {
           />
           <p class="controleer-of-wij-ac valign-text-bottom">{{ controleerOfWijAc }}</p>
         </div>
-        <div class="frame-19">
-          <div class="frame-18">
 
 
-              <label class="postcode-label" for="postcode-input"></label>
-              <input id="postcode-input" type="text" class="postcode-input-2" placeholder="Postcode" />
-
-
-
-          </div>
-          <router-link to="/vraag1">
-            <div class="button-onder">
-              <div class="controleer-beneden valign-text-bottom">
-                <span class="centreer">Controleer</span>
-              </div>
-            </div>
-          </router-link>        
-        </div>
-      </div>
-
-      
+      <div class="frame-19">
+    <div class="frame-18">
+      <label class="postcode-label" for="postcode-input-2"></label>
+      <input id="postcode-input-2" type="text" class="postcode-input-2" placeholder="Postcode" v-model="zip" />
+    </div>
+    <div>
+      <x-button :controleer="controleer" @button-click="navigateToNextPage"></x-button>
+    </div>
+    <div v-if="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+  </div>
+  </div>
       <p class="nederlandsadviesn valign-text-bottom">{{ nederlandsadviesN }}</p>
     </div>
   </div>

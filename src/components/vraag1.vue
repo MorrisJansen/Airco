@@ -12,20 +12,37 @@ export default {
   props: {
     spanText1: String,
     spanText2: String,
-    logoNLAdviesAircoProps: Object,  
+    logoNLAdviesAircoProps: Object,
   },
   data() {
     return {
       formData: {
-        zip: sessionStorage.getItem('postcode') || '',
+        zip: sessionStorage.getItem('zip') || '', // Haal postcode op uit sessionStorage
         house_number: '',
         street: '',
       },
       currentPage: 1,
+      errorMessage: '', // Voeg een errorMessage toe voor validatie
     };
   },
   methods: {
+    checkPostcode() {
+      const pattern = /^[1-9][0-9]{3}\s?[-]?[a-zA-Z]{2}$/;
+      if (!pattern.test(this.formData.zip)) {
+        this.errorMessage = 'Ongeldige postcode.';
+        return false;
+      }
+
+      this.errorMessage = '';
+      return true;
+    },
     navigateToNextPage() {
+      // Validatie van postcode
+      if (!this.checkPostcode()) {
+        alert(this.errorMessage);
+        return;
+      }
+
       // Validatie van house_number
       if (!this.formData.house_number || isNaN(this.formData.house_number)) {
         alert('Voer een geldig huisnummer in.');
@@ -43,7 +60,7 @@ export default {
       console.log('Antwoorden na toevoegen:', getAntwoorden());
 
       // Sla de gegevens op in sessionStorage
-      sessionStorage.setItem('postcode', this.formData.zip);
+      sessionStorage.setItem('zip', this.formData.zip);
       sessionStorage.setItem('house_number', this.formData.house_number);
       sessionStorage.setItem('street', this.formData.street);
 
