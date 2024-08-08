@@ -540,6 +540,46 @@ export default {
 
 
 
+  @media (max-width: 500px)
+    .overkoepelende-container
+      zoom: 100%
+  
+    .achtergrond-vraag1
+      height: 90rem!important
+      padding-bottom: 2rem
+      width: 100%
+  
+    .formulier-container
+      width: 90%
+      padding-bottom: 1px
+      height: auto
+  
+    .form-container form 
+      flex-direction: column
+      gap: 20px
+  
+    .input-group 
+      flex-direction: column
+      gap: 20px
+  
+    .input-item 
+      width: 100%
+    
+    .input-item input 
+      width: 100%
+  
+    .volgende-button-formulier
+      width: 100%
+      font-size: 1.25rem
+  
+    .footer-formulier
+      padding: 2.5rem 5%
+      font-size: 0.875rem
+  
+    .footer
+      text-align: center
+      font-size: 0.875rem
+    
 
 
 
@@ -551,8 +591,5 @@ export default {
 
 
 
-  .input-item
-    display: block
-    width: 100%
 
   </style>
