@@ -466,7 +466,7 @@ export default {
     
   
 
-  @media (max-width: 500px) 
+  @media (max-width: 680px) 
     .formulier-achtergrond-vraag1 
       height: 61rem !important
       padding-bottom: 2rem
@@ -545,6 +545,41 @@ export default {
 
 
 
+ @media (max-width: 1150px)
+  .formulier-overkoepelende-container
+    zoom: 80%
+
+@media (max-width: 900px)
+  .formulier-overkoepelende-container
+    zoom: 70%
+
+
+
+
+@media (max-width: 800px)
+  .formulier-overkoepelende-container
+    zoom: 65%
+
+@media (max-width: 720px)
+  .formulier-overkoepelende-container
+    zoom: 60%
+
+
+
+
+
+@media (min-width: 500px)
+  .formulier-container-afbeelding-mobiel
+    display: none
+
+@media (max-width: 680px)
+  .formulier-overkoepelende-container
+    zoom: 100%
+
+
+@media (max-width: 500px)
+  .formulier-overkoepelende-container
+    zoom: 100%
 
 
   </style>

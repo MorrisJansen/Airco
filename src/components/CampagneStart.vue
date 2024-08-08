@@ -92,8 +92,8 @@ export default {
         const data = await response.json();
         if (data.length > 0) {
           const streetNames = data.map(item => item.street);
-          const city = data[0].settlement; // Assuming the first result has the correct city
-          localStorage.setItem('city', city); // Store city in localStorage
+          const city = data[0].settlement;
+          localStorage.setItem('city', city); 
           return streetNames;
         } else {
           this.errorMessage = 'No results found';
@@ -370,10 +370,10 @@ export default {
       <div class="frame-19">
     <div class="frame-18">
       <label class="postcode-label" for="postcode-input-2"></label>
-      <input id="postcode-input-2" type="text" class="postcode-input-2" placeholder="Postcode" v-model="zip" />
+      <input id="postcode-input-2" type="text" class="postcode-input-2" placeholder="Postcode" v-model="postcode" />
     </div>
     <div>
-      <x-button :controleer="controleer" @button-click="navigateToNextPage"></x-button>
+      <x-button :controleer="controleer" @button-click="handlePostcode"></x-button>
     </div>
     <div v-if="errorMessage" class="error-message">
       {{ errorMessage }}

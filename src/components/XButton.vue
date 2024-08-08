@@ -29,7 +29,7 @@ export default {
   flex: 0 0 auto
   gap: 10px
   justify-content: center
-  padding: 20px 50px
+  padding: 12px 50px
   position: relative
   border: none
 

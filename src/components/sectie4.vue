@@ -159,11 +159,7 @@ export default {
 
 
 @media (min-width: 1000px)
-  .button-onder
-    height: 60px
-    width: 20%
-    background-color: black
-    border-radius: 35px
+
 
   .controleer-beneden
     align-items: center
@@ -205,12 +201,6 @@ export default {
 
 
 
-  .button-onder
-    height: 60px
-    width: 20%
-    background-color: black
-    border-radius: 35px
-
   .controleer-beneden
     align-items: center
     font-size: 20px
@@ -241,6 +231,9 @@ export default {
   .controleer-of-wij-ac
     zoom: 70%
 
+  .frame-19
+    width: 160%
+
 
 @media (max-width: 600px)
   .frame-15, .frame-19
@@ -264,8 +257,7 @@ export default {
   .button-onder
     height: 100px
     width: 95%
-    background-color: black
-    border-radius: 60px
+
 
   
   .controleer-beneden
