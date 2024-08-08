@@ -16,9 +16,9 @@
       </div>
     </div>
 
-    <div class="achtergrond-vraag1">
-      <div class="overkoepelende-container">
-        <div class="formulier-container">
+    <div class="formulier-achtergrond-vraag1">
+      <div class="formulier-overkoepelende-container">
+        <div class="formulier-formulier-container">
           <p class="titel-formulier">Bedankt, start nu ook met besparen!</p>
           <p class="subtitel-formulier">
             Ontvang gratis en vrijblijvend 3<br>
@@ -26,44 +26,45 @@
             advies van de beste partners/bedrijven uit jouw regio
           </p>
           <p class="mensen-gingen-voor">Al meer dan 1,2 miljoen mensen ging je voor.</p>
-          <div class="form-container">
+          <div class="formulier-form-container">
             <form @submit.prevent="afronden">
-              <div class="input-group">
-                <div class="input-item">
+              <div class="formulier-input-group">
+                <div class="formulier-input-item">
                   <label for="input-voornaam"></label>
                   <input class="input-voornaam" v-model="formData.firstname" type="text" id="input-voornaam" placeholder="Voornaam">
                   <span v-if="errors.firstname" class="error-message">{{ errors.firstname }}</span>
                 </div>
-                <div class="input-item">
+                <div class="formulier-input-item">
                   <label for="input-achternaam"></label>
                   <input class="input-achternaam" v-model="formData.lastname" type="text" id="input-achternaam" placeholder="Achternaam">
                   <span v-if="errors.lastname" class="error-message">{{ errors.lastname }}</span>
                 </div>
               </div>
-              <div class="input-group">
-                <div class="input-item">
+              <div class="formulier-input-group">
+                <div class="formulier-input-item">
                   <label for="input-telefoon"></label>
                   <input class="input-telefoon" v-model="formData.phone_number" type="text" id="input-telefoon" placeholder="Telefoonnummer">
                   <span v-if="errors.phone_number" class="error-message">{{ errors.phone_number }}</span>
                 </div>
-                <div class="input-item">
+                <div class="formulier-input-item">
                   <label for="input-email"></label>
                   <input class="input-email" v-model="formData.email" type="text" id="input-email" placeholder="E-mailadres">
                   <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
                 </div>
               </div>
-              <div class="volgende-formulier">
-                <button class="volgende-button-formulier" type="submit">Aanvraag afronden</button>
+              <div class="formulier-volgende-formulier">
+                <button class="formulier-volgende-button-formulier" type="submit">Aanvraag afronden</button>
               </div>
             </form>
           </div>
-          <p class="footer-formulier">Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,<br>persoonlijk advies en offertes van onze partners.<br>Dit is volledig vrijblijvend, je zit dus nergens aan vast.</p>
+          <p class="formulier-footer-formulier">Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,<br>persoonlijk advies en offertes van onze partners.<br>Dit is volledig vrijblijvend, je zit dus nergens aan vast.</p>
         </div>
       </div>
     </div>
-    <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
+    <p class="formulier-footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
   </div>
 </template>
+
 
 <script>
 import { getAntwoorden } from "../antwoorden";
@@ -288,49 +289,34 @@ export default {
   @import '../../variables'
 
 
+.error-message 
+  color: red
+  font-size: 0.875rem
+  margin-bottom: 5%
+  padding-bottom: 10px
+  margin-top: -10px
+  width: 99%
+  margin-left: 115%
 
-  .error-message 
-    color: red
-    font-size: 0.875rem
-    margin-bottom: 5%
-    padding-bottom: 10px
-    margin-top: -10px
-    width: 99%
-    margin-left: 115%
-
-  
-
-
-
-
-
-
-
-
-
-.achtergrond-vraag1
+.formulier-achtergrond-vraag1
   background-color: #FFE758
   height: auto
   padding-bottom: 2rem
   width: 120rem
   max-width: 100vw
 
-
-.overkoepelende-container
+.formulier-overkoepelende-container
   display: flex
   flex-direction: column
   align-items: center
   gap: 6rem
 
-
-
-.formulier-container
+.formulier-formulier-container
   width: 68rem
   height: auto
   border-radius: 1.875rem
   background: #FFF
   margin-top: 4rem
-
 
 .titel-formulier
   display: block
@@ -342,7 +328,6 @@ export default {
   font-style: normal
   font-weight: 800
   line-height: 130%
-  text-align: center
   margin-top: 2rem
 
 .subtitel-formulier
@@ -355,9 +340,7 @@ export default {
   font-style: normal
   font-weight: 800
   line-height: 130%
-  text-align: center
   margin-top: 2rem
-
 
 .mensen-gingen-voor
   color: #FFCD02
@@ -371,71 +354,48 @@ export default {
   line-height: normal
   margin-top: 1rem
   margin-bottom: 2rem
-  
 
+// Dit is voor het form zelf
 
-// dit is voor het form zelf
-
-.form-container 
+.formulier-form-container 
   max-width: 600px
   margin: 0 auto
   padding: 20px
 
-
-.form-container form 
+.formulier-form-container form 
   display: flex
   flex-direction: column
   gap: 20px
 
-
-.input-group 
+.formulier-input-group 
   display: flex
   gap: 20px
 
-.input-item 
+.formulier-input-item 
   flex: 1
   display: flex
   flex-direction: column
 
-.input-item label 
+.formulier-input-item label 
   margin-bottom: 8px
   font-weight: bold
 
-.input-item input 
+.formulier-input-item input 
   padding: 10px
   border: 1px solid #ccc
   border-radius: 4px
-
-
 
 .input-voornaam, .input-achternaam, .input-telefoon, .input-email
   height: 3.4rem
   width: 15rem
 
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-.volgende-formulier
+.formulier-volgende-formulier
   display: flex
   justify-content: center
   margin-right: 5rem
   margin-top: 1rem
 
-
-.volgende-button-formulier
+.formulier-volgende-button-formulier
   display: flex
   padding: 0.5rem 2.8rem
   justify-content: center
@@ -445,7 +405,7 @@ export default {
   background: #FFCD02
   color:  #1C1829
   font-family: Catamaran
-  font-size: 1.36875rem!important
+  font-size: 1.36875rem !important
   font-style: normal
   font-weight: 800
   line-height: normal
@@ -456,7 +416,7 @@ export default {
   position: relative
   left: 1.5rem
 
-.footer-formulier
+.formulier-footer-formulier
   color: #000
   text-align: center
   font-family: Catamaran
@@ -466,9 +426,9 @@ export default {
   line-height: normal
   padding: 2.5rem 25%
   margin-right: 15px
-  padding-bottom: 4rem!important
+  padding-bottom: 4rem !important
 
-.footer
+.formulier-footer
   display: flex
   justify-content: center
   padding-top: 3rem
@@ -480,43 +440,31 @@ export default {
   font-weight: 400
   line-height: normal
 
-
-
-
 @media (max-width: 800px)
-  .achtergrond-vraag1
+  .formulier-achtergrond-vraag1
     zoom: 100%
 
-
-
 @media (max-width: 500px)
-  .overkoepelende-container
+  .formulier-overkoepelende-container
     zoom: 30%
 
-  .achtergrond-vraag1
-    height: 26rem!important
+  .formulier-achtergrond-vraag1
+    height: 26rem !important
 
-  .formulier-container
+  .formulier-formulier-container
     padding-bottom: 1px
     height: 1060px
 
-
-
-
-
   .vraag
-    margin-left: 3rem!important
-    zoom: 110%!important
+    margin-left: 3rem !important
+    zoom: 110% !important
 
   .container-inputs
-    margin-left: 3rem!important
-  
-
-
+    margin-left: 3rem !important
 
   .overkoepelende-input-container
-    display: block!important
-  
+    display: block !important
+
   .volgende
     margin-bottom: 50px
 
@@ -524,14 +472,12 @@ export default {
     width: 100%
     position: relative
     left: 50px
-    padding-top: 30px!important
-    padding-bottom: 30px!important
-    font-size: 38px!important
-
+    padding-top: 30px !important
+    padding-bottom: 30px !important
+    font-size: 38px !important
 
   .footer
     text-align: center
-
 
   
 
@@ -541,45 +487,42 @@ export default {
 
 
   @media (max-width: 500px)
-    .overkoepelende-container
-      zoom: 100%
-  
-    .achtergrond-vraag1
+    .formulier-achtergrond-vraag1
       height: 90rem!important
       padding-bottom: 2rem
       width: 100%
   
-    .formulier-container
+    .formulier-formulier-container
       width: 90%
       padding-bottom: 1px
       height: auto
   
-    .form-container form 
+    .formulier-form-container form 
       flex-direction: column
       gap: 20px
   
-    .input-group 
+    .formulier-input-group 
       flex-direction: column
       gap: 20px
   
-    .input-item 
+    .formulier-input-item 
       width: 100%
     
-    .input-item input 
+    .formulier-input-item input 
       width: 100%
   
-    .volgende-button-formulier
+    .formulier-volgende-button-formulier
       width: 100%
       font-size: 1.25rem
   
-    .footer-formulier
+    .formulier-footer-formulier
       padding: 2.5rem 5%
       font-size: 0.875rem
   
-    .footer
+    .formulier-footer
       text-align: center
       font-size: 0.875rem
-    
+  
 
 
 
