@@ -289,247 +289,229 @@ export default {
   @import '../../variables'
 
 
-.error-message 
-  color: red
-  font-size: 0.875rem
-  margin-bottom: 5%
-  padding-bottom: 10px
-  margin-top: -10px
-  width: 99%
-  margin-left: 115%
 
-.formulier-achtergrond-vraag1
-  background-color: #FFE758
-  height: auto
-  padding-bottom: 2rem
-  width: 120rem
-  max-width: 100vw
-
-.formulier-overkoepelende-container
-  display: flex
-  flex-direction: column
-  align-items: center
-  gap: 6rem
-
-.formulier-formulier-container
-  width: 68rem
-  height: auto
-  border-radius: 1.875rem
-  background: #FFF
-  margin-top: 4rem
-
-.titel-formulier
-  display: block
-  width: 100%
-  color: #1C1829
-  text-align: center
-  font-family: Catamaran
-  font-size: 2.8125rem
-  font-style: normal
-  font-weight: 800
-  line-height: 130%
-  margin-top: 2rem
-
-.subtitel-formulier
-  display: block
-  width: 100%
-  font-size: 32px
-  color: #1C1829
-  text-align: center
-  font-family: Catamaran
-  font-style: normal
-  font-weight: 800
-  line-height: 130%
-  margin-top: 2rem
-
-.mensen-gingen-voor
-  color: #FFCD02
-  text-align: center
-  leading-trim: both
-  text-edge: cap
-  font-family: Catamaran
-  font-size: 0.9375rem
-  font-style: normal
-  font-weight: 600
-  line-height: normal
-  margin-top: 1rem
-  margin-bottom: 2rem
-
-// Dit is voor het form zelf
-
-.formulier-form-container 
-  max-width: 600px
-  margin: 0 auto
-  padding: 20px
-
-.formulier-form-container form 
-  display: flex
-  flex-direction: column
-  gap: 20px
-
-.formulier-input-group 
-  display: flex
-  gap: 20px
-
-.formulier-input-item 
-  flex: 1
-  display: flex
-  flex-direction: column
-
-.formulier-input-item label 
-  margin-bottom: 8px
-  font-weight: bold
-
-.formulier-input-item input 
-  padding: 10px
-  border: 1px solid #ccc
-  border-radius: 4px
-
-.input-voornaam, .input-achternaam, .input-telefoon, .input-email
-  height: 3.4rem
-  width: 15rem
-
-.formulier-volgende-formulier
-  display: flex
-  justify-content: center
-  margin-right: 5rem
-  margin-top: 1rem
-
-.formulier-volgende-button-formulier
-  display: flex
-  padding: 0.5rem 2.8rem
-  justify-content: center
-  align-items: center
-  gap: 0.625rem
-  border-radius: 3.75rem
-  background: #FFCD02
-  color:  #1C1829
-  font-family: Catamaran
-  font-size: 1.36875rem !important
-  font-style: normal
-  font-weight: 800
-  line-height: normal
-  text-transform: uppercase
-  border: none
-  cursor: pointer
-  width:  33.5rem
-  position: relative
-  left: 1.5rem
-
-.formulier-footer-formulier
-  color: #000
-  text-align: center
-  font-family: Catamaran
-  font-size: 1rem
-  font-style: normal
-  font-weight: 400
-  line-height: normal
-  padding: 2.5rem 25%
-  margin-right: 15px
-  padding-bottom: 4rem !important
-
-.formulier-footer
-  display: flex
-  justify-content: center
-  padding-top: 3rem
-  padding-bottom: 3rem
-  color: #000
-  font-family: Catamaran
-  font-size: 1rem
-  font-style: normal
-  font-weight: 400
-  line-height: normal
-
-@media (max-width: 800px)
-  .formulier-achtergrond-vraag1
-    zoom: 100%
-
-@media (max-width: 500px)
-  .formulier-overkoepelende-container
-    zoom: 30%
-
-  .formulier-achtergrond-vraag1
-    height: 26rem !important
-
-  .formulier-formulier-container
-    padding-bottom: 1px
-    height: 1060px
-
-  .vraag
-    margin-left: 3rem !important
-    zoom: 110% !important
-
-  .container-inputs
-    margin-left: 3rem !important
-
-  .overkoepelende-input-container
-    display: block !important
-
-  .volgende
-    margin-bottom: 50px
-
-  .volgende-button
-    width: 100%
-    position: relative
-    left: 50px
-    padding-top: 30px !important
-    padding-bottom: 30px !important
-    font-size: 38px !important
-
-  .footer
-    text-align: center
-
+  .error-message 
+    color: red
+    font-size: 0.875rem
+    margin-bottom: 5%
+    padding-bottom: 10px
+    margin-top: -10px
+    width: 99%
+    margin-left: 115%
   
 
+  .formulier-achtergrond-vraag1 
+    background-color: #FFE758
+    height: auto
+    padding-bottom: 2rem
+    width: 120rem
+    max-width: 100vw
+  
 
+  .formulier-overkoepelende-container 
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 6rem
+  
 
+  .formulier-formulier-container 
+    width: 68rem
+    height: auto
+    border-radius: 1.875rem
+    background: #FFF
+    margin-top: 4rem
+  
 
+  .titel-formulier 
+    display: block
+    width: 100%
+    color: #1C1829
+    text-align: center
+    font-family: Catamaran
+    font-size: 2.8125rem
+    font-style: normal
+    font-weight: 800
+    line-height: 130%
+    margin-top: 2rem
+  
 
+  .subtitel-formulier 
+    display: block
+    width: 100%
+    font-size: 32px
+    color: #1C1829
+    text-align: center
+    font-family: Catamaran
+    font-style: normal
+    font-weight: 800
+    line-height: 130%
+    margin-top: 2rem
+  
 
-  @media (max-width: 500px)
-    .formulier-achtergrond-vraag1
-      height: 90rem!important
+  .mensen-gingen-voor 
+    color: #FFCD02
+    text-align: center
+    leading-trim: both
+    text-edge: cap
+    font-family: Catamaran
+    font-size: 0.9375rem
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    margin-top: 1rem
+    margin-bottom: 2rem
+  
+
+  // Dit is voor het form zel
+
+  .formulier-form-container 
+    max-width: 600px
+    margin: 0 auto
+    padding: 20px
+  
+
+  .formulier-form-container form 
+    display: flex
+    flex-direction: column
+    gap: 20px
+  
+
+  .formulier-input-group 
+    display: flex
+    gap: 20px
+  
+
+  .formulier-input-item 
+    flex: 1
+    display: flex
+    flex-direction: column
+  
+
+  .formulier-input-item label 
+    margin-bottom: 8px
+    font-weight: bold
+  
+
+  .formulier-input-item input 
+    padding: 10px
+    border: 1px solid #ccc
+    border-radius: 4px
+  
+
+  .input-voornaam, .input-achternaam, .input-telefoon, .input-email
+    height: 3.4rem
+    width: 15rem
+  
+
+  .formulier-volgende-formulier 
+    display: flex
+    justify-content: center
+    margin-right: 5rem
+    margin-top: 1rem
+  
+
+  .formulier-volgende-button-formulier
+    display: flex
+    padding: 0.5rem 2.8rem
+    justify-content: center
+    align-items: center
+    gap: 0.625rem
+    border-radius: 3.75rem
+    background: #FFCD02
+    color:  #1C1829
+    font-family: Catamaran
+    font-size: 1.36875rem !important
+    font-style: normal
+    font-weight: 800
+    line-height: normal
+    text-transform: uppercase
+    border: none
+    cursor: pointer
+    width:  33.5rem
+    position: relative
+    left: 1.5rem
+  
+
+  .formulier-footer-formulier 
+    color: #000
+    text-align: center
+    font-family: Catamaran
+    font-size: 1rem
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+    padding: 2.5rem 25%
+    margin-right: 15px
+    padding-bottom: 4rem !important
+  
+
+  .formulier-footer 
+    display: flex
+    justify-content: center
+    padding-top: 3rem
+    padding-bottom: 3rem
+    color: #000
+    font-family: Catamaran
+    font-size: 1rem
+    font-style: normal
+    font-weight: 400
+    line-height: normal
+  
+
+  // Responsive Desig
+  @media (max-width: 800px) 
+    .formulier-achtergrond-vraag1 
+      zoom: 100%
+    
+  
+
+  @media (max-width: 500px) 
+    .formulier-achtergrond-vraag1 
+      height: 90rem !important
       padding-bottom: 2rem
       width: 100%
-  
-    .formulier-formulier-container
+    
+
+    .formulier-formulier-container 
       width: 90%
       padding-bottom: 1px
       height: auto
-  
+    
+
     .formulier-form-container form 
       flex-direction: column
       gap: 20px
-  
+    
+
     .formulier-input-group 
       flex-direction: column
       gap: 20px
-  
+    
+
     .formulier-input-item 
       width: 100%
     
+
     .formulier-input-item input 
       width: 100%
-  
-    .formulier-volgende-button-formulier
+    
+
+    .formulier-volgende-button-formulier 
       width: 100%
       font-size: 1.25rem
-  
-    .formulier-footer-formulier
+    
+
+    .formulier-footer-formulier 
       padding: 2.5rem 5%
       font-size: 0.875rem
-  
-    .formulier-footer
+    
+
+    .formulier-footer 
       text-align: center
       font-size: 0.875rem
+    
   
-
-
-
-
-
-
-
 
 
 
