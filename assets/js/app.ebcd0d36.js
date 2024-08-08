@@ -2651,8 +2651,8 @@ var analyse_component = Object(componentNormalizer["a" /* default */])(
 )
 
 /* harmony default export */ var analyse = (analyse_component.exports);
-// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/formulier.vue?vue&type=template&id=802adca2
-var formuliervue_type_template_id_802adca2_render = function render() {
+// CONCATENATED MODULE: ./node_modules/cache-loader/dist/cjs.js?{"cacheDirectory":"node_modules/.cache/vue-loader","cacheIdentifier":"12ccd5c8-vue-loader-template"}!./node_modules/cache-loader/dist/cjs.js??ref--13-0!./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/loaders/templateLoader.js??ref--6!./node_modules/cache-loader/dist/cjs.js??ref--1-0!./node_modules/vue-loader/lib??vue-loader-options!./src/components/formulier.vue?vue&type=template&id=de54f058
+var formuliervue_type_template_id_de54f058_render = function render() {
   var _vm = this,
     _c = _vm._self._c;
   return _c('div', [_c('div', {
@@ -2675,17 +2675,17 @@ var formuliervue_type_template_id_802adca2_render = function render() {
   }, [_vm._v(_vm._s(_vm.spanText1))]), _c('span', {
     staticClass: "tekst-geel-navbar"
   }, [_vm._v(_vm._s(_vm.spanText2))])])])]), _c('div', {
-    staticClass: "achtergrond-vraag1"
+    staticClass: "formulier-achtergrond-vraag1"
   }, [_c('div', {
-    staticClass: "overkoepelende-container"
+    staticClass: "formulier-overkoepelende-container"
   }, [_c('div', {
-    staticClass: "formulier-container"
+    staticClass: "formulier-formulier-container"
   }, [_c('p', {
     staticClass: "titel-formulier"
   }, [_vm._v("Bedankt, start nu ook met besparen!")]), _vm._m(0), _c('p', {
     staticClass: "mensen-gingen-voor"
   }, [_vm._v("Al meer dan 1,2 miljoen mensen ging je voor.")]), _c('div', {
-    staticClass: "form-container"
+    staticClass: "formulier-form-container"
   }, [_c('form', {
     on: {
       "submit": function ($event) {
@@ -2694,9 +2694,9 @@ var formuliervue_type_template_id_802adca2_render = function render() {
       }
     }
   }, [_c('div', {
-    staticClass: "input-group"
+    staticClass: "formulier-input-group"
   }, [_c('div', {
-    staticClass: "input-item"
+    staticClass: "formulier-input-item"
   }, [_c('label', {
     attrs: {
       "for": "input-voornaam"
@@ -2726,7 +2726,7 @@ var formuliervue_type_template_id_802adca2_render = function render() {
   }), _vm.errors.firstname ? _c('span', {
     staticClass: "error-message"
   }, [_vm._v(_vm._s(_vm.errors.firstname))]) : _vm._e()]), _c('div', {
-    staticClass: "input-item"
+    staticClass: "formulier-input-item"
   }, [_c('label', {
     attrs: {
       "for": "input-achternaam"
@@ -2756,9 +2756,9 @@ var formuliervue_type_template_id_802adca2_render = function render() {
   }), _vm.errors.lastname ? _c('span', {
     staticClass: "error-message"
   }, [_vm._v(_vm._s(_vm.errors.lastname))]) : _vm._e()])]), _c('div', {
-    staticClass: "input-group"
+    staticClass: "formulier-input-group"
   }, [_c('div', {
-    staticClass: "input-item"
+    staticClass: "formulier-input-item"
   }, [_c('label', {
     attrs: {
       "for": "input-telefoon"
@@ -2788,7 +2788,7 @@ var formuliervue_type_template_id_802adca2_render = function render() {
   }), _vm.errors.phone_number ? _c('span', {
     staticClass: "error-message"
   }, [_vm._v(_vm._s(_vm.errors.phone_number))]) : _vm._e()]), _c('div', {
-    staticClass: "input-item"
+    staticClass: "formulier-input-item"
   }, [_c('label', {
     attrs: {
       "for": "input-email"
@@ -2818,10 +2818,10 @@ var formuliervue_type_template_id_802adca2_render = function render() {
   }), _vm.errors.email ? _c('span', {
     staticClass: "error-message"
   }, [_vm._v(_vm._s(_vm.errors.email))]) : _vm._e()])]), _vm._m(1)])]), _vm._m(2)])])]), _c('p', {
-    staticClass: "footer"
+    staticClass: "formulier-footer"
   }, [_vm._v("© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy")])]);
 };
-var formuliervue_type_template_id_802adca2_staticRenderFns = [function () {
+var formuliervue_type_template_id_de54f058_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c('p', {
@@ -2831,9 +2831,9 @@ var formuliervue_type_template_id_802adca2_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c('div', {
-    staticClass: "volgende-formulier"
+    staticClass: "formulier-volgende-formulier"
   }, [_c('button', {
-    staticClass: "volgende-button-formulier",
+    staticClass: "formulier-volgende-button-formulier",
     attrs: {
       "type": "submit"
     }
@@ -2842,11 +2842,11 @@ var formuliervue_type_template_id_802adca2_staticRenderFns = [function () {
   var _vm = this,
     _c = _vm._self._c;
   return _c('p', {
-    staticClass: "footer-formulier"
+    staticClass: "formulier-footer-formulier"
   }, [_vm._v("Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,"), _c('br'), _vm._v("persoonlijk advies en offertes van onze partners."), _c('br'), _vm._v("Dit is volledig vrijblijvend, je zit dus nergens aan vast.")]);
 }];
 
-// CONCATENATED MODULE: ./src/components/formulier.vue?vue&type=template&id=802adca2
+// CONCATENATED MODULE: ./src/components/formulier.vue?vue&type=template&id=de54f058
 
 // EXTERNAL MODULE: ./node_modules/core-js/modules/web.dom-exception.stack.js
 var web_dom_exception_stack = __webpack_require__("b7ef");
@@ -3033,8 +3033,8 @@ var web_dom_exception_stack = __webpack_require__("b7ef");
 });
 // CONCATENATED MODULE: ./src/components/formulier.vue?vue&type=script&lang=js
  /* harmony default export */ var components_formuliervue_type_script_lang_js = (formuliervue_type_script_lang_js); 
-// EXTERNAL MODULE: ./src/components/formulier.vue?vue&type=style&index=0&id=802adca2&prod&lang=sass
-var formuliervue_type_style_index_0_id_802adca2_prod_lang_sass = __webpack_require__("a39b");
+// EXTERNAL MODULE: ./src/components/formulier.vue?vue&type=style&index=0&id=de54f058&prod&lang=sass
+var formuliervue_type_style_index_0_id_de54f058_prod_lang_sass = __webpack_require__("6c27");
 
 // CONCATENATED MODULE: ./src/components/formulier.vue
 
@@ -3047,8 +3047,8 @@ var formuliervue_type_style_index_0_id_802adca2_prod_lang_sass = __webpack_requi
 
 var formulier_component = Object(componentNormalizer["a" /* default */])(
   components_formuliervue_type_script_lang_js,
-  formuliervue_type_template_id_802adca2_render,
-  formuliervue_type_template_id_802adca2_staticRenderFns,
+  formuliervue_type_template_id_de54f058_render,
+  formuliervue_type_template_id_de54f058_staticRenderFns,
   false,
   null,
   null,
@@ -3390,6 +3390,17 @@ new vue_runtime_esm["a" /* default */]({
 
 /***/ }),
 
+/***/ "6c27":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_de54f058_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("bf15");
+/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_de54f058_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_de54f058_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
+/* unused harmony reexport * */
+
+
+/***/ }),
+
 /***/ "6d84":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3440,17 +3451,6 @@ new vue_runtime_esm["a" /* default */]({
 
 /***/ }),
 
-/***/ "a39b":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_802adca2_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("ca7d");
-/* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_802adca2_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_formulier_vue_vue_type_style_index_0_id_802adca2_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
-/* unused harmony reexport * */
-
-
-/***/ }),
-
 /***/ "aaca":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -3480,6 +3480,13 @@ new vue_runtime_esm["a" /* default */]({
 
 /***/ }),
 
+/***/ "bf15":
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
 /***/ "c9eb":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3488,13 +3495,6 @@ new vue_runtime_esm["a" /* default */]({
 /* harmony import */ var _node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_navbar_vue_vue_type_style_index_0_id_131af716_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_mini_css_extract_plugin_dist_loader_js_ref_10_oneOf_1_0_node_modules_css_loader_dist_cjs_js_ref_10_oneOf_1_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_10_oneOf_1_2_node_modules_sass_loader_dist_cjs_js_ref_10_oneOf_1_3_node_modules_cache_loader_dist_cjs_js_ref_1_0_node_modules_vue_loader_lib_index_js_vue_loader_options_navbar_vue_vue_type_style_index_0_id_131af716_prod_lang_sass__WEBPACK_IMPORTED_MODULE_0__);
 /* unused harmony reexport * */
 
-
-/***/ }),
-
-/***/ "ca7d":
-/***/ (function(module, exports, __webpack_require__) {
-
-// extracted by mini-css-extract-plugin
 
 /***/ }),
 
@@ -3584,4 +3584,4 @@ module.exports = __webpack_require__.p + "assets/img/firstQuestion.b563951f.png"
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.2aaff016.js.map
+//# sourceMappingURL=app.ebcd0d36.js.map
