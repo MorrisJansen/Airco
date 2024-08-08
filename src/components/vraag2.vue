@@ -1,3 +1,60 @@
+<script>
+import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
+import progressiebalk from "./progressiebalk.vue";
+import { addAntwoord } from "../antwoorden.js";
+
+export default {
+  name: "vraag2",
+  components: {
+    LogoNlAdviesAirco,
+    progressiebalk,
+  },
+  props: [
+    "spanText1",
+    "spanText2",
+    "logoNLAdviesAircoProps",
+  ],
+  data() {
+    return {
+      currentPage: 2,
+      antwoordOpties: {
+        'Vaste airco met buitenunit (split airco)': 5112,
+        'Vaste airco zonder buitenunit (monoblock)': 5115,
+        'Ik wil graag advies': 5118
+      },
+      geselecteerdAntwoordId: null,
+    };
+  },
+  methods: {
+    selectOption(optionText) {
+      const answerId = this.antwoordOpties[optionText];
+      if (answerId) {
+        this.geselecteerdAntwoordId = answerId;
+        addAntwoord('vraag2', { id: answerId }); // Correct the answer format
+        console.log(`Antwoord voor vraag2 toegevoegd: ${answerId}`);
+        this.$router.push('/vraag3');
+      } else {
+        console.error('Onbekende optie geselecteerd:', optionText);
+      }
+    }
+  }
+};
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <template>
   <div>
     <!-- navbar -->
@@ -85,53 +142,7 @@
   </div>
 </template>
 
-<script>
-import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
-import progressiebalk from "./progressiebalk.vue";
-import { addAntwoord } from "../antwoorden.js";
 
-export default {
-  name: "vraag2",
-  components: {
-    LogoNlAdviesAirco,
-    progressiebalk,
-  },
-  props: [
-    "spanText1",
-    "spanText2",
-    "logoNLAdviesAircoProps",
-  ],
-  data() {
-    return {
-      currentPage: 2,
-      antwoordOpties: {
-        'Vaste airco met buitenunit (split airco)': 5112,
-        'Vaste airco zonder buitenunit (monoblock)': 5115,
-        'Ik wil graag advies': 5118
-      },
-      geselecteerdAntwoordId: null,
-    };
-  },
-  watch: {
-    geselecteerdAntwoordId(newVal) {
-      if (newVal !== null) {
-        addAntwoord({ question: 'vraag2', id: newVal });
-        this.$router.push('/vraag3');
-      }
-    }
-  },
-  methods: {
-    selectOption(optionText) {
-      const answerId = this.antwoordOpties[optionText];
-      if (answerId) {
-        this.geselecteerdAntwoordId = answerId; // Triggers the watch function
-      } else {
-        console.error('Onbekende optie geselecteerd:', optionText);
-      }
-    }
-  }
-};
-</script>
 
 
 

@@ -1,3 +1,126 @@
+<script>
+import { getAntwoorden } from "../antwoorden";
+import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
+
+export default {
+  name: "formulier",
+  components: {
+    LogoNlAdviesAirco,
+  },
+  data() {
+    return {
+      formData: {
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone_number: '',
+        street: localStorage.getItem('selectedStreet') || '',
+        house_number: localStorage.getItem('huisnummer') || '',
+        city: localStorage.getItem('city') ||'',
+        zip: localStorage.getItem('postcode') || '',
+      }
+    };
+  },
+  props: [
+    "spanText1",
+    "spanText2",
+    "logoNLAdviesAircoProps",
+    "antwoorden",
+  ],
+  mounted() {
+    const antwoordenData = getAntwoorden();
+    console.log('Ophalen antwoorden bij mount:', antwoordenData);
+    if (antwoordenData && antwoordenData.vraag1) {
+      this.formData.street = antwoordenData.vraag1.street || this.formData.street;
+      this.formData.house_number = antwoordenData.vraag1.house_number || this.formData.house_number;
+      this.formData.zip = antwoordenData.vraag1.zip || this.formData.zip;
+    }
+  },
+  methods: {
+    afronden() {
+      const username = '185';
+      const password = 'ab8221d4a3170d89542880459abf79817ae367c2';
+      const authHeader = 'Basic ' + btoa(username + ':' + password);
+      const apiUrl = 'https://leadgen.republish.nl/api/sponsors/2394/leads';
+
+      const antwoordenData = getAntwoorden();
+      console.log('Antwoorden voor afronden:', antwoordenData);
+
+      const answers = [
+        5109, 
+        antwoordenData.vraag2 ? antwoordenData.vraag2.id : null,
+        antwoordenData.vraag3 ? antwoordenData.vraag3.id : null 
+      ].filter(id => id !== null);
+
+      const leadData = {
+        language: 'nl_NL',
+        publisher_id: 'Morris de publisher :)',
+        site_subid: 'id=5',
+        site_custom_url: 'http://nederlansadvies.nl',
+        site_custom_name: 'airco',
+        ip: 'userIPAddress',
+        optin_timestamp: new Date().toISOString().slice(0, 19).replace('T', ' '),
+        firstname: this.formData.firstname,
+        lastname: this.formData.lastname,
+        email: this.formData.email,
+        gender: 'male',
+        house_number: this.formData.house_number,
+        street: this.formData.street,
+        city: this.formData.city,
+        zip: this.formData.zip,
+        phone_number: this.formData.phone_number,
+        answers: answers
+      };
+
+      console.log('Preparing to send the following data to the API:');
+      console.log('API URL:', apiUrl);
+      console.log('Authorization Header:', authHeader);
+      console.log('Lead Data:', leadData);
+
+      fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+          'Authorization': authHeader,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(leadData)
+      })
+      .then(response => {
+        console.log('Response Status:', response.status);
+        return response.json(); 
+      })
+      .then(responseData => {
+        console.log('API Response Data:', responseData);
+
+        if (responseData.status === 201) {
+          console.log('Lead successfully created.');
+          this.$router.push('./einde');
+        } else if (responseData.status === 400) {
+          console.log('Bad request. Please check the parameters.');
+        } else if (responseData.status === 401) {
+          console.log('Unauthorized. Please check your credentials.');
+        } else {
+          console.log('Unexpected error:', responseData.status);
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+    }
+  }
+};
+</script>
+
+
+
+
+
+
+
+
+
+
+
 <template>
   <div>
     <!-- navbar -->
@@ -63,125 +186,7 @@
   </div>
 </template>
 
-<script>
-import { getAntwoorden } from "../antwoorden";
-import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
-export default {
-  name: "formulier",
-  components: {
-    LogoNlAdviesAirco,
-  },
-  data() {
-    return {
-      formData: {
-        firstname: '',
-        lastname: '',
-        email: '',
-        phone_number: '',
-        street: sessionStorage.getItem('street') || '',
-        house_number: sessionStorage.getItem('house_number') || '',
-        city: 'Rotterdam',
-        zip: sessionStorage.getItem('zip') || '',
-        answers: [5109,]
-      }
-    };
-  },
-  props: [
-    "spanText1",
-    "spanText2",
-    "logoNLAdviesAircoProps",
-  ],
-  mounted() {
-    const antwoordenData = getAntwoorden();
-    antwoordenData.forEach(answer => {
-      if (answer.question === 'vraag1') {
-        this.formData.street = answer.street || this.formData.street;
-        this.formData.house_number = answer.house_number || this.formData.house_number;
-        this.formData.zip = answer.zip || this.formData.zip;
-      }
-      if (answer.question === 'vraag2' || answer.question === 'vraag3') {
-        this.formData.answers.push(answer.id);
-      }
-    });
-
-    console.log("Antwoorden:", this.formData.answers);
-  },
-  methods: {
-    afronden() {
-      const username = '185';
-      const password = 'ab8221d4a3170d89542880459abf79817ae367c2';
-      const authHeader = 'Basic ' + btoa(username + ':' + password);
-      const apiUrl = 'https://leadgen.republish.nl/api/sponsors/2394/leads';
-
-      const answers = [
-        ...this.formData.answers,
-      ];
-
-      const now = new Date();
-
-      now.setHours(now.getHours() + 2);
-
-      const optinTimestamp = now.toISOString().slice(0, 19).replace('T', ' ');
-
-      const leadData = {
-        language: 'nl_NL',
-        publisher_id: 'Morris de publisher :)',
-        site_subid: 'id=5',
-        site_custom_url: 'http://yourwebsite.com',
-        site_custom_name: 'Airco',
-        ip: 'userIPAddress',
-        optin_timestamp: optinTimestamp,
-        firstname: this.formData.firstname,
-        lastname: this.formData.lastname,
-        email: this.formData.email,
-        gender: 'male',
-        house_number: this.formData.house_number,
-        street: this.formData.street,
-        city: this.formData.city,
-        zip: this.formData.zip,
-        phone_number: this.formData.phone_number,
-        answers: answers
-      };
-
-      console.log('Preparing to send the following data to the API:');
-      console.log('API URL:', apiUrl);
-      console.log('Authorization Header:', authHeader);
-      console.log('Lead Data:', leadData);
-
-      fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': authHeader,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(leadData)
-      })
-      .then(response => {
-        console.log('Response Status:', response.status);
-        return response.json();
-      })
-      .then(responseData => {
-        console.log('API Response Data:', responseData);
-
-        if (responseData.status === 201) {
-          console.log('Lead successfully created.');
-          this.$router.push('./einde');
-        } else if (responseData.status === 400) {
-          console.log('Bad request. Please check the parameters.');
-        } else if (responseData.status === 401) {
-          console.log('Unauthorized. Please check your credentials.');
-        } else {
-          console.log('Unexpected error:', responseData.status);
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-    }
-  }
-};
-</script>
 
 
 

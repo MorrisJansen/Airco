@@ -1,3 +1,59 @@
+<script>
+import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
+import progressiebalk from "./progressiebalk.vue";
+import { addAntwoord } from "../antwoorden.js";
+
+export default {
+  name: "vraag3",
+  components: {
+    LogoNlAdviesAirco,
+    progressiebalk,
+  },
+  props: [
+    "spanText1",
+    "spanText2",
+    "logoNLAdviesAircoProps",
+  ],
+  data() {
+    return {
+      currentPage: 3,
+      totalPages: 3,
+      selectedOption: '',
+      opties: [
+        { id: 5121, label: '1' },
+        { id: 5124, label: '2' },
+        { id: 5127, label: '3+' },
+        { id: 5130, label: 'Weet ik niet' },
+      ],
+    };
+  },
+  methods: {
+    navigateToNextPage() {
+      if (this.selectedOption) {
+        // Voeg het antwoord toe aan de antwoorden
+        addAntwoord('vraag3', { id: this.selectedOption }); // Correct the answer format
+        console.log(`Selected option for vraag3: ${this.selectedOption}`);
+        // Navigeer naar de volgende pagina
+        this.$router.push('./formulier');
+      } else {
+        alert("Selecteer een optie voordat je doorgaat.");
+      }
+    }
+  }
+};
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
 <template>
   <div>
     <!-- navbar -->
@@ -76,53 +132,6 @@
   </div>
 </template>
 
-<script>
-import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
-import progressiebalk from "./progressiebalk.vue";
-import { addAntwoord } from "../antwoorden.js";
-
-export default {
-  name: "vraag3",
-  components: {
-    LogoNlAdviesAirco,
-    progressiebalk,
-  },
-  props: [
-    "spanText1",
-    "spanText2",
-    "logoNLAdviesAircoProps",
-  ],
-  data() {
-    return {
-      currentPage: 3,
-      totalPages: 3,
-      selectedOption: '', // Houdt de geselecteerde optie bij
-      opties: [
-        { id: 5121, label: '1' },
-        { id: 5124, label: '2' },
-        { id: 5127, label: '3+' },
-        { id: 5130, label: 'Weet ik niet' },
-      ],
-    };
-  },
-  watch: {
-    selectedOption(newValue) {
-      if (newValue) {
-        addAntwoord({ question: 'vraag3', id: newValue });
-      }
-    }
-  },
-  methods: {
-    navigateToNextPage() {
-      if (this.selectedOption) {
-        this.$router.push('/formulier');
-      } else {
-        alert("Selecteer een optie voordat je doorgaat.");
-      }
-    }
-  }
-};
-</script>
 
 
 

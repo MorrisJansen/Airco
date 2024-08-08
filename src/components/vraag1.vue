@@ -12,40 +12,29 @@ export default {
   props: {
     spanText1: String,
     spanText2: String,
-    logoNLAdviesAircoProps: Object,
+    logoNLAdviesAircoProps: Object,  
   },
   data() {
     return {
       formData: {
-        zip: sessionStorage.getItem('zip') || '', // Haal postcode op uit sessionStorage
+        zip: localStorage.getItem('postcode') || '',
         house_number: '',
         street: '',
       },
+      streets: JSON.parse(localStorage.getItem('straatnaam')) || [],
       currentPage: 1,
-      errorMessage: '', // Voeg een errorMessage toe voor validatie
+      error: '',
     };
   },
   methods: {
-    checkPostcode() {
-      const pattern = /^[1-9][0-9]{3}\s?[-]?[a-zA-Z]{2}$/;
-      if (!pattern.test(this.formData.zip)) {
-        this.errorMessage = 'Ongeldige postcode.';
-        return false;
-      }
-
-      this.errorMessage = '';
-      return true;
-    },
     navigateToNextPage() {
-      // Validatie van postcode
-      if (!this.checkPostcode()) {
-        alert(this.errorMessage);
-        return;
-      }
-
-      // Validatie van house_number
+      // Validatie van house_number en street
       if (!this.formData.house_number || isNaN(this.formData.house_number)) {
         alert('Voer een geldig huisnummer in.');
+        return;
+      }
+      if (!this.formData.street) {
+        alert('Selecteer een straatnaam.');
         return;
       }
 
@@ -56,16 +45,23 @@ export default {
         street: this.formData.street,
       });
 
+      // Sla postcode, straatnaam en huisnummer op in localStorage
+      localStorage.setItem('postcode', this.formData.zip);
+      localStorage.setItem('straatnaam', JSON.stringify(this.streets));
+      localStorage.setItem('huisnummer', this.formData.house_number);
+      localStorage.setItem('selectedStreet', this.formData.street);
+
       // Voor debuggen, log de antwoorden naar de console
       console.log('Antwoorden na toevoegen:', getAntwoorden());
 
-      // Sla de gegevens op in sessionStorage
-      sessionStorage.setItem('zip', this.formData.zip);
-      sessionStorage.setItem('house_number', this.formData.house_number);
-      sessionStorage.setItem('street', this.formData.street);
-
       // Navigeer naar de volgende vraag
       this.$router.push('/vraag2');
+    }
+  },
+  mounted() {
+    // Haal de straatnaam op bij het laden van de pagina als er een postcode is opgeslagen
+    if (this.formData.zip) {
+      this.fetchStreets();
     }
   }
 };
@@ -108,11 +104,14 @@ export default {
               <p>Vraag 1 van 3</p>
             </div>
             <p class="vraag">Wat is jouw adres?</p>
+
+
+
             <div class="container-inputs">
               <div class="overkoepelende-input-container">
                 <div class="input-container full-width-mobiel">
                   <label class="postcode-label" for="postcode-input"></label>
-                  <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode" v-model="formData.zip">
+                  <input id="postcode-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Postcode" v-model="formData.zip" readonly>
                 </div>
                 <div class="input-container full-width-mobiel">
                   <label class="huisnr-label" for="huisnr-input"></label>
@@ -122,13 +121,15 @@ export default {
                   <label class="option-label" for="option-select"></label>
                   <select id="option-select" class="option-select" v-model="formData.street">
                     <option value="" disabled selected>Straatnaam</option>
-                    <option value="option1">Optie 1</option>
-                    <option value="option2">Optie 2</option>
-                    <option value="option3">Optie 3</option>
+                    <option v-for="street in streets" :key="street" :value="street">
+                      {{ street }}
+                    </option>
                   </select>
                 </div>
               </div>
             </div>
+
+
             <div class="volgende">
               <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
             </div>

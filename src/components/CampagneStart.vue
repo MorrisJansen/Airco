@@ -29,40 +29,9 @@ export default {
   },
   data() {
     return {
-      zip: '',  
+      postcode: '',
       errorMessage: ''
     };
-  },
-  methods: {
-    async checkPostcode() {
-      const pattern = /^[1-9][0-9]{3}\s?[-]?[a-zA-Z]{2}$/;
-      if (!pattern.test(this.zip)) {
-        this.errorMessage = 'Ongeldige postcode.';
-        return false;
-      }
-
-      this.errorMessage = '';
-      return true;
-    },
-    async navigateToNextPage() {
-      const isValid = await this.checkPostcode();
-      if (isValid) {
-        // Opslaan in sessionStorage
-        sessionStorage.setItem('zip', this.zip);
-        console.log(this.zip);
-        this.$router.push('/vraag1');
-      } else {
-        console.error('Postcode niet geldig:', this.errorMessage);
-      }
-    }
-  },
-  watch: {
-    zip(newZip) {
-      if (newZip.length === 6) {
-        console.log('Postcode:', newZip);
-        sessionStorage.setItem('zip', newZip);
-      }
-    }
   },
   props: [
     "spanText1",
@@ -100,9 +69,57 @@ export default {
     "xLabelProps",
     "xButton2Props",
   ],
+  methods: {
+    checkPostcode() {
+      const pattern = /^[1-9][0-9]{3}\s?[-]?[a-zA-Z]{2}$/;
+      if (!pattern.test(this.postcode)) {
+        this.errorMessage = 'Ongeldige postcode.';
+        return false;
+      }
+      this.errorMessage = '';
+      return true;
+    },
+    async fetchStreetByPostcode(postcode) {
+      const authKey = 'P6JTU52clKYjZca8'; // Vervang door je werkelijke API-sleutel
+      const baseUrl = 'https://api.pro6pp.nl';
+      const url = `${baseUrl}/v2/suggest/nl/street?postalCode=${postcode}&authKey=${authKey}`;
+
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Authentication failed or no results found');
+        }
+        const data = await response.json();
+        if (data.length > 0) {
+          const streetNames = data.map(item => item.street);
+          const city = data[0].settlement; // Assuming the first result has the correct city
+          localStorage.setItem('city', city); // Store city in localStorage
+          return streetNames;
+        } else {
+          this.errorMessage = 'No results found';
+          return [];
+        }
+      } catch (error) {
+        this.errorMessage = error.message;
+        return [];
+      }
+    },
+    async handlePostcode() {
+      const isValid = this.checkPostcode();
+      if (isValid) {
+        const streets = await this.fetchStreetByPostcode(this.postcode);
+        if (streets.length > 0) {
+          localStorage.setItem('postcode', this.postcode);
+          localStorage.setItem('straatnaam', JSON.stringify(streets));
+          this.$router.push('/vraag1');
+        }
+      } else {
+        console.error('Postcode niet geldig:', this.errorMessage);
+      }
+    }
+  }
 };
 </script>
-
 
 
 
@@ -197,11 +214,11 @@ export default {
           <div class="frame-14">
             <div class="frame-20">
               <label class="postcode-label" for="postcode-input"></label>
-                <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" v-model="zip" />
+              <input id="postcode-input" type="text" class="postcode-input" placeholder="Postcode" v-model="postcode" />
                 
 
               <!-- controleer knop en klaar binnen 1 minuut tekst -->
-              <x-button :controleer="controleer" @button-click="navigateToNextPage"></x-button>
+              <x-button :controleer="controleer" @button-click="handlePostcode"></x-button>
             </div>
             <div v-if="errorMessage" class="error-message">
               {{ errorMessage }}
@@ -363,6 +380,7 @@ export default {
     </div>
   </div>
   </div>
+      
       <p class="nederlandsadviesn valign-text-bottom">{{ nederlandsadviesN }}</p>
     </div>
   </div>
