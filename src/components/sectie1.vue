@@ -1,117 +1,114 @@
 <script>
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
-
-
 export default {
-  name: "Navbar",
+  name: "Sectie1",
   components: {
     LogoNlAdviesAirco,
-
   },
   props: [
     "spanText1",
     "spanText2",
-    "logoNLAdviesAircoProps",  
-],
+    "logoNLAdviesAircoProps",
+    "xButtonProps",
+    "overlapGroup6",
+    "bespaarTot40OpDeAanschafprijs"
+  ],
+  data() {
+    return {
+      postcode: '',
+      errorMessage: '' // Dit zal de foutmelding opslaan
+    };
+  },
+  methods: {
+    validatePostcode() {
+      console.log('Validating postcode:', this.postcode);  // Controleer of de methode wordt aangeroepen
+      const pattern = /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/; // Simpele postcode-validatie
+      if (!pattern.test(this.postcode)) {
+        this.errorMessage = 'Ongeldige postcode. Voer een geldige postcode in.'; // Foutmelding instellen
+      } else {
+        this.errorMessage = ''; // Foutmelding wissen als de postcode geldig is
+      }
+    },
+    handleKeydown(event) {
+      if (event.key === 'Enter') {
+        this.validatePostcode(); // Valideer de postcode wanneer op Enter wordt gedrukt
+      }
+    }
+  }
 };
 </script>
 
 <template>
-    
-        <!-- achtergrond afbeelding -->
-
-    <div class="container-sectie1">
-
-
-
-      <div class="overlap-group6" :style="{ 'background-image': 'url(' + overlapGroup6 + ')' }">
-
-        <!-- dit is de afbeelding van de pijl aan de linkerkant -->
-        <img class="layer_1" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/layer-1.svg" alt="Layer_1"/>
-
-
-
-        <div class="frame-13">
-
-
-
-          <h1 class="hou-je-huis-koel-met-airconditioning valign-text-bottom large-title-capitals">
-            <span> 
-              <span class="span0-1 large-title-capitals">Hou je huis koel met<br></span>
-              <span class="span1-1 large-title-capitals">airconditioning</span>
-            </span>
-          </h1>
-
-
-
-
-          <div class="frame-11 catamaran-bold-white-22px">
-            <p class="doe-de-woningscan-en-check valign-text-bottom">Doe de woningscan en check:</p>
-            <div class="frame">
-
-              <div class="frame-1">
-                <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons.svg" alt="Small icons"/>
-                <p class="hoeveel-jij-kan-besp valign-text-middle catamaran-bold-white-22px"> Hoeveel jij kan besparen op airconditioning;</p>
-              </div>
-
-              <div class="frame-1">
-                <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons.svg" alt="Small icons"/>
-                <p class="de-best-beschikbare valign-text-middle catamaran-bold-white-22px">De best beschikbare offertes voor jouw woning;</p>
-              </div>
-
-              <div class="frame-1">
-                <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons.svg" alt="Small icons"/>
-                <p class="de-juiste-specialist valign-text-middle catamaran-bold-white-22px">De juiste specialisten voor gratis & vrijblijvend<br class="dekstop"> advies;</p>
-              </div>
-
+  <div class="container-sectie1">
+    <div class="overlap-group6" :style="{ 'background-image': 'url(' + overlapGroup6 + ')' }">
+      <img class="layer_1" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/layer-1.svg" alt="Layer_1"/>
+      <div class="frame-13">
+        <h1 class="hou-je-huis-koel-met-airconditioning valign-text-bottom large-title-capitals">
+          <span>
+            <span class="span0-1 large-title-capitals">Hou je huis koel met<br></span>
+            <span class="span1-1 large-title-capitals">airconditioning</span>
+          </span>
+        </h1>
+        <div class="frame-11 catamaran-bold-white-22px">
+          <p class="doe-de-woningscan-en-check valign-text-bottom">Doe de woningscan en check:</p>
+          <div class="frame">
+            <div class="frame-1">
+              <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons.svg" alt="Small icons"/>
+              <p class="hoeveel-jij-kan-besp valign-text-middle catamaran-bold-white-22px"> Hoeveel jij kan besparen op airconditioning;</p>
             </div>
-
-
-
-            <br>
-            <br>
-            <p class="controleer-nu-of-wij valign-text-bottom">Controleer nu of wij actief zijn in jouw regio:</p>
-          </div>
-
-
-
-          <div class="frame-14">
-            <div class="frame-20">
-              <label class="postcode-label" for="postcode-input1"></label>
-                <input id="postcode-input postcode-input1" type="text" class="postcode-input" placeholder="Postcode" />
-                
-              <!-- controleer knop en klaar binnen 1 minuut tekst -->
-              <x-button :controleer="xButtonProps.controleer" class="" />
+            <div class="frame-1">
+              <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons.svg" alt="Small icons"/>
+              <p class="de-best-beschikbare valign-text-middle catamaran-bold-white-22px">De best beschikbare offertes voor jouw woning;</p>
             </div>
-            <div class="klaar-binnen-1-minuut valign-text-bottom label-text">Klaar binnen 1 minuut</div>
+            <div class="frame-1">
+              <img class="small-icons" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons.svg" alt="Small icons"/>
+              <p class="de-juiste-specialist valign-text-middle catamaran-bold-white-22px">De juiste specialisten voor gratis & vrijblijvend advies;</p>
+            </div>
           </div>
-
-
-
+          <br>
+          <br>
+          <p class="controleer-nu-of-wij valign-text-bottom">Controleer nu of wij actief zijn in jouw regio:</p>
         </div>
-
-
-
-
-        <!-- het zwarte bespaar tot 40% rondje met gele tekst --> 
-        <div class="overlap-group">
-          <p class="bespaar-tot-40-op-de-aanschafprijs valign-text-bottom catamaran-bold-supernova-22px" v-html="bespaarTot40OpDeAanschafprijs"></p>
+        <div class="frame-14">
+          <div class="frame-20">
+            <label class="postcode-label" for="postcode-input"></label>
+            <input 
+              id="postcode-input" 
+              type="text" 
+              class="postcode-input" 
+              v-model="postcode" 
+              placeholder="Postcode"  
+              @keydown="handleKeydown"
+            />
+            <x-button :controleer="xButtonProps.controleer" @button-click="validatePostcode" />
+          </div>
+          <div v-if="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
+          <div class="klaar-binnen-1-minuut valign-text-bottom label-text">Klaar binnen 1 minuut</div>
         </div>
-
-
-
       </div>
-
-
-
+      <div class="overlap-group">
+        <p class="bespaar-tot-40-op-de-aanschafprijs valign-text-bottom catamaran-bold-supernova-22px" v-html="bespaarTot40OpDeAanschafprijs"></p>
+      </div>
     </div>
-    
+  </div>
 </template>
 
 
 <style lang="sass">
 @import '../../variables'
+
+.error-message
+  color: red
+  font-size: 22px!important
+  z-index: 999
+
+  width: auto!important
+  margin: 0!important
+  padding: 0!important
+  margin-right: 20px!important
 
 
 
@@ -136,7 +133,7 @@ export default {
 
 .layer_1
   height: 107px
-  margin-top: 410px
+  margin-top: 320px
   width: 93px
 
 .frame-13
@@ -170,7 +167,7 @@ export default {
   display: inline-flex
   flex: 0 0 auto
   flex-direction: column
-  gap: 23px
+  gap: 5px
   position: relative
 
 .doe-de-woningscan-en-check
@@ -245,11 +242,12 @@ export default {
   gap: 10px
   height: 100%
   // width: 265px!important
-  padding: 20px 26px
+  padding: 10px 26px
   position: relative
   left: -20px
   font-size: 22px
   border-radius: 5px
+  font-family: catamaran
 
 .postcode-input:placeholder 
   font-size: 22px
@@ -403,6 +401,9 @@ export default {
     height: 60%
     position: relative
     right: 17px
+
+  .button:hover
+    cursor: pointer
 
 
   .controleer

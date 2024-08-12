@@ -58,7 +58,7 @@ export default {
                             <group4 :className="group4Props.className" />
                             <div class="frame-28">
                               <div class="stap-3 valign-text-bottom large-title">{{ stap3 }}</div>
-                              <p class="onze-vakmensen-geven valign-text-bottom body-text">{{ onzeVakmensenGeven }}</p>
+                              <p class="onze-vakmensen-geven valign-text-bottom body-text tekst-sectie2">Onze vakmensen geven gratis en vrijblijvend, persoonlijk advies</p>
                             </div>
                         </div>
                     
@@ -77,8 +77,15 @@ export default {
 @import '../../variables'
 
 
+.titel-sectie2
+  position: relative
+  top: -25px
 
 
+
+.tekst-sectie2
+  position: relative!important
+  top: -40px!important
 
 .frame-26
   align-items: center

@@ -48,7 +48,7 @@ export default {
 
 .container-links
   width: 50vw
-  background-color: black
+  background-color: #1C1829
   max-height: 100%
 
 
@@ -86,7 +86,7 @@ export default {
 
 .tekst-zwart-navbar
   color: black
-  padding-top: 2.5% 
+  padding-top: 3% 
 
 
 .tekst-geel-navbar

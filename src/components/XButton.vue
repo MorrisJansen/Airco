@@ -1,7 +1,7 @@
 <template>
   <div>
     <button @click="handleClick" class="button">
-      <div class="controleer valign-text-bottom">Controleer</div>
+      <div class="controleer valign-text-bottom">CONTROLEER</div>
     </button>
   </div>
 </template>
@@ -33,8 +33,12 @@ export default {
   position: relative
   border: none
 
+
+.button:hover
+  cursor: pointer
+
+
 .controleer
-  color: $primary-dark-blue
   font-family: $font-family-catamaran
   font-size: 21.9px
   font-weight: 800

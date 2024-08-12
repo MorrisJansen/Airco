@@ -49,7 +49,6 @@ export default {
     "nederlandsadviesNl",
     "hoeWerktHet",
     "stap3",
-    "onzeVakmensenGeven",
     "waaromAirconditioning",
     "airconditioningHee",
     "verbeterdeLuchtkwaliteit",
@@ -80,7 +79,7 @@ export default {
       return true;
     },
     async fetchStreetByPostcode(postcode) {
-      const authKey = 'P6JTU52clKYjZca8'; // Vervang door je werkelijke API-sleutel
+      const authKey = 'P6JTU52clKYjZca8'; 
       const baseUrl = 'https://api.pro6pp.nl';
       const url = `${baseUrl}/v2/suggest/nl/street?postalCode=${postcode}&authKey=${authKey}`;
 
@@ -116,7 +115,19 @@ export default {
       } else {
         console.error('Postcode niet geldig:', this.errorMessage);
       }
+    },
+    handleKeyDown(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        this.handlePostcode();
+      }
     }
+  },
+  mounted() {
+    window.addEventListener('keydown', this.handleKeyDown);
+  },
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.handleKeyDown);
   }
 };
 </script>
@@ -175,8 +186,8 @@ export default {
 
           <h1 class="hou-je-huis-koel-met-airconditioning valign-text-bottom large-title-capitals">
             <span>
-              <span class="span0-1 large-title-capitals">Hou je huis koel met<br></span>
-              <span class="span1-1 large-title-capitals">airconditioning</span>
+              <span class="span0-1 large-title-capitals">HOU JE HUIS KOEL MET<br></span>
+              <span class="span1-1 large-title-capitals">AIRCONDITIONING</span>
             </span>
           </h1>
 
@@ -204,8 +215,6 @@ export default {
 
             </div>
 
-            <br>
-            <br>
             <p class="controleer-nu-of-wij valign-text-bottom">Controleer nu of wij actief zijn in jouw regio:</p>
           </div>
 
@@ -235,7 +244,7 @@ export default {
 
         <!-- het zwarte bespaar tot 40% rondje met gele tekst --> 
         <div class="overlap-group">
-          <p class="bespaar-tot-40-op-de-aanschafprijs valign-text-bottom catamaran-bold-supernova-22px" v-html="bespaarTot40OpDeAanschafprijs"></p>
+          <p class="bespaar-tot-40-op-de-aanschafprijs valign-text-bottom catamaran-bold-supernova-22px text-in-zwart-bol" v-html="bespaarTot40OpDeAanschafprijs"></p>
         </div>
 
 
@@ -290,8 +299,8 @@ export default {
           <div class="rectangle"></div>
           <group4 :className="group4Props.className" />
           <div class="frame-28">
-            <div class="stap-3 valign-text-bottom large-title">{{ stap3 }}</div>
-            <p class="onze-vakmensen-geven valign-text-bottom body-text">{{ onzeVakmensenGeven }}</p>
+            <div class="stap-3 valign-text-bottom large-title titel-sectie2">{{ stap3 }}</div>
+            <p class="onze-vakmensen-geven valign-text-bottom body-text tekst-sectie2">Onze vakmensen geven gratis  en vrijblijvend, persoonlijk advies</p>
           </div>
         </div>
 
@@ -372,16 +381,27 @@ export default {
       <label class="postcode-label" for="postcode-input-2"></label>
       <input id="postcode-input-2" type="text" class="postcode-input-2" placeholder="Postcode" v-model="postcode" />
     </div>
-    <div>
-      <x-button :controleer="controleer" @button-click="handlePostcode"></x-button>
-    </div>
-    <div v-if="errorMessage" class="error-message">
+        <button @click="handleClick" class="button donkere-button">
+          <div class="controleer valign-text-bottom controleer-benenden" id="beneden-controleren">CONTROLEER</div>
+        </button>
+
+    <div v-if="errorMessage" class="error-message beneden-foutmelding">
       {{ errorMessage }}
     </div>
   </div>
   </div>
       
-      <p class="nederlandsadviesn valign-text-bottom">{{ nederlandsadviesN }}</p>
+      <p class="nederlandsadviesn valign-text-bottom">
+        <a  class="footer-linkjes" href="nederlandsadvies.nl">
+          © Nederlandsadvies.nl
+        </a>
+        <a  class="footer-linkjes" href="https://leadgen.republish.nl/api/content/solvari-voorwaarden">
+          | Algemene voorwaarden
+        </a>
+        <a  class="footer-linkjes" href="https://leadgen.republish.nl/api/content/solvari-privacy">
+          | Privacy policy
+        </a>
+        </p>
     </div>
   </div>
 </template>
@@ -391,7 +411,28 @@ export default {
 <style lang="sass">
 @import '../../variables'
 
+
+.footer-linkjes
+  text-decoration: none
+  color: black
+
+
+
+.beneden-foutmelding
+  position: relative
+  right: 60%!important
+  top: 100%!important
+
+
+.error-message-benenden
+  font-family: catamaran!important
+  font-size: 22px!important
+  color: red!important
+
+
 .campagne-start
+
+
   align-items: center
   background-color: $white
   display: flex
@@ -434,6 +475,11 @@ export default {
 
 .nederlandsadviesn
   padding-bottom: 1.5rem
+
+
+.text-in-zwart-bol
+  position: relative
+  top: 11px
 
 
 

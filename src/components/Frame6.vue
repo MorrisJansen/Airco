@@ -1,7 +1,7 @@
 <template>
   <div :class="[`frame-6`, className || ``]">
-    <div class="stap valign-text-bottom large-title">{{ stap1 }}</div>
-    <p class="controleer-of-wij-ac-1 valign-text-bottom body-text">{{ controleerOfWijAc }}</p>
+    <div class="stap valign-text-bottom large-title titel-sectie2">{{ stap1 }}</div>
+    <p class="controleer-of-wij-ac-1 valign-text-bottom body-text tekst-sectie2">{{ controleerOfWijAc }}</p>
   </div>
 </template>
 

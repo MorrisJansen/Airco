@@ -38,13 +38,17 @@ export default {
                   <input id="postcode-input" type="text" class="postcode-input-2" placeholder="Postcode" />
     
               </div>
-              <router-link to="/vraag1">
-                <div class="button-onder">
-                  <div class="controleer-beneden valign-text-bottom">
-                    <span class="centreer">Controleer</span>
-                  </div>
-                </div>
-              </router-link>           
+              
+              <button @click="handleClick" class="button donkere-button">
+                <div class="controleer valign-text-bottom controleer-benenden" id="beneden-controleren" >CONTROLEER</div>
+              </button>
+      
+          <div v-if="errorMessage" class="error-message beneden-foutmelding">
+            {{ errorMessage }}
+          </div>
+
+
+
             </div>
           </div>
                     
@@ -59,6 +63,16 @@ export default {
 
 <style lang="sass">
 @import '../../variables'
+
+.donkere-button
+  background-color: #1C1829!important
+
+#beneden-controleren
+  color: white!important
+
+
+.controleer-beneden
+  color: white!important
 
 
 .container-sectie4
