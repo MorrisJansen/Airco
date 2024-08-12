@@ -19,6 +19,8 @@ export default {
       currentPage: 3,
       totalPages: 3,
       selectedOption: '',
+      weetIkNiet: false,
+      // Opties zijn alleen relevant voor 'Weet ik niet' checkbox
       opties: [
         { id: 5121, label: '1' },
         { id: 5124, label: '2' },
@@ -29,20 +31,33 @@ export default {
   },
   methods: {
     navigateToNextPage() {
-      if (this.selectedOption) {
-        addAntwoord('vraag3', { id: this.selectedOption });
-        console.log(`Selected option for vraag3: ${this.selectedOption}`);
+      let antwoordId;
+
+      if (this.weetIkNiet) {
+        antwoordId = 5130; // ID voor "Weet ik niet"
+      } else if (this.selectedOption) {
+        const numberValue = parseInt(this.selectedOption, 10);
+
+        if (numberValue === 1) {
+          antwoordId = 5121;
+        } else if (numberValue === 2) {
+          antwoordId = 5124;
+        } else if (numberValue >= 3) {
+          antwoordId = 5127;
+        }
+      }
+
+      if (antwoordId) {
+        addAntwoord('vraag3', { id: antwoordId });
+        console.log(`Selected option for vraag3: ${antwoordId}`);
         this.$router.push('./formulier');
       } else {
-        alert("Selecteer een optie voordat je doorgaat.");
+        alert("Selecteer een optie of vink 'Weet ik niet' aan voordat je doorgaat.");
       }
     }
   }
 };
 </script>
-
-
-
 
 
 
@@ -94,18 +109,40 @@ export default {
               <br class="mobiel"> installeren?
             </p>
 
+
+
+
+
             <div class="container-inputs">
               <div class="overkoepelende-input-container">
                 <form>
-                  <select class="select-vraag3" v-model="selectedOption">
-                    <option value="" disabled>Selecteer een optie</option>
-                    <option v-for="optie in opties" :key="optie.id" :value="optie.id">
-                      {{ optie.label }}
-                    </option>
-                  </select>
+                  <!-- Toegevoegd input veld voor cijfers 1 t/m 30 -->
+                  <input
+                    v-if="!weetIkNiet"
+                    type="number"
+                    min="1"
+                    max="30"
+                    class="input-vraag3"
+                    v-model="selectedOption"
+                    placeholder="Vul een getal in"
+                  />
                 </form>
               </div>
             </div>
+
+            <!-- Checkbox voor 'Weet ik niet' -->
+            <div class="checkbox-container">
+              <input
+                type="checkbox"
+                id="weet-ik-niet"
+                v-model="weetIkNiet"
+              />
+              <label class="weet-ik-niet" for="weet-ik-niet">Weet ik niet</label>
+            </div>
+
+
+
+
 
             <div class="volgende">
               <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
@@ -136,6 +173,28 @@ export default {
   @import '../../variables'
 
 
+
+.weet-ik-niet
+  position: relative
+  bottom: 15px
+  margin-left: 30px
+
+
+
+.checkbox-container
+  width: 100%
+  font-size: 22px
+  margin-left: 5rem
+  font-family: catamaran
+
+
+
+  input[type="checkbox"] 
+    width: 3em
+    height: 3rem
+    accent-color: #FFCD02
+  
+  
 
 
 

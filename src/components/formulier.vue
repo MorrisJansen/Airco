@@ -21,7 +21,7 @@
         <div class="formulier-formulier-container">
           <p class="titel-formulier">Bedankt, start nu ook met besparen!</p>
           <p class="subtitel-formulier">
-            Ontvang gratis en vrijblijvend 3<br>
+            Ontvang gratis en vrijblijvend 4<br>
             airconditioning offertes met persoonlijk<br>
             advies van de beste partners/bedrijven uit jouw regio
           </p>
@@ -360,7 +360,7 @@ export default {
     font-weight: 600
     line-height: normal
     margin-top: 1rem
-    margin-bottom: 2rem
+    margin-bottom: 0rem
   
 
   // Dit is voor het form zel
@@ -394,9 +394,10 @@ export default {
   
 
   .formulier-input-item input 
-    padding: 10px
+    padding: 20px
     border: 1px solid #ccc
     border-radius: 4px
+    font-size: 18px
   
 
   .input-voornaam, .input-achternaam, .input-telefoon, .input-email
@@ -441,7 +442,7 @@ export default {
     font-style: normal
     font-weight: 400
     line-height: normal
-    padding: 2.5rem 25%
+    padding: 0.5rem 25% 2.5rem
     margin-right: 15px
     padding-bottom: 4rem !important
   
@@ -506,7 +507,7 @@ export default {
     
 
     .formulier-footer-formulier 
-      padding: 2.5rem 5%
+      padding: 0.5rem 5% 2.5rem!important
       font-size: 0.875rem
     
 
@@ -538,8 +539,7 @@ export default {
     .formulier-volgende-button-formulier
       font-size: 1rem!important
 
-    .formulier-footer-formulier
-      padding: 5px 5%
+
 
   
 

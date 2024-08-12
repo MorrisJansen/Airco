@@ -135,7 +135,7 @@ export default {
             </div>
           </div>
           <div class="container-afbeelding-desktop">
-            <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./vraag1-afbeelding.png" alt="">
+            <img id="afbeelding-border-desktop" class="afbeelding-border-desktop" src="./afbeelding-vraag-1.png" alt="">
           </div>
           <div class="container-afbeelding-mobiel">
             <img id="afbeelding-mobiel" class="afbeelding-mobiel" src="./firstQuestion.png" alt="afbeelding mobiel">
@@ -152,6 +152,14 @@ export default {
   <style lang="sass">
   @import '../../variables'
 
+
+
+.afbeelding-border-desktop
+  height: 100%
+  border-radius: 35px
+  zoom: 90%
+  width: 100%
+  object-fit: cover
 
 
 

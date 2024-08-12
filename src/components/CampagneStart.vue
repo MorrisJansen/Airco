@@ -110,7 +110,9 @@ export default {
         if (streets.length > 0) {
           localStorage.setItem('postcode', this.postcode);
           localStorage.setItem('straatnaam', JSON.stringify(streets));
-          this.$router.push('/vraag1');
+          this.$router.push('/vraag1').then(() => {
+          window.location.reload();
+});
         }
       } else {
         console.error('Postcode niet geldig:', this.errorMessage);
