@@ -383,7 +383,7 @@ export default {
       <label class="postcode-label" for="postcode-input-2"></label>
       <input id="postcode-input-2" type="text" class="postcode-input-2" placeholder="Postcode" v-model="postcode" />
     </div>
-        <button @click="handleClick" class="button donkere-button">
+        <button @click="handlePostcode" class="button donkere-button">
           <div class="controleer valign-text-bottom controleer-benenden" id="beneden-controleren">CONTROLEER</div>
         </button>
 

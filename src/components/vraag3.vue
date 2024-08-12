@@ -514,4 +514,30 @@ option
 
   .mobiel
     display: none
+
+
+
+
+  
+  .weet-ik-niet
+    position: relative
+    bottom: 45px
+    margin-left: 40px
+
+
+
+
+  .checkbox-container
+    width: 100%
+    font-size: 42px
+    margin-left: 5rem
+    font-family: catamaran
+    padding-bottom: 3rem
+
+
+
+    input[type="checkbox"]  
+      width: 7.5rem
+      height: 7.5rem
+      accent-color: #FFCD02
   </style>
