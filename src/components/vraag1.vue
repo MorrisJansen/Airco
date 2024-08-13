@@ -28,7 +28,6 @@ export default {
   },
   methods: {
     navigateToNextPage() {
-      // Validatie van house_number en street
       if (!this.formData.house_number || isNaN(this.formData.house_number)) {
         alert('Voer een geldig huisnummer in.');
         return;
@@ -38,28 +37,23 @@ export default {
         return;
       }
 
-      // Voeg de antwoorden toe aan de antwoorden object
       addAntwoord({
         zip: this.formData.zip,
         house_number: this.formData.house_number,
         street: this.formData.street,
       });
 
-      // Sla postcode, straatnaam en huisnummer op in localStorage
       localStorage.setItem('postcode', this.formData.zip);
       localStorage.setItem('straatnaam', JSON.stringify(this.streets));
       localStorage.setItem('huisnummer', this.formData.house_number);
       localStorage.setItem('selectedStreet', this.formData.street);
 
-      // Voor debuggen, log de antwoorden naar de console
       console.log('Antwoorden na toevoegen:', getAntwoorden());
 
-      // Navigeer naar de volgende vraag
       this.$router.push('/vraag2');
     }
   },
   mounted() {
-    // Haal de straatnaam op bij het laden van de pagina als er een postcode is opgeslagen
     if (this.formData.zip) {
       this.fetchStreets();
     }
