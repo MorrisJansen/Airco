@@ -1,96 +1,149 @@
 <template>
-    <div class="postcode-container">
-      <h1>Postcode naar Straatnaam</h1>
-      <div class="input-group">
-        <label for="postcode-input">Postcode:</label>
-        <input id="postcode-input" type="text" v-model="postcode" @change="fetchStreetNames" placeholder="Voer postcode in" />
+  <div>
+    <form @submit.prevent="validateAddress">
+      <div>Call</div>
+      <div>
+        <label for="postcode">Postcode:</label>
+        <input v-model="postcode" id="postcode" placeholder="1012BZ" required />
+        <label for="streetNumberAndPremise"
+          >Street number and/without premise:</label
+        >
+        <input
+          v-model="streetNumberAndPremise"
+          id="streetNumberAndPremise"
+          placeholder="7A"
+          required
+        />
       </div>
-      
-      <div class="input-group" v-if="streets.length > 0">
-        <label for="street-select">Straat:</label>
-        <select id="street-select" v-model="selectedStreet">
-          <option value="" disabled>Selecteer een straatnaam</option>
-          <option v-for="street in streets" :key="street" :value="street">{{ street }}</option>
-        </select>
+      <div>
+        <span style="color: red">{{ message }}</span>
       </div>
-  
-      <button @click="submit">Submit</button>
-      
-      <div v-if="errorMessage" class="error-message">
-        {{ errorMessage }}
+      <div>
+        <button type="submit">Submit</button>
       </div>
-    </div>
-  </template>
-  
-  <script>
-  import axios from 'axios';
-  
-  export default {
-    name: "Postcode",
-    data() {
-      return {
-        postcode: '',
-        streets: [],
-        selectedStreet: '',
-        errorMessage: ''
-      };
-    },
-    methods: {
-      async fetchStreetNames() {
-        const pattern = /^[1-9][0-9]{3}\s?[-]?[a-zA-Z]{2}$/;
-        if (!pattern.test(this.postcode)) {
-          this.errorMessage = 'Ongeldige postcode.';
-          this.streets = [];
-          return;
+      <br />
+      <div v-if="showResponse">
+        <div>Response</div>
+        <div>
+          <label for="streetNumber">Street number:</label>
+          <input
+            v-model="streetNumber"
+            id="streetNumber"
+            class="streetnumber"
+            readonly
+            disabled
+          />
+
+          <label for="premise">Premise:</label>
+          <input v-model="premise" id="premise" class="premise" readonly disabled />
+
+          <label for="street">Street:</label>
+          <input v-model="street" id="street" class="street" readonly disabled />
+
+          <label for="settlement">Settlement:</label>
+          <input
+            v-model="settlement"
+            id="settlement"
+            class="settlement"
+            readonly
+            disabled
+          />
+
+          <label for="municipality">Municipality:</label>
+          <input
+            v-model="municipality"
+            id="municipality"
+            class="municipality"
+            readonly
+            disabled
+          />
+
+          <label for="province">Province:</label>
+          <input
+            v-model="province"
+            id="province"
+            class="province"
+            readonly
+            disabled
+          />
+        </div>
+
+        <br />
+        <div>Full Response</div>
+        <pre>{{ jsonResponse }}</pre>
+      </div>
+    </form>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      postcode: "",
+      streetNumberAndPremise: "",
+      streetNumber: "",
+      premise: "",
+      street: "",
+      settlement: "",
+      municipality: "",
+      province: "",
+      jsonResponse: "",
+      message: "",
+      showResponse: false,
+    };
+  },
+  methods: {
+    async validateAddress() {
+      const pro6ppAuthKey = "P6JTU52clKYjZca8"; // Replace with your actual authorization key
+      const BASE_URL = "https://api.pro6pp.nl/v2";
+
+      const url = `${BASE_URL}/suggest/nl/streetNumber?postalCode=${encodeURIComponent(
+        this.postcode
+      )}&settlement=${encodeURIComponent(
+        this.settlement || "ROTTERDAM"
+      )}&streetNumber=${encodeURIComponent(
+        this.streetNumberAndPremise
+      )}&authKey=${pro6ppAuthKey}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        console.log("API Response:", data);
+
+        if (data && Array.isArray(data) && data.length > 0) {
+          const validNumbers = data.map((item) => item.streetNumber.toString());
+
+          if (validNumbers.includes(this.streetNumberAndPremise.toString())) {
+            this.streetNumber = data[0].streetNumber || "";
+            this.premise = data[0].premise || "";
+            this.street = data[0].street || "";
+            this.settlement = data[0].settlement || "";
+            this.municipality = data[0].municipality || "";
+            this.province = data[0].province || "";
+            this.jsonResponse = JSON.stringify(data, null, 2);
+            this.message = "";
+            this.showResponse = true;
+          } else {
+            this.message =
+              "Huisnummer is niet geldig voor de opgegeven straat en postcode.";
+            this.showResponse = false;
+          }
+        } else {
+          this.message = "Geen resultaten gevonden voor het opgegeven adres.";
+          this.showResponse = false;
         }
-  
-        this.errorMessage = '';
-        try {
-          console.log(`Fetching street names for postcode: ${this.postcode}`);
-          const response = await axios.get(`https://api.postcodeapi.nu/v3/lookup/${this.postcode}`, {
-            headers: {
-              'X-Api-Key': '0kwzCamtlw4aqtUAK60UTaKjc02VOBXH3MASy2TO' // Vervang 'YOUR_API_KEY' met je echte API sleutel
-            }
-          });
-          console.log('API response:', response.data);
-          this.streets = response.data.street ? [response.data.street] : [];
-          this.selectedStreet = ''; // Reset the selected street when a new postcode is entered
-          console.log('Streets:', this.streets);
-        } catch (error) {
-          console.error('Error fetching street names:', error);
-          this.errorMessage = 'Kon de straatnaam niet ophalen. Controleer de postcode en probeer het opnieuw.';
-          this.streets = [];
-        }
-      },
-      submit() {
-        if (!this.selectedStreet) {
-          this.errorMessage = 'Selecteer een straatnaam.';
-          return;
-        }
-  
-        this.errorMessage = '';
-        alert(`Postcode: ${this.postcode}, Straatnaam: ${this.selectedStreet}`);
-        // Hier kun je verdere verwerking toevoegen, zoals het verzenden van gegevens naar een server
+      } catch (error) {
+        console.error("Fout bij het ophalen van adresgegevens:", error);
+        this.message = "Er is een fout opgetreden bij het ophalen van gegevens.";
+        this.showResponse = false;
       }
-    }
-  };
-  </script>
-  
-  <style scoped>
-  .postcode-container {
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-  }
-  
-  .input-group {
-    margin-bottom: 20px;
-  }
-  
-  .error-message {
-    color: red;
-    margin-top: 20px;
-  }
-  </style>
+    },
+  },
+};
+</script>
+
+<style scoped>
+/* Voeg hier je eigen stijlen toe als dat nodig is */
+</style>

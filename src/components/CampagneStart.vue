@@ -110,9 +110,14 @@ export default {
         if (streets.length > 0) {
           localStorage.setItem('postcode', this.postcode);
           localStorage.setItem('straatnaam', JSON.stringify(streets));
+          if (streets.length === 1) {
+            localStorage.setItem('selectedStreet', streets[0]);
+          } else {
+            localStorage.removeItem('selectedStreet');
+          }
           this.$router.push('/vraag1').then(() => {
-          window.location.reload();
-});
+            window.location.reload();
+          });
         }
       } else {
         console.error('Postcode niet geldig:', this.errorMessage);

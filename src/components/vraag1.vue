@@ -20,46 +20,114 @@ export default {
         zip: localStorage.getItem('postcode') || '',
         house_number: '',
         street: '',
+        city: localStorage.getItem('city') || ''
       },
       streets: JSON.parse(localStorage.getItem('straatnaam')) || [],
       currentPage: 1,
       error: '',
     };
   },
+  computed: {
+    fullAddress() {
+      if (this.formData.house_number && (this.streets.length === 1 || this.formData.street)) {
+        const streetName = this.streets.length === 1 ? this.streets[0] : this.formData.street;
+        return `${streetName} ${this.formData.house_number}, ${this.formData.zip} ${this.formData.city}`;
+      }
+      return '';
+    }
+  },
   methods: {
-    navigateToNextPage() {
-      if (!this.formData.house_number || isNaN(this.formData.house_number)) {
-        alert('Voer een geldig huisnummer in.');
-        return;
+    async validateAddress() {
+        const authKey = 'P6JTU52clKYjZca8'; // Vervang dit door je eigen API-sleutel
+        const baseUrl = 'https://api.pro6pp.nl/v2/suggest/nl/streetNumber';
+        const url = `${baseUrl}?postalCode=${encodeURIComponent(this.formData.zip)}&streetNumber=${encodeURIComponent(this.formData.house_number)}&authKey=${authKey}`;
+
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error('Fout bij het ophalen van adresgegevens.');
+            }
+            const data = await response.json();
+            if (data.length === 0) {
+                this.error = 'Het huisnummer komt niet overeen met de opgegeven straat/postcode/stad.';
+                this.showResponse = false;
+                return false;
+            }
+
+            const addressData = data[0];
+            this.formData.street = addressData.street || '';
+            this.formData.city = addressData.settlement || '';
+            this.premise = addressData.premise || '';
+            this.municipality = addressData.municipality || '';
+            this.province = addressData.province || '';
+
+            this.error = '';
+            this.showResponse = true;
+
+            // Voeg het adres toe aan antwoorden
+            addAntwoord('adres', {
+                postcode: this.formData.zip,
+                huisnummer: this.formData.house_number,
+                straatnaam: this.formData.street,
+                stad: this.formData.city,
+                gemeente: this.municipality,
+                provincie: this.province
+            });
+
+            return true;
+        } catch (error) {
+            this.error = 'Er is een fout opgetreden bij de validatie.';
+            console.error(error);
+            this.showResponse = false;
+            return false;
+        }
+    },
+
+    async navigateToNextPage() {
+        if (!this.formData.house_number || isNaN(this.formData.house_number)) {
+            alert('Voer een geldig huisnummer in.');
+            return;
+        }
+        if (!this.formData.street && this.streets.length > 1) {
+            alert('Selecteer een straatnaam.');
+            return;
+        }
+
+        // Validate address
+        const isValid = await this.validateAddress();
+        if (!isValid) return;
+
+        // Antwoorden opslaan
+        addAntwoord('vraag1', {
+            zip: this.formData.zip,
+            house_number: this.formData.house_number,
+            street: this.formData.street || this.streets[0],
+        });
+
+        this.$router.push('/vraag2');
+    },
+
+    updateAddress() {
+        if (this.streets.length === 1) {
+            this.formData.street = this.streets[0];
+        }
+    }
+},
+  watch: {
+    'formData.house_number': async function (newValue) {
+      if (newValue) {
+        await this.validateAddress();
       }
-      if (!this.formData.street) {
-        alert('Selecteer een straatnaam.');
-        return;
-      }
-
-      addAntwoord({
-        zip: this.formData.zip,
-        house_number: this.formData.house_number,
-        street: this.formData.street,
-      });
-
-      localStorage.setItem('postcode', this.formData.zip);
-      localStorage.setItem('straatnaam', JSON.stringify(this.streets));
-      localStorage.setItem('huisnummer', this.formData.house_number);
-      localStorage.setItem('selectedStreet', this.formData.street);
-
-      console.log('Antwoorden na toevoegen:', getAntwoorden());
-
-      this.$router.push('/vraag2');
     }
   },
   mounted() {
     if (this.formData.zip) {
-      this.fetchStreets();
+      this.updateAddress();
     }
   }
 };
 </script>
+
 
 <template>
   <div>
@@ -99,8 +167,6 @@ export default {
             </div>
             <p class="vraag">Wat is jouw adres?</p>
 
-
-
             <div class="container-inputs">
               <div class="overkoepelende-input-container">
                 <div class="input-container full-width-mobiel">
@@ -109,20 +175,16 @@ export default {
                 </div>
                 <div class="input-container full-width-mobiel">
                   <label class="huisnr-label" for="huisnr-input"></label>
-                  <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Huisnr." v-model="formData.house_number">
+                  <input id="huisnr-input" type="text" class="huisnr-input full-width-mobiel-vraag1" placeholder="Huisnr." v-model="formData.house_number" @input="updateAddress">
                 </div>
                 <div class="input-container full-width">
-                  <label class="option-label" for="option-select"></label>
-                  <select id="option-select" class="option-select" v-model="formData.street">
-                    <option value="" disabled selected>Straatnaam</option>
-                    <option v-for="street in streets" :key="street" :value="street">
-                      {{ street }}
-                    </option>
-                  </select>
+                  <label class="straat-label" for="straat-naam"></label>
+                  <p id="straat-naam" class="straat-naam">
+                    {{ fullAddress }}
+                  </p>
                 </div>
               </div>
             </div>
-
 
             <div class="volgende">
               <button class="volgende-button" @click="navigateToNextPage">Volgende</button>
@@ -142,10 +204,20 @@ export default {
 </template>
 
 
+
+
+
   
   <style lang="sass">
   @import '../../variables'
 
+
+
+
+.straat-naam
+  font-family: Catamaran
+  font-size: 20px
+  width: 207%
 
 
 .afbeelding-border-desktop
@@ -159,7 +231,6 @@ export default {
 
 .achtergrond-vraag1
   background-color: #FFE758
-  // max-height: 60rem
   height: auto
   padding-bottom: 2rem
   width: 120rem
