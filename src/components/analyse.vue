@@ -14,14 +14,14 @@ export default {
   data() {
     return {
       progress: 0,
-      visibleItems: [false, false, false, false],
+      visibleItems: [false, false, false, false, false],
     };
   },
   mounted() {
     this.startLoading();
     setTimeout(() => {
       this.navigateToNextPage();
-    }, 5500); // Navigeren na 5,5 seconden
+    }, 6500); 
   },
   methods: {
     startLoading() {
@@ -36,6 +36,9 @@ export default {
         if (this.progress >= 40 && !this.visibleItems[1]) this.visibleItems[1] = true;
         if (this.progress >= 60 && !this.visibleItems[2]) this.visibleItems[2] = true;
         if (this.progress >= 80 && !this.visibleItems[3]) this.visibleItems[3] = true;
+        if (this.progress >= 100 && !this.visibleItems[4]) this.visibleItems[4] = true;
+
+
 
         if (this.progress >= 100) {
           clearInterval(interval);
@@ -49,17 +52,18 @@ export default {
 };
 </script>
 
-
 <template>
   <div>
     <!-- navbar -->
     <div class="navbar">
       <div class="container-links">
+        <a href="/airco">
         <div class="container-advies-logo">
           <logo-nl-advies-airco
             :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
             :airconditioning="logoNLAdviesAircoProps.airconditioning" />
         </div>
+        </a>
       </div>
       <div class="container-rechts">
         <div class="container-tekst-rechts">
@@ -84,19 +88,24 @@ export default {
 
           <ul class="lijst-analyse">
             <li
-              v-for="(visible, index) in visibleItems"
+              v-for="(visible, index) in visibleItems.slice(0, 4)"
               :key="index"
               class="lijst-items-analyse"
               :class="{ visible }"
             >
-              <span v-if="index === 0">Jouw woning komt in aanmerking voor airconditioning</span>
-              <span v-if="index === 1">Jij kunt besparen op je gasrekening met airconditioning</span>
-              <span v-if="index === 2">Wij hebben de juiste vakmannen beschikbaar voor jou</span>
-              <span v-if="index === 3">Bespaar tot 40% op de aanschaf</span>
+              <div class="lijst-item-content">
+                <img class="lijst-item-icoon" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/small-icons.svg" alt="">
+                <span v-if="index === 0">Jouw woning komt <span class="groen">in aanmerking</span></span>
+                <span v-if="index === 1">Met airco bespaar je tot <span class="groen"> 65% op je gasrekening</span></span>
+                <span v-if="index === 2">Wij hebben <span class="groen">beschikbare vakmensen</span></span>
+                <span v-if="index === 3">Jij bespaart tot<span class="groen"> 40% op de aanschaf</span></span>
+              </div>
             </li>
           </ul>
 
-          <p class="woningscan">We sturen je nu door om de woningscan af te ronden...</p>
+          <!-- Losse paragraaf buiten de lijst -->
+          <p v-if="visibleItems[4]" class="woningscan">We sturen je nu door om de woningscan af te ronden...</p>
+
         </div>
       </div>
     </div>
@@ -108,6 +117,39 @@ export default {
 
 <style lang="sass">
 @import '../../variables'
+
+.groen
+  color: #5DBA01
+
+.lijst-item-icoon
+  filter: invert(1)
+
+.lijst-item-content
+  display: flex
+  align-items: center
+  gap: 10px
+
+.lijst-item-icoon
+  width: 24px 
+  height: 24px
+
+.lijst-items-analyse
+  font-size: 20px
+  margin: 10px 0
+  opacity: 0
+  transition: opacity 0.5s ease-in-out
+  color: black
+
+.lijst-items-analyse.visible
+  opacity: 1
+
+img .lijst-item-icoon
+  position: relative
+  top: 4%
+
+.lijst-items-analyse img.lijst-item-icoon 
+  position: relative
+  top: 5%
 
 .achtergrond-vraag1
   background-color: #FFE758
@@ -133,7 +175,7 @@ export default {
 .domeinnaam
   font-size: 45px
   margin-top: 4rem
-  color: #000
+  color: #5DBA01
   text-align: center
   font-family: Catamaran
   font-weight: 800
@@ -143,7 +185,7 @@ export default {
   color: #000
   text-align: center
   font-family: Catamaran
-  font-weight: 800  
+  font-weight: 800
 
 .laadbalk-analyse
   margin: 0 auto
@@ -175,6 +217,16 @@ export default {
   font-weight: 700
   margin-left: 30%
 
+
+.lijst-analyse
+  list-style: none
+  padding-left: 0
+
+
+
+
+
+  
 .lijst-items-analyse
   font-size: 20px
   margin: 10px 0

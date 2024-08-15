@@ -80,12 +80,13 @@ export default {
     <!-- navbar -->
     <div class="navbar">
       <div class="container-links">
+        <a href="/airco">
         <div class="container-advies-logo">
           <logo-nl-advies-airco
             :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-            :airconditioning="logoNLAdviesAircoProps.airconditioning"
-          />
+            :airconditioning="logoNLAdviesAircoProps.airconditioning" />
         </div>
+        </a>
       </div>
       <div class="container-rechts">
         <div class="container-tekst-rechts">
@@ -290,6 +291,7 @@ option
   background: #FFF
   font-size: 22px
   margin: 1rem 0
+  font-family: catamaran
 
 
 

@@ -165,6 +165,7 @@ export default {
 
 .postcode-input-2
   border-radius: 5px
+  font-family: Catamaran
 
 
 @media (min-width: 2000px)

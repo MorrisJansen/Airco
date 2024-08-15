@@ -38,7 +38,6 @@ export const campagneStartData = {
     spanText3: "Hou je huis koel met ",
     spanText4: "airconditioning",
     doeDeWoningscanEnCheck: "Doe de woningscan en check:",
-    hoeveelJijKanBesp: "Hoeveel jij kan besparen op airconditioning;",
     deBestBeschikbare: "De best beschikbare offertes voor jouw woning;",
     deJuisteSpecialist: "De juiste specialisten voor gratis & vrijblijvend advies;",
     controleerNuOfWij: "Controleer nu of wij actief zijn in jouw regio:",

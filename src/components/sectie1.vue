@@ -211,6 +211,9 @@ export default {
   white-space: nowrap
   width: fit-content
 
+.controleer-nu-of-wij
+  margin-top: 20px
+
 .frame-14
   align-items: flex-end
   display: inline-flex
@@ -290,7 +293,9 @@ export default {
     position: relative
     left: 575px
 
-
+@media (max-width: 1200px)
+  .tekst-geel-navbar
+    margin-left: 17%
 
 @media (max-width: 1150px)
   .overlap-group

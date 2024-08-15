@@ -1,5 +1,4 @@
 <script>
-import axios from 'axios';
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 import XButton from "./XButton";
 import Frame6 from "./Frame6";
@@ -26,11 +25,14 @@ export default {
     sectie2,
     sectie3,
     sectie4,
+
   },
   data() {
     return {
       postcode: '',
-      errorMessage: ''
+      errorMessage: '',
+      isModalVisible: false, 
+      modalContent: '',
     };
   },
   props: [
@@ -116,7 +118,6 @@ export default {
             localStorage.removeItem('selectedStreet');
           }
           this.$router.push('/vraag1').then(() => {
-            // window.location.reload(); 
           });
         }
       } else {
@@ -128,7 +129,24 @@ export default {
         event.preventDefault();
         this.handlePostcode();
       }
-    }
+    },
+    async openModal(url) {
+      try {
+        const response = await fetch(url);
+        const content = await response.text(); // Haal de content op als tekst
+        this.modalContent = content;
+        this.isModalVisible = true;
+      } catch (error) {
+        console.error('Error fetching content:', error);
+        this.modalContent = 'Sorry, de inhoud kon niet worden geladen.';
+        this.isModalVisible = true;
+      }
+    },
+
+    closeModal() {
+      this.isModalVisible = false;
+      this.modalContent = '';
+    },
   },
   mounted() {
     window.addEventListener('keydown', this.handleKeyDown);
@@ -397,19 +415,28 @@ export default {
     </div>
   </div>
   </div>
+
+  
       
-      <p class="nederlandsadviesn valign-text-bottom">
-        <a  class="footer-linkjes" href="nederlandsadvies.nl">
-          © Nederlandsadvies.nl
-        </a>
-        <a  class="footer-linkjes" href="https://leadgen.republish.nl/api/content/solvari-voorwaarden">
-          | Algemene voorwaarden
-        </a>
-        <a  class="footer-linkjes" href="https://leadgen.republish.nl/api/content/solvari-privacy">
-          | Privacy policy
-        </a>
-        </p>
+  <p class="nederlandsadviesn valign-text-bottom">
+    <a href="https://nederlandsadvies.nl" target="_blank" class="footer-linkjes">
+      © Nederlandsadvies.nl
+    </a>
+    <a @click.prevent="openModal('https://leadgen.republish.nl/api/content/solvari-voorwaarden')" class="footer-linkjes">
+      | Algemene voorwaarden
+    </a>
+    <a @click.prevent="openModal('https://leadgen.republish.nl/api/content/solvari-privacy')" class="footer-linkjes">
+      | Privacy policy
+    </a>
+  </p>
+
+  <!-- Modal component -->
+  <div v-if="isModalVisible" class="modal-overlay" @click.self="closeModal">
+    <div class="modal-content">
+      <button class="close-btn" @click="closeModal">X</button>
+      <div v-html="modalContent"></div>
     </div>
+  </div>    </div>
   </div>
 </template>
 
@@ -418,6 +445,37 @@ export default {
 <style lang="sass">
 @import '../../variables'
 
+
+
+.modal-overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0, 0, 0, 0.5)
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 1000
+  
+.modal-content
+  background: #fff
+  padding: 1rem
+  border-radius: 8px
+  position: relative
+  max-width: 90vw
+  max-height: 80vh
+  overflow: auto
+  
+.close-btn
+  position: absolute
+  top: 0.5rem
+  right: 0.5rem
+  border: none
+  background: transparent
+  font-size: 1.5rem
+  cursor: pointer
 
 .footer-linkjes
   text-decoration: none

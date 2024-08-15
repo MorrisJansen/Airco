@@ -226,12 +226,18 @@ export default {
   <div>
     <div class="navbar">
       <div class="container-links">
+        <a href="/airco">
+
         <div class="container-advies-logo">
           <logo-nl-advies-airco
             :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
             :airconditioning="logoNLAdviesAircoProps.airconditioning" />
         </div>
+         </a>
+
       </div>
+
+
       <div class="container-rechts">
         <div class="container-tekst-rechts">
           <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
@@ -243,16 +249,37 @@ export default {
     <div class="formulier-achtergrond-vraag1">
       <div class="formulier-overkoepelende-container">
         <div class="formulier-formulier-container">
-          <p class="titel-formulier">Bedankt, start nu ook met besparen!</p>
+          <p class="titel-formulier">Bedankt!</p>
           <p class="subtitel-formulier">
             Ontvang gratis en vrijblijvend 4<br>
-            airconditioning offertes met persoonlijk<br>
-            advies van de beste partners/bedrijven uit jouw regio
+            superscherpe offertes met persoonlijk<br>
+            advies van de beste lokale vakmensen
           </p>
           <p class="mensen-gingen-voor">Al meer dan 1,2 miljoen mensen ging je voor.</p>
+
+
+
+          <div class="" style="display: flex; justify-content: center; font-size: 22px; font-family: catamaran;">
+            <label></label>
+        
+            <div class="radio-group">
+              <input class="input-geslacht-man" v-model="formData.gender" type="radio"  id="input-geslacht-man"  value="male">
+              <label for="input-geslacht-man">Man</label>
+              
+              <input class="input-geslacht-vrouw" v-model="formData.gender"  type="radio"  id="input-geslacht-vrouw" value="female">
+              <label for="input-geslacht-vrouw">Vrouw</label>
+            </div>
+        
+            <span v-if="errors.gender" class="error-message">{{ errors.gender }}</span>
+          </div>
           <div class="formulier-form-container">
             <form @submit.prevent="afronden">
               <div class="formulier-input-group">
+
+                
+
+
+
                 <div class="formulier-input-item">
                   <label for="input-voornaam"></label>
                   <input class="input-voornaam" v-model="formData.firstname" type="text" id="input-voornaam" placeholder="Voornaam">
@@ -347,7 +374,7 @@ export default {
     font-style: normal
     font-weight: 800
     line-height: 130%
-    margin-top: 2rem
+    margin-top: 4rem
   
 
   .subtitel-formulier 
@@ -374,8 +401,31 @@ export default {
     font-weight: 600
     line-height: normal
     margin-top: 1rem
-    margin-bottom: 0rem
-  
+    margin-bottom: 1rem
+    
+  #input-geslacht-man + label
+    position: relative
+    right: 180px
+
+  .input-geslacht-vrouw + label
+    position: relative
+    left: 30px
+
+  .input-geslacht-man[type="radio"] 
+    position: relative
+    right: 200px
+    accent-color: #ffcd02
+    scale: 1.5
+
+  .input-geslacht-vrouw[type="radio"]
+    position: relative
+    left: 20px
+    accent-color: #ffcd02
+    scale: 1.5
+
+
+
+
 
   .formulier-form-container 
     max-width: 600px
@@ -410,6 +460,7 @@ export default {
     border: 1px solid #ccc
     border-radius: 4px
     font-size: 18px
+    font-family: catamaran
   
 
   .input-voornaam, .input-achternaam, .input-telefoon, .input-email
