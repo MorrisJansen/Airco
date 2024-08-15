@@ -20,7 +20,6 @@ export default {
       totalPages: 3,
       selectedOption: '',
       weetIkNiet: false,
-      // Opties zijn alleen relevant voor 'Weet ik niet' checkbox
       opties: [
         { id: 5121, label: '1' },
         { id: 5124, label: '2' },
@@ -34,7 +33,7 @@ export default {
       let antwoordId;
 
       if (this.weetIkNiet) {
-        antwoordId = 5130; // ID voor "Weet ik niet"
+        antwoordId = 5130;
       } else if (this.selectedOption) {
         const numberValue = parseInt(this.selectedOption, 10);
 
@@ -54,7 +53,19 @@ export default {
       } else {
         alert("Selecteer een optie of vink 'Weet ik niet' aan voordat je doorgaat.");
       }
-    }
+    },
+    handleEnter3(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        this.navigateToNextPage();
+      }
+  }  
+},
+ mounted() {
+    window.addEventListener('keydown', this.handleEnter3);
+  },
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.handleEnter3);
   }
 };
 </script>

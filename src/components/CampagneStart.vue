@@ -116,7 +116,7 @@ export default {
             localStorage.removeItem('selectedStreet');
           }
           this.$router.push('/vraag1').then(() => {
-            window.location.reload();
+            // window.location.reload(); 
           });
         }
       } else {

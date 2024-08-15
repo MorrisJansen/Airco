@@ -28,14 +28,17 @@ export default {
     };
   },
   computed: {
-    fullAddress() {
-      if (this.formData.house_number && (this.streets.length === 1 || this.formData.street)) {
-        const streetName = this.streets.length === 1 ? this.streets[0] : this.formData.street;
-        return `${streetName} ${this.formData.house_number}, ${this.formData.zip} ${this.formData.city}`;
-      }
-      return '';
+  fullAddress() {
+    if (this.error) {
+      return this.error; // Retourneer de foutmelding als er een fout is
     }
-  },
+    if (this.formData.house_number && (this.streets.length === 1 || this.formData.street)) {
+      const streetName = this.streets.length === 1 ? this.streets[0] : this.formData.street;
+      return `${streetName} ${this.formData.house_number}, ${this.formData.zip} ${this.formData.city}`;
+    }
+    return '';
+  }
+},
   methods: {
     async validateAddress() {
         const authKey = 'P6JTU52clKYjZca8'; // Vervang dit door je eigen API-sleutel
@@ -49,7 +52,7 @@ export default {
             }
             const data = await response.json();
             if (data.length === 0) {
-                this.error = 'Het huisnummer komt niet overeen met de opgegeven straat/postcode/stad.';
+                this.error = 'Het huisnummer komt niet overeen met de opgegeven postcode.';
                 this.showResponse = false;
                 return false;
             }
@@ -61,7 +64,7 @@ export default {
             this.municipality = addressData.municipality || '';
             this.province = addressData.province || '';
 
-            this.error = '';
+            this.error = ''; // Wis de foutmelding als alles goed is
             this.showResponse = true;
 
             // Voeg het adres toe aan antwoorden
@@ -111,6 +114,12 @@ export default {
         if (this.streets.length === 1) {
             this.formData.street = this.streets[0];
         }
+    },
+    handleEnter(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        this.navigateToNextPage();
+      }
     }
 },
   watch: {
@@ -124,9 +133,18 @@ export default {
     if (this.formData.zip) {
       this.updateAddress();
     }
-  }
+    window.addEventListener('keydown', this.handleEnter);
+  },
+  beforeDestroy() {
+  window.removeEventListener('keydown', this.handleEnter);
+}
+  
 };
 </script>
+
+mounted() {
+},
+
 
 
 <template>
@@ -179,7 +197,7 @@ export default {
                 </div>
                 <div class="input-container full-width">
                   <label class="straat-label" for="straat-naam"></label>
-                  <p id="straat-naam" class="straat-naam">
+                  <p id="straat-naam" :class="{ 'error-text': error, 'straat-naam': !error }">
                     {{ fullAddress }}
                   </p>
                 </div>
@@ -205,11 +223,37 @@ export default {
 
 
 
-
-
   
   <style lang="sass">
   @import '../../variables'
+
+
+
+
+  // .error-text
+  //   color: red
+  //   font-size: 18px
+  //   margin-top: 0.5rem
+  //   margin-left: 108%
+  //   width: 14vw
+  //   font-family: Catamaran
+
+
+  .error-text
+    color: red
+    font-size: 18px
+    margin-top: 0.5rem
+    margin-left: 0%
+    width: 27vw
+    font-family: Catamaran
+
+
+ .straat-naam 
+   font-family: Catamaran
+   font-size: 20px
+   width: 207%
+   color: black
+  
 
 
 

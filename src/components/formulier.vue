@@ -1,71 +1,3 @@
-<template>
-  <div>
-    <div class="navbar">
-      <div class="container-links">
-        <div class="container-advies-logo">
-          <logo-nl-advies-airco
-            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-            :airconditioning="logoNLAdviesAircoProps.airconditioning" />
-        </div>
-      </div>
-      <div class="container-rechts">
-        <div class="container-tekst-rechts">
-          <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
-          <span class="tekst-geel-navbar">{{ spanText2 }}</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="formulier-achtergrond-vraag1">
-      <div class="formulier-overkoepelende-container">
-        <div class="formulier-formulier-container">
-          <p class="titel-formulier">Bedankt, start nu ook met besparen!</p>
-          <p class="subtitel-formulier">
-            Ontvang gratis en vrijblijvend 4<br>
-            airconditioning offertes met persoonlijk<br>
-            advies van de beste partners/bedrijven uit jouw regio
-          </p>
-          <p class="mensen-gingen-voor">Al meer dan 1,2 miljoen mensen ging je voor.</p>
-          <div class="formulier-form-container">
-            <form @submit.prevent="afronden">
-              <div class="formulier-input-group">
-                <div class="formulier-input-item">
-                  <label for="input-voornaam"></label>
-                  <input class="input-voornaam" v-model="formData.firstname" type="text" id="input-voornaam" placeholder="Voornaam">
-                  <span v-if="errors.firstname" class="error-message">{{ errors.firstname }}</span>
-                </div>
-                <div class="formulier-input-item">
-                  <label for="input-achternaam"></label>
-                  <input class="input-achternaam" v-model="formData.lastname" type="text" id="input-achternaam" placeholder="Achternaam">
-                  <span v-if="errors.lastname" class="error-message">{{ errors.lastname }}</span>
-                </div>
-              </div>
-              <div class="formulier-input-group">
-                <div class="formulier-input-item">
-                  <label for="input-telefoon"></label>
-                  <input class="input-telefoon" v-model="formData.phone_number" type="text" id="input-telefoon" placeholder="Telefoonnummer">
-                  <span v-if="errors.phone_number" class="error-message">{{ errors.phone_number }}</span>
-                </div>
-                <div class="formulier-input-item">
-                  <label for="input-email"></label>
-                  <input class="input-email" v-model="formData.email" type="text" id="input-email" placeholder="E-mailadres">
-                  <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
-                </div>
-              </div>
-              <div class="formulier-volgende-formulier">
-                <button class="formulier-volgende-button-formulier" type="submit">Aanvraag afronden</button>
-              </div>
-            </form>
-          </div>
-          <p class="formulier-footer-formulier">Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,<br>persoonlijk advies en offertes van onze partners.<br>Dit is volledig vrijblijvend, je zit dus nergens aan vast.</p>
-        </div>
-      </div>
-    </div>
-    <p class="formulier-footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
-  </div>
-</template>
-
-
 <script>
 import { getAntwoorden } from "../antwoorden";
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
@@ -188,7 +120,7 @@ export default {
       }
 
       this.errors.phone_number = '';
-      this.formData.phone_number = phoneNumber; // Update the phone number to the formatted version
+      this.formData.phone_number = phoneNumber;
       return true;
     },
     validateForm() {
@@ -273,10 +205,92 @@ export default {
       .catch(error => {
         console.error('Error:', error);
       });
-    }
+    },
+    handleEnterform(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault();
+        this.afronden();
+      }
+  },
+  },
+  mounted() {
+    window.addEventListener('keydown', this.handleEnterform);
+  },
+  beforeDestroy() {
+    window.removeEventListener('keydown', this.handleEnterform);
   }
 };
 </script>
+
+<template>
+  <div>
+    <div class="navbar">
+      <div class="container-links">
+        <div class="container-advies-logo">
+          <logo-nl-advies-airco
+            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
+            :airconditioning="logoNLAdviesAircoProps.airconditioning" />
+        </div>
+      </div>
+      <div class="container-rechts">
+        <div class="container-tekst-rechts">
+          <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
+          <span class="tekst-geel-navbar">{{ spanText2 }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="formulier-achtergrond-vraag1">
+      <div class="formulier-overkoepelende-container">
+        <div class="formulier-formulier-container">
+          <p class="titel-formulier">Bedankt, start nu ook met besparen!</p>
+          <p class="subtitel-formulier">
+            Ontvang gratis en vrijblijvend 4<br>
+            airconditioning offertes met persoonlijk<br>
+            advies van de beste partners/bedrijven uit jouw regio
+          </p>
+          <p class="mensen-gingen-voor">Al meer dan 1,2 miljoen mensen ging je voor.</p>
+          <div class="formulier-form-container">
+            <form @submit.prevent="afronden">
+              <div class="formulier-input-group">
+                <div class="formulier-input-item">
+                  <label for="input-voornaam"></label>
+                  <input class="input-voornaam" v-model="formData.firstname" type="text" id="input-voornaam" placeholder="Voornaam">
+                  <span v-if="errors.firstname" class="error-message">{{ errors.firstname }}</span>
+                </div>
+                <div class="formulier-input-item">
+                  <label for="input-achternaam"></label>
+                  <input class="input-achternaam" v-model="formData.lastname" type="text" id="input-achternaam" placeholder="Achternaam">
+                  <span v-if="errors.lastname" class="error-message">{{ errors.lastname }}</span>
+                </div>
+              </div>
+              <div class="formulier-input-group">
+                <div class="formulier-input-item">
+                  <label for="input-telefoon"></label>
+                  <input class="input-telefoon" v-model="formData.phone_number" type="text" id="input-telefoon" placeholder="Telefoonnummer">
+                  <span v-if="errors.phone_number" class="error-message">{{ errors.phone_number }}</span>
+                </div>
+                <div class="formulier-input-item">
+                  <label for="input-email"></label>
+                  <input class="input-email" v-model="formData.email" type="text" id="input-email" placeholder="E-mailadres">
+                  <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
+                </div>
+              </div>
+              <div class="formulier-volgende-formulier">
+                <button class="formulier-volgende-button-formulier" type="submit">Aanvraag afronden</button>
+              </div>
+            </form>
+          </div>
+          <p class="formulier-footer-formulier">Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,<br>persoonlijk advies en offertes van onze partners.<br>Dit is volledig vrijblijvend, je zit dus nergens aan vast.</p>
+        </div>
+      </div>
+    </div>
+    <p class="formulier-footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
+  </div>
+</template>
+
+
+
 
 
 
@@ -362,8 +376,6 @@ export default {
     margin-top: 1rem
     margin-bottom: 0rem
   
-
-  // Dit is voor het form zel
 
   .formulier-form-container 
     max-width: 600px
@@ -460,7 +472,6 @@ export default {
     line-height: normal
   
 
-  // Responsive Desig
   @media (max-width: 800px) 
     .formulier-achtergrond-vraag1 
       zoom: 100%
