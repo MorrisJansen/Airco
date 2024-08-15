@@ -1,148 +1,124 @@
 <script>
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 
-
-
 export default {
   name: "analyse",
   components: {
     LogoNlAdviesAirco,
-
   },
-  props: [
-    "spanText1",
-    "spanText2",
-    "logoNLAdviesAircoProps",  
-],
+  props: {
+    spanText1: String,
+    spanText2: String,
+    logoNLAdviesAircoProps: Object,
+  },
+  data() {
+    return {
+      progress: 0,
+      visibleItems: [false, false, false, false],
+    };
+  },
+  mounted() {
+    this.startLoading();
+  },
   methods: {
+    startLoading() {
+      const duration = 5000;
+      const intervalTime = 50;
+      const increment = (100 / (duration / intervalTime));
+
+      const interval = setInterval(() => {
+        this.progress += increment;
+        
+        if (this.progress >= 20 && !this.visibleItems[0]) this.visibleItems[0] = true;
+        if (this.progress >= 40 && !this.visibleItems[1]) this.visibleItems[1] = true;
+        if (this.progress >= 60 && !this.visibleItems[2]) this.visibleItems[2] = true;
+        if (this.progress >= 80 && !this.visibleItems[3]) this.visibleItems[3] = true;
+
+        if (this.progress >= 100) {
+          clearInterval(interval);
+          // this.navigateToNextPage();
+        }
+      }, intervalTime);
+    },
     navigateToNextPage() {
-        this.$router.push('./analyse');
-    }
-  }
+      this.$router.push('/formulier');
+    },
+  },
 };
 </script>
 
 
-
 <template>
-    <div>
-
+  <div>
     <!-- navbar -->
     <div class="navbar">
       <div class="container-links">
         <div class="container-advies-logo">
           <logo-nl-advies-airco
-          :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-          :airconditioning="logoNLAdviesAircoProps.airconditioning" />
+            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
+            :airconditioning="logoNLAdviesAircoProps.airconditioning" />
         </div>
       </div>
-        <div class="container-rechts">
-          <div class="container-tekst-rechts">
-            <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
-            <span class="tekst-geel-navbar">{{ spanText2 }}</span>
-          </div>
+      <div class="container-rechts">
+        <div class="container-tekst-rechts">
+          <span class="tekst-zwart-navbar">{{ spanText1 }}</span>
+          <span class="tekst-geel-navbar">{{ spanText2 }}</span>
         </div>
+      </div>
     </div>
 
+    <div class="achtergrond-vraag1">
+      <div class="overkoepelende-container">
+        <div class="witte-container">
+          <p class="domeinnaam">Nederlandsadvies.nl</p>
+          <p class="analyseert-gegevens">analyseert nu je gegevens...</p>
 
+          <!-- Laadbalk -->
+          <div class="laadbalk-analyse">
+            <div class="geladen-gedeelte-vraag-analyse" :style="{ width: progress + '%' }">
+              <div class="procent">{{ Math.round(progress) }}%</div>
+            </div>
+          </div>
 
-        <div class="achtergrond-vraag1">
-            <div class="overkoepelende-container">
+          <ul class="lijst-analyse">
+            <li
+              v-for="(visible, index) in visibleItems"
+              :key="index"
+              class="lijst-items-analyse"
+              :class="{ visible }"
+            >
+              <span v-if="index === 0">Jouw woning komt in aanmerking voor airconditioning</span>
+              <span v-if="index === 1">Jij kunt besparen op je gasrekening met airconditioning</span>
+              <span v-if="index === 2">Wij hebben de juiste vakmannen beschikbaar voor jou</span>
+              <span v-if="index === 3">Bespaar tot 40% op de aanschaf</span>
+            </li>
+          </ul>
 
-
-              <div class="witte-container">
-                <p class="domeinnaam">Nederlandsadvies.nl</p>
-                <p class="analyseert-gegevens">analyseert nu je gegevens...</p>
-
-
-
-
-                <div class="laadbalk-analyse">
-                  <div class="geladen-gedeelte-vraag-analyse">
-                      <div class="procent">43%</div>
-                  </div>
-              </div>
-
-
-
-
-
-              <ul class="lijst-analyse">
-                <li class="lijst-items-analyse">Jouw woning komt in aanmerking voor airconditioning</li>
-                <li class="lijst-items-analyse">Jij kunt besparen op je gasrekening met airconditioning</li>
-                <li class="lijst-items-analyse">Wij hebben de juiste vakmannen beschikbaar voor jou</li>
-                <li class="lijst-items-analyse">Bespaar tot 40% op de aanschaf</li>
-              </ul>
-
-
-
-
-
-              <p class='woningscan'>We sturen je nu door om de woningscan af te ronden...</p>
-
-
-
-              </div>
-
-
-
-
-
-
-
-                
-                   
-
-
-           </div>
+          <p class="woningscan">We sturen je nu door om de woningscan af te ronden...</p>
         </div>
+      </div>
+    </div>
+
+    <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
+  </div>
+</template>
 
 
-        <p class="footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
-
-
-
-
-
-
-</div>
-
-
-
-  </template>
-  
-
-  
-  <style lang="sass">
-  @import '../../variables'
-
-
-
-
-
-
-
-
-
-
-
-
+<style lang="sass">
+@import '../../variables'
 
 .achtergrond-vraag1
   background-color: #FFE758
-  // max-height: 60rem
   height: auto
   padding-bottom: 2rem
   width: 120rem
   max-width: 100vw
-
 
 .overkoepelende-container
   display: flex
   flex-direction: column
   align-items: center
   gap: 6rem
-
 
 .witte-container
   width: 68.125rem
@@ -151,34 +127,21 @@ export default {
   border-radius: 1.875rem
   background: #FFF
   margin-top: 4rem
-  
-
 
 .domeinnaam
   font-size: 45px
   margin-top: 4rem
   color: #000
   text-align: center
-  leading-trim: both
-  text-edge: cap
   font-family: Catamaran
-  font-size: 2.8125rem
-  font-style: normal
   font-weight: 800
-  line-height: 130%
 
 .analyseert-gegevens
   font-size: 45px
   color: #000
   text-align: center
   font-family: Catamaran
-  font-size: 2.8125rem
-  font-style: normal
-  font-weight: 800
-  line-height: 130%  
-
-
-
+  font-weight: 800  
 
 .laadbalk-analyse
   margin: 0 auto
@@ -192,35 +155,33 @@ export default {
   height: 1.5rem
   border-radius: 2.5rem
   background-color: #5DBA01
-  width: 20rem
+  display: flex
+  align-items: center
+  justify-content: center
 
 .procent
   color: #FFF
   font-family: Catamaran
   font-size: 0.9375rem
-  font-style: normal
   font-weight: 600
-  line-height: normal
-  display: flex
-  justify-content: center
-
-
 
 .lijst-analyse
   display: block
   padding-top: 3rem
-  //position: relative
-  //left: 30%
   list-style: inside
   font-family: Catamaran, sans-serif
   font-weight: 700
   margin-left: 30%
 
-
 .lijst-items-analyse
   font-size: 20px
   margin: 10px 0
+  opacity: 0
+  transition: opacity 0.5s ease-in-out
+  color: black
 
+.lijst-items-analyse.visible
+  opacity: 1
 
 .woningscan
   margin-top: 4rem
@@ -228,7 +189,6 @@ export default {
   font-family: Catamaran
   font-weight: 700
   text-align: center
-
 
 .footer
   display: flex
@@ -238,17 +198,10 @@ export default {
   color: #000
   font-family: Catamaran
   font-size: 1rem
-  font-style: normal
   font-weight: 400
-  line-height: normal
-
-
-
-
+  text-align: center
 
 @media (min-width: 500px)
-
-
 
 @media (max-width: 500px)
   .overkoepelende-container
@@ -267,11 +220,31 @@ export default {
     background: #FFF
     zoom: 290%
 
+
+  .witte-container
+    height: 80rem
+    width: 92rem
+
+  .domeinnaam
+    font-size: 115px
+
+  .analyseert-gegevens
+    font-size: 70px
+
+  .laadbalk-analyse
+    zoom: 180%
+
+  .lijst-analyse
+    margin-left: 7%
+    zoom: 250%
+
+  .woningscan
+    margin-top: 7rem
+    font-size: 50px
+
   .geladen-gedeelte
     max-width: 40%
 
   .footer
     text-align: center
-
-
-  </style>
+</style>
