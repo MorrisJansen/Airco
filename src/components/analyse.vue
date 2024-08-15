@@ -19,6 +19,9 @@ export default {
   },
   mounted() {
     this.startLoading();
+    setTimeout(() => {
+      this.navigateToNextPage();
+    }, 5500); // Navigeren na 5,5 seconden
   },
   methods: {
     startLoading() {
@@ -36,14 +39,11 @@ export default {
 
         if (this.progress >= 100) {
           clearInterval(interval);
-          this.navigateToNextPage();
-          console.log('word dit daarna getriggerd???');
         }
       }, intervalTime);
     },
     navigateToNextPage() {
       this.$router.push('/formulier');
-      console.log('word dit getriggerd?');
     },
   },
 };
