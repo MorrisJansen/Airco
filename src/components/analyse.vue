@@ -36,7 +36,7 @@ export default {
 
         if (this.progress >= 100) {
           clearInterval(interval);
-          // this.navigateToNextPage();
+          this.navigateToNextPage();
         }
       }, intervalTime);
     },
