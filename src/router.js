@@ -52,11 +52,6 @@ export default new Router({
       props: {...campagneStartData},
     },
     {
-      path: '/postcode',
-      component: postcode,
-      props: {...campagneStartData},
-    },
-    {
       path: '*',
       redirect: '/'
     }

@@ -37,11 +37,13 @@ export default {
         if (this.progress >= 100) {
           clearInterval(interval);
           this.navigateToNextPage();
+          console.log('word dit daarna getriggerd???');
         }
       }, intervalTime);
     },
     navigateToNextPage() {
       this.$router.push('/formulier');
+      console.log('word dit getriggerd?');
     },
   },
 };
