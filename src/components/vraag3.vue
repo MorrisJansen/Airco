@@ -48,7 +48,6 @@ export default {
 
       if (antwoordId) {
         addAntwoord('vraag3', { id: antwoordId });
-        console.log(`Selected option for vraag3: ${antwoordId}`);
         this.$router.push('./analyse');
       } else {
         alert("Selecteer een optie of vink 'Weet ik niet' aan voordat je doorgaat.");

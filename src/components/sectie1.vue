@@ -17,22 +17,21 @@ export default {
   data() {
     return {
       postcode: '',
-      errorMessage: '' // Dit zal de foutmelding opslaan
+      errorMessage: '' 
     };
   },
   methods: {
     validatePostcode() {
-      console.log('Validating postcode:', this.postcode);  // Controleer of de methode wordt aangeroepen
-      const pattern = /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/; // Simpele postcode-validatie
+      const pattern = /^[1-9][0-9]{3}\s?[a-zA-Z]{2}$/; 
       if (!pattern.test(this.postcode)) {
-        this.errorMessage = 'Ongeldige postcode. Voer een geldige postcode in.'; // Foutmelding instellen
+        this.errorMessage = 'Ongeldige postcode. Voer een geldige postcode in.';
       } else {
-        this.errorMessage = ''; // Foutmelding wissen als de postcode geldig is
+        this.errorMessage = ''; 
       }
     },
     handleKeydown(event) {
       if (event.key === 'Enter') {
-        this.validatePostcode(); // Valideer de postcode wanneer op Enter wordt gedrukt
+        this.validatePostcode();
       }
     }
   }

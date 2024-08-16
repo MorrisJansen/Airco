@@ -14,6 +14,7 @@ export default {
         lastname: '',
         email: '',
         phone_number: '',
+        gender: '', // Zorg ervoor dat dit correct wordt bijgehouden
         street: localStorage.getItem('selectedStreet') || '',
         house_number: localStorage.getItem('huisnummer') || '',
         city: localStorage.getItem('city') || '',
@@ -24,6 +25,7 @@ export default {
         lastname: '',
         email: '',
         phone_number: '',
+        gender: '', // Voeg een foutbericht toe voor gender indien nodig
       }
     };
   },
@@ -35,7 +37,6 @@ export default {
   ],
   mounted() {
     const antwoordenData = getAntwoorden();
-    console.log('Ophalen antwoorden bij mount:', antwoordenData);
     if (antwoordenData && antwoordenData.vraag1) {
       this.formData.street = antwoordenData.vraag1.street || this.formData.street;
       this.formData.house_number = antwoordenData.vraag1.house_number || this.formData.house_number;
@@ -43,8 +44,15 @@ export default {
     }
   },
   methods: {
+    validateGender() {
+      if (!this.formData.gender) {
+        this.errors.gender = 'Selecteer een geslacht.';
+        return false;
+      }
+      this.errors.gender = '';
+      return true;
+    },
     validateFirstname() {
-      console.log("Validating voornaam:", this.formData.firstname);
       const regex = /^[a-zA-Z\s.,'-]{1,}$/;
       if (!this.formData.firstname.match(regex)) {
         this.errors.firstname = 'Ongeldige voornaam. Gebruik alleen letters, spaties en leestekens.';
@@ -54,7 +62,6 @@ export default {
       return true;
     },
     validateLastname() {
-      console.log("Validating achternaam:", this.formData.lastname);
       const regex = /^[a-zA-Z\s.,'-]{1,}$/;
       if (!this.formData.lastname.match(regex)) {
         this.errors.lastname = 'Ongeldige achternaam. Gebruik alleen letters, spaties en leestekens.';
@@ -64,7 +71,6 @@ export default {
       return true;
     },
     validateEmail() {
-      console.log("Validating email:", this.formData.email);
       const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       const containsApostrophe = /'/;
 
@@ -110,7 +116,6 @@ export default {
       return phoneNumber;
     },
     validatePhoneNumber() {
-      console.log("Validating telefoonnummer:", this.formData.phone_number);
       const phoneNumber = this.validateAndFormatPhoneNumber(this.formData.phone_number);
 
       if (!phoneNumber) {
@@ -124,12 +129,13 @@ export default {
       return true;
     },
     validateForm() {
+      const isGenderValid = this.validateGender();
       const isFirstnameValid = this.validateFirstname();
       const isLastnameValid = this.validateLastname();
       const isEmailValid = this.validateEmail();
       const isPhoneNumberValid = this.validatePhoneNumber();
 
-      return isFirstnameValid && isLastnameValid && isEmailValid && isPhoneNumberValid;
+      return isGenderValid && isFirstnameValid && isLastnameValid && isEmailValid && isPhoneNumberValid;
     },
     afronden() {
       if (!this.validateForm()) {
@@ -137,13 +143,14 @@ export default {
         return;
       }
 
+      console.log('Geselecteerd geslacht:', this.formData.gender); // Debugging
+
       const username = '185';
       const password = 'ab8221d4a3170d89542880459abf79817ae367c2';
       const authHeader = 'Basic ' + btoa(username + ':' + password);
       const apiUrl = 'https://leadgen.republish.nl/api/sponsors/2394/leads';
 
       const antwoordenData = getAntwoorden();
-      console.log('Antwoorden voor afronden:', antwoordenData);
 
       const answers = [
         5109, 
@@ -162,7 +169,7 @@ export default {
         firstname: this.formData.firstname,
         lastname: this.formData.lastname,
         email: this.formData.email,
-        gender: 'male',
+        gender: this.formData.gender,
         house_number: this.formData.house_number,
         street: this.formData.street,
         city: this.formData.city,
@@ -171,10 +178,7 @@ export default {
         answers: answers
       };
 
-      console.log('Preparing to send the following data to the API:');
-      console.log('API URL:', apiUrl);
-      console.log('Authorization Header:', authHeader);
-      console.log('Lead Data:', leadData);
+      console.log('Te versturen data:', leadData); // Debugging
 
       fetch(apiUrl, {
         method: 'POST',
@@ -185,33 +189,19 @@ export default {
         body: JSON.stringify(leadData)
       })
       .then(response => {
-        console.log('Response Status:', response.status);
-        return response.json(); 
+        if (response.status === 201) {
+          this.$router.push('/bedankt');
+        } else {
+          return response.json();
+        }
       })
       .then(responseData => {
-        console.log('API Response Data:', responseData);
-
-        if (responseData.status === 201) {
-          console.log('Lead successfully created.');
-          this.$router.push('./einde');
-        } else if (responseData.status === 400) {
-          console.log('Bad request. Please check the parameters.');
-        } else if (responseData.status === 401) {
-          console.log('Unauthorized. Please check your credentials.');
-        } else {
-          console.log('Unexpected error:', responseData.status);
-        }
+        console.log('API response:', responseData); // Debugging
       })
       .catch(error => {
         console.error('Error:', error);
       });
     },
-    handleEnterform(event) {
-      if (event.key === 'Enter') {
-        event.preventDefault();
-        this.afronden();
-      }
-  },
   },
   mounted() {
     window.addEventListener('keydown', this.handleEnterform);
@@ -227,16 +217,13 @@ export default {
     <div class="navbar">
       <div class="container-links">
         <a href="/airco">
-
-        <div class="container-advies-logo">
-          <logo-nl-advies-airco
-            :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
-            :airconditioning="logoNLAdviesAircoProps.airconditioning" />
-        </div>
-         </a>
-
+          <div class="container-advies-logo">
+            <logo-nl-advies-airco
+              :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
+              :airconditioning="logoNLAdviesAircoProps.airconditioning" />
+          </div>
+        </a>
       </div>
-
 
       <div class="container-rechts">
         <div class="container-tekst-rechts">
@@ -257,61 +244,85 @@ export default {
           </p>
           <p class="mensen-gingen-voor">Al meer dan 1,2 miljoen mensen ging je voor.</p>
 
+          <div class="radio-group" style="display: flex; justify-content: center; font-size: 22px; font-family: catamaran;">
+            <input
+              class="input-geslacht-man"
+              v-model="formData.gender"
+              type="radio"
+              id="input-geslacht-man"
+              value="male" />
+            <label for="input-geslacht-man">Man</label>
 
-
-          <div class="" style="display: flex; justify-content: center; font-size: 22px; font-family: catamaran;">
-            <label></label>
-        
-            <div class="radio-group">
-              <input class="input-geslacht-man" v-model="formData.gender" type="radio"  id="input-geslacht-man"  value="male">
-              <label for="input-geslacht-man">Man</label>
-              
-              <input class="input-geslacht-vrouw" v-model="formData.gender"  type="radio"  id="input-geslacht-vrouw" value="female">
-              <label for="input-geslacht-vrouw">Vrouw</label>
-            </div>
-        
-            <span v-if="errors.gender" class="error-message">{{ errors.gender }}</span>
+            <input
+              class="input-geslacht-vrouw"
+              v-model="formData.gender"
+              type="radio"
+              id="input-geslacht-vrouw"
+              value="female" />
+            <label for="input-geslacht-vrouw">Vrouw</label>
           </div>
+
+          <span v-if="errors.gender" class="error-message">{{ errors.gender }}</span>
+
           <div class="formulier-form-container">
             <form @submit.prevent="afronden">
               <div class="formulier-input-group">
-
-                
-
-
-
                 <div class="formulier-input-item">
                   <label for="input-voornaam"></label>
-                  <input class="input-voornaam" v-model="formData.firstname" type="text" id="input-voornaam" placeholder="Voornaam">
+                  <input
+                    class="input-voornaam"
+                    v-model="formData.firstname"
+                    type="text"
+                    id="input-voornaam"
+                    placeholder="Voornaam" />
                   <span v-if="errors.firstname" class="error-message">{{ errors.firstname }}</span>
                 </div>
                 <div class="formulier-input-item">
                   <label for="input-achternaam"></label>
-                  <input class="input-achternaam" v-model="formData.lastname" type="text" id="input-achternaam" placeholder="Achternaam">
+                  <input
+                    class="input-achternaam"
+                    v-model="formData.lastname"
+                    type="text"
+                    id="input-achternaam"
+                    placeholder="Achternaam" />
                   <span v-if="errors.lastname" class="error-message">{{ errors.lastname }}</span>
                 </div>
               </div>
+
               <div class="formulier-input-group">
                 <div class="formulier-input-item">
                   <label for="input-telefoon"></label>
-                  <input class="input-telefoon" v-model="formData.phone_number" type="text" id="input-telefoon" placeholder="Telefoonnummer">
+                  <input
+                    class="input-telefoon"
+                    v-model="formData.phone_number"
+                    type="text"
+                    id="input-telefoon"
+                    placeholder="Telefoonnummer" />
                   <span v-if="errors.phone_number" class="error-message">{{ errors.phone_number }}</span>
                 </div>
                 <div class="formulier-input-item">
                   <label for="input-email"></label>
-                  <input class="input-email" v-model="formData.email" type="text" id="input-email" placeholder="E-mailadres">
+                  <input
+                    class="input-email"
+                    v-model="formData.email"
+                    type="text"
+                    id="input-email"
+                    placeholder="E-mailadres" />
                   <span v-if="errors.email" class="error-message">{{ errors.email }}</span>
                 </div>
               </div>
+
               <div class="formulier-volgende-formulier">
                 <button class="formulier-volgende-button-formulier" type="submit">Aanvraag afronden</button>
               </div>
             </form>
           </div>
+
           <p class="formulier-footer-formulier">Je gegevens worden uitsluitend gebruikt om jou te voorzien van gratis,<br>persoonlijk advies en offertes van onze partners.<br>Dit is volledig vrijblijvend, je zit dus nergens aan vast.</p>
         </div>
       </div>
     </div>
+
     <p class="formulier-footer">© Nederlandsadvies.nl | Algemene voorwaarden | Privacy policy</p>
   </div>
 </template>

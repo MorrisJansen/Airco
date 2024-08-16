@@ -8,6 +8,7 @@ import analyse from './components/analyse.vue';
 import formulier from './components/formulier.vue';
 import navbar from './components/navbar.vue';
 import { campagneStartData } from './data';
+import bedankt from './components/bedankt.vue';
 
 Vue.use(Router);
 
@@ -48,6 +49,11 @@ export default new Router({
     {
       path: '/navbar',
       component: navbar,
+      props: {...campagneStartData},
+    },
+    {
+      path: '/bedankt',
+      component: bedankt,
       props: {...campagneStartData},
     },
     {

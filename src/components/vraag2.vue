@@ -30,8 +30,7 @@ export default {
       const answerId = this.antwoordOpties[optionText];
       if (answerId) {
         this.geselecteerdAntwoordId = answerId;
-        addAntwoord('vraag2', { id: answerId }); // Correct the answer format
-        console.log(`Antwoord voor vraag2 toegevoegd: ${answerId}`);
+        addAntwoord('vraag2', { id: answerId });
         this.$router.push('/vraag3');
       } else {
         console.error('Onbekende optie geselecteerd:', optionText);

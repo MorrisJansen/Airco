@@ -33,6 +33,7 @@ export default {
       errorMessage: '',
       isModalVisible: false, 
       modalContent: '',
+      isLoading: false,
     };
   },
   props: [
@@ -106,24 +107,35 @@ export default {
       }
     },
     async handlePostcode() {
-      const isValid = this.checkPostcode();
-      if (isValid) {
-        const streets = await this.fetchStreetByPostcode(this.postcode);
-        if (streets.length > 0) {
-          localStorage.setItem('postcode', this.postcode);
-          localStorage.setItem('straatnaam', JSON.stringify(streets));
-          if (streets.length === 1) {
-            localStorage.setItem('selectedStreet', streets[0]);
-          } else {
-            localStorage.removeItem('selectedStreet');
-          }
-          this.$router.push('/vraag1').then(() => {
-          });
+    const isValid = this.checkPostcode();
+    if (isValid) {
+      const streets = await this.fetchStreetByPostcode(this.postcode);
+      if (streets.length > 0) {
+        localStorage.setItem('postcode', this.postcode);
+        localStorage.setItem('straatnaam', JSON.stringify(streets));
+        if (streets.length === 1) {
+          localStorage.setItem('selectedStreet', streets[0]);
+        } else {
+          localStorage.removeItem('selectedStreet');
         }
-      } else {
-        console.error('Postcode niet geldig:', this.errorMessage);
+
+        this.city = localStorage.getItem('city');
+        this.isLoading = true;
+
+        setTimeout(() => {
+          this.isLoading = false; 
+          this.showCongratsModal = true;
+          
+          setTimeout(() => {
+            this.showCongratsModal = false; 
+            this.$router.push('/vraag1'); 
+          }, 3000); 
+        }, 3000); 
       }
-    },
+    } else {
+      console.error('Postcode niet geldig:', this.errorMessage);
+    }
+  },
     handleKeyDown(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
@@ -133,7 +145,7 @@ export default {
     async openModal(url) {
       try {
         const response = await fetch(url);
-        const content = await response.text(); // Haal de content op als tekst
+        const content = await response.text();
         this.modalContent = content;
         this.isModalVisible = true;
       } catch (error) {
@@ -203,6 +215,27 @@ export default {
         <!-- dit is de afbeelding van de pijl aan de linkerkant -->
         <img class="layer_1" src="https://cdn.animaapp.com/projects/668fabe1a9b7d2ad0686601a/releases/668fac9fb8183b225861ce8d/img/layer-1.svg" alt="Layer_1"/>
 
+
+
+
+
+        <div v-if="isLoading" class="loading-overlay">
+          <div class="loading-modal">
+            <p class="laadscherm-tekst">Even geduld aub...</p>
+            <div class="spinner"></div>
+          </div>
+        </div>
+  
+
+        <div v-if="showCongratsModal" class="loading-overlay">
+          <div class="loading-modal">
+            <h2 class="laadscherm-tekst">Gefeliciteerd!</h2>
+            <p class="laadscherm-tekst">Wij zijn beschikbaar in <span class="groen">{{ city }}</span>.</p> <br>
+            <p class="laadscherm-tekst" >We sturen je nu door...</p>
+          </div>
+        </div>
+  
+  
 
 
         <div class="frame-13">
@@ -446,7 +479,53 @@ export default {
 @import '../../variables'
 
 
+// dit is voor het laadscherm
 
+.laadscherm-tekst
+  font-size: 3.5rem
+  font-family: Catamaran
+  margin-bottom: 2rem
+
+.loading-overlay
+  position: fixed
+  top: 0
+  left: 0
+  width: 100vw
+  height: 100vh
+  background-color: rgba(0, 0, 0, 0.5)
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 10000
+
+.loading-modal
+  background-color: #fff
+  padding: 2rem
+  border-radius: 10px
+  text-align: center
+  width: 50%
+  height: 50%
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+
+.spinner
+  width: 50px
+  height: 50px
+  border: 5px solid black
+  border-top: 5px solid white
+  border-radius: 50%
+  animation: spin 1s linear infinite
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+
+// dit is voor de footer
 .modal-overlay
   position: fixed
   top: 0
