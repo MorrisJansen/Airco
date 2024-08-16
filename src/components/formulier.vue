@@ -138,70 +138,72 @@ export default {
       return isGenderValid && isFirstnameValid && isLastnameValid && isEmailValid && isPhoneNumberValid;
     },
     afronden() {
-      if (!this.validateForm()) {
-        console.error('Formulier bevat ongeldige waarden.');
-        return;
-      }
+  // Debugging: Log de waarde van gender
+  console.log('Geselecteerd geslacht:', this.formData.gender);
+  
+  // Valideer het formulier
+  if (!this.validateForm()) {
+    console.error('Formulier bevat ongeldige waarden.');
+    return;
+  }
 
-      console.log('Geselecteerd geslacht:', this.formData.gender); // Debugging
+  // Voorbereiden van gegevens om te versturen
+  const username = '185';
+  const password = 'ab8221d4a3170d89542880459abf79817ae367c2';
+  const authHeader = 'Basic ' + btoa(username + ':' + password);
+  const apiUrl = 'https://leadgen.republish.nl/api/sponsors/2394/leads';
 
-      const username = '185';
-      const password = 'ab8221d4a3170d89542880459abf79817ae367c2';
-      const authHeader = 'Basic ' + btoa(username + ':' + password);
-      const apiUrl = 'https://leadgen.republish.nl/api/sponsors/2394/leads';
+  const antwoordenData = getAntwoorden();
+  const answers = [
+    5109,
+    antwoordenData.vraag2 ? antwoordenData.vraag2.id : null,
+    antwoordenData.vraag3 ? antwoordenData.vraag3.id : null
+  ].filter(id => id !== null);
 
-      const antwoordenData = getAntwoorden();
+  const leadData = {
+    language: 'nl_NL',
+    publisher_id: 'Morris de publisher :)',
+    site_subid: 'id=5',
+    site_custom_url: 'http://nederlansadvies.nl',
+    site_custom_name: 'airco',
+    ip: 'userIPAddress',
+    optin_timestamp: new Date().toISOString().slice(0, 19).replace('T', ' '),
+    firstname: this.formData.firstname,
+    lastname: this.formData.lastname,
+    email: this.formData.email,
+    gender: this.formData.gender,
+    house_number: this.formData.house_number,
+    street: this.formData.street,
+    city: this.formData.city,
+    zip: this.formData.zip,
+    phone_number: this.formData.phone_number,
+    answers: answers
+  };
 
-      const answers = [
-        5109, 
-        antwoordenData.vraag2 ? antwoordenData.vraag2.id : null,
-        antwoordenData.vraag3 ? antwoordenData.vraag3.id : null 
-      ].filter(id => id !== null);
+  console.log('Te versturen data:', leadData); // Debugging
 
-      const leadData = {
-        language: 'nl_NL',
-        publisher_id: 'Morris de publisher :)',
-        site_subid: 'id=5',
-        site_custom_url: 'http://nederlansadvies.nl',
-        site_custom_name: 'airco',
-        ip: 'userIPAddress',
-        optin_timestamp: new Date().toISOString().slice(0, 19).replace('T', ' '),
-        firstname: this.formData.firstname,
-        lastname: this.formData.lastname,
-        email: this.formData.email,
-        gender: this.formData.gender,
-        house_number: this.formData.house_number,
-        street: this.formData.street,
-        city: this.formData.city,
-        zip: this.formData.zip,
-        phone_number: this.formData.phone_number,
-        answers: answers
-      };
-
-      console.log('Te versturen data:', leadData); // Debugging
-
-      fetch(apiUrl, {
-        method: 'POST',
-        headers: {
-          'Authorization': authHeader,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(leadData)
-      })
-      .then(response => {
-        if (response.status === 201) {
-          this.$router.push('/bedankt');
-        } else {
-          return response.json();
-        }
-      })
-      .then(responseData => {
-        console.log('API response:', responseData); // Debugging
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+  fetch(apiUrl, {
+    method: 'POST',
+    headers: {
+      'Authorization': authHeader,
+      'Content-Type': 'application/json'
     },
+    body: JSON.stringify(leadData)
+  })
+  .then(response => {
+    if (response.status === 201) {
+      this.$router.push('/bedankt');
+    } else {
+      return response.json();
+    }
+  })
+  .then(responseData => {
+    console.log('API response:', responseData); // Debugging
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+}
   },
   mounted() {
     window.addEventListener('keydown', this.handleEnterform);
