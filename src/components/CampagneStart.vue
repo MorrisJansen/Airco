@@ -229,8 +229,7 @@ export default {
 
         <div v-if="showCongratsModal" class="loading-overlay">
           <div class="loading-modal">
-            <h2 class="laadscherm-tekst">Gefeliciteerd!</h2>
-            <p class="laadscherm-tekst">Wij zijn beschikbaar in <span class="groen">{{ city }}</span>.</p> <br>
+            <p class="laadscherm-tekst">Gefeliciteerd, wij zijn beschikbaar in <span class="groen">{{ city }}</span>!</p> <br>
             <p class="laadscherm-tekst" >We sturen je nu door...</p>
           </div>
         </div>
@@ -485,6 +484,7 @@ export default {
   font-size: 3.5rem
   font-family: Catamaran
   margin-bottom: 2rem
+  font-weight: 700
 
 .loading-overlay
   position: fixed
@@ -500,7 +500,7 @@ export default {
 
 .loading-modal
   background-color: #fff
-  padding: 2rem
+  padding: 7rem
   border-radius: 10px
   text-align: center
   width: 50%
