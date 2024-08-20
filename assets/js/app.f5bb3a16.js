@@ -3582,7 +3582,7 @@ var bedankt_component = Object(componentNormalizer["a" /* default */])(
 vue_runtime_esm["a" /* default */].use(vue_router_esm["a" /* default */]);
 /* harmony default export */ var router = (new vue_router_esm["a" /* default */]({
   mode: 'history',
-  base: '/airco/',
+  base: '/Airco/',
   routes: [{
     path: '/',
     component: CampagneStart,
@@ -3905,4 +3905,4 @@ module.exports = __webpack_require__.p + "assets/img/firstQuestion.b563951f.png"
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.0c888c0c.js.map
+//# sourceMappingURL=app.f5bb3a16.js.map
