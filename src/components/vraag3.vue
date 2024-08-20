@@ -80,7 +80,7 @@ export default {
     <div class="navbar">
       <div class="container-links">
         <a href="/Airco">
-        <div class="container-advies-logo">
+          <div class="container-advies-logo">
           <logo-nl-advies-airco
             :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
             :airconditioning="logoNLAdviesAircoProps.airconditioning" />
