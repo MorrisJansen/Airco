@@ -273,7 +273,7 @@ export default {
 
             </div>
 
-            <p class="controleer-nu-of-wij valign-text-bottom">Controleer nu of wij actief zijn in jouw regio:</p>
+            <p class="controleer-nu-of-wij valign-text-bottom">Controleer nu of wij actief zijn in jouw regio.</p>
           </div>
 
 
