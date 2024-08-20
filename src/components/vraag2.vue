@@ -59,7 +59,7 @@ export default {
     <!-- navbar -->
     <div class="navbar">
       <div class="container-links">
-        <a href="/https://morrisjansen.github.io/Airco/">
+        <a href="/">
         <div class="container-advies-logo">
           <logo-nl-advies-airco
             :nederlandsadviesNl="logoNLAdviesAircoProps.nederlandsadviesNl"
