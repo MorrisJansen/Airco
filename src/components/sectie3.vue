@@ -122,7 +122,6 @@ export default {
   letter-spacing: 0
   line-height: normal
   position: relative
-  //width: 733px
 
 .frame-29
   align-items: flex-start
@@ -168,6 +167,10 @@ export default {
 
 
 
+@media (min-width: 1500px) and (max-width: 2000px)
+  .frame-22-item
+    max-width: 80%
+
 @media (max-width: 1500px)
   .overlap-group9
     position: relative
@@ -177,6 +180,8 @@ export default {
   .overlap-group4
     width: 100vw
 
+  .frame-22-item
+    max-width: 90%
 
 @media (max-width: 1200px)
   .overlap-group4
@@ -185,6 +190,9 @@ export default {
   .frame-22
     position: relative
     right: 130px
+
+  .frame-22-item
+    width: 53vw
 
   .overlap-group9
     left: -400px

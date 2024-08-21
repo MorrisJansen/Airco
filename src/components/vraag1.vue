@@ -1,7 +1,7 @@
 <script>
 import LogoNlAdviesAirco from "./LogoNlAdviesAirco";
 import progressiebalk from "./progressiebalk.vue";
-import { addAntwoord, getAntwoorden } from "../antwoorden.js";
+import { addAntwoord } from "../antwoorden.js";
 
 export default {
   name: "vraag1",
@@ -20,130 +20,108 @@ export default {
         zip: localStorage.getItem('postcode') || '',
         house_number: '',
         street: '',
-        city: localStorage.getItem('city') || ''
+        city: localStorage.getItem('city') || '',
       },
-      streets: JSON.parse(localStorage.getItem('straatnaam')) || [],
+      validHouseNumbers: [], // Om de geldige huisnummers op te slaan
       currentPage: 1,
-      error: '',
+      error: '', // Foutmelding variabele
     };
   },
   computed: {
-  fullAddress() {
-    if (this.error) {
-      return this.error; // Retourneer de foutmelding als er een fout is
+    fullAddress() {
+      if (this.error) {
+        return this.error; // Retourneer de foutmelding als er een fout is
+      }
+      if (this.formData.house_number && (this.streets.length === 1 || this.formData.street)) {
+        const streetName = this.streets.length === 1 ? this.streets[0] : this.formData.street;
+        return `${streetName} ${this.formData.house_number}, ${this.formData.zip} ${this.formData.city}`;
+      }
+      return '';
     }
-    if (this.formData.house_number && (this.streets.length === 1 || this.formData.street)) {
-      const streetName = this.streets.length === 1 ? this.streets[0] : this.formData.street;
-      return `${streetName} ${this.formData.house_number}, ${this.formData.zip} ${this.formData.city}`;
-    }
-    return '';
-  }
-},
+  },
   methods: {
-    async validateAddress() {
-        const authKey = 'P6JTU52clKYjZca8'; // Vervang dit door je eigen API-sleutel
-        const baseUrl = 'https://api.pro6pp.nl/v2/suggest/nl/streetNumber';
-        const url = `${baseUrl}?postalCode=${encodeURIComponent(this.formData.zip)}&streetNumber=${encodeURIComponent(this.formData.house_number)}&authKey=${authKey}`;
+    async fetchValidHouseNumbers() {
+      const authKey = 'P6JTU52clKYjZca8'; // Vervang dit door je eigen API-sleutel
+      const baseUrl = 'https://api.pro6pp.nl/v2/suggest/nl/streetNumber';
+      const maxResults = 900; // Stel een hogere limiet in voor het aantal resultaten
+      const url = `${baseUrl}?postalCode=${encodeURIComponent(this.formData.zip)}&authKey=${authKey}&maxResults=${maxResults}`;
 
-        try {
-            const response = await fetch(url);
-            if (!response.ok) {
-                throw new Error('Fout bij het ophalen van adresgegevens.');
-            }
-            const data = await response.json();
-            if (data.length === 0) {
-                this.error = 'Het huisnummer komt niet overeen met de opgegeven postcode.';
-                this.showResponse = false;
-                return false;
-            }
-
-            const addressData = data[0];
-            this.formData.street = addressData.street || '';
-            this.formData.city = addressData.settlement || '';
-            this.premise = addressData.premise || '';
-            this.municipality = addressData.municipality || '';
-            this.province = addressData.province || '';
-
-            this.error = ''; // Wis de foutmelding als alles goed is
-            this.showResponse = true;
-
-            // Voeg het adres toe aan antwoorden
-            addAntwoord('adres', {
-                postcode: this.formData.zip,
-                huisnummer: this.formData.house_number,
-                straatnaam: this.formData.street,
-                stad: this.formData.city,
-                gemeente: this.municipality,
-                provincie: this.province
-            });
-
-            return true;
-        } catch (error) {
-            this.error = 'Er is een fout opgetreden bij de validatie.';
-            console.error(error);
-            this.showResponse = false;
-            return false;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Fout bij het ophalen van huisnummers.');
         }
+        const data = await response.json();
+        this.validHouseNumbers = data.map(item => item.streetNumber.toString().trim()); // Opslaan van de huisnummers als strings
+        console.log("Geldige huisnummers:", this.validHouseNumbers); // Log de geldige huisnummers
+      } catch (error) {
+        console.error('Er is een fout opgetreden bij het ophalen van huisnummers:', error);
+        this.error = 'Er is een fout opgetreden bij het ophalen van huisnummers.';
+      }
+    },
+
+    validateHouseNumber() {
+      const inputHouseNumber = this.formData.house_number.toString().trim();
+      return this.validHouseNumbers.includes(inputHouseNumber);
+    },
+
+    async validateAddress() {
+      // Controleer of het huisnummer geldig is
+      const isValid = this.validateHouseNumber();
+      if (!isValid) {
+        this.error = 'Het ingevoerde huisnummer is niet geldig voor de opgegeven postcode.';
+        return false; // Stop als het huisnummer ongeldig is
+      }
+
+      // Voeg het adres toe aan antwoorden en wis de foutmelding
+      addAntwoord('adres', {
+        postcode: this.formData.zip,
+        huisnummer: this.formData.house_number,
+        straatnaam: this.formData.street,
+        stad: this.formData.city,
+      });
+
+      this.error = ''; // Wis de foutmelding als alles goed is
+      return true;
     },
 
     async navigateToNextPage() {
-        if (!this.formData.house_number || isNaN(this.formData.house_number)) {
-            alert('Voer een geldig huisnummer in.');
-            return;
-        }
-        if (!this.formData.street && this.streets.length > 1) {
-            alert('Selecteer een straatnaam.');
-            return;
-        }
+      // Validatie van het adres bij het proberen naar de volgende pagina te gaan
+      const isValid = await this.validateAddress();
+      if (!isValid) return;
 
-        // Validate address
-        const isValid = await this.validateAddress();
-        if (!isValid) return;
-
-        // Antwoorden opslaan
-        addAntwoord('vraag1', {
-            zip: this.formData.zip,
-            house_number: this.formData.house_number,
-            street: this.formData.street || this.streets[0],
-        });
-
-        this.$router.push('/vraag2');
+      this.$router.push('/vraag2');
     },
 
-    updateAddress() {
-        if (this.streets.length === 1) {
-            this.formData.street = this.streets[0];
-        }
-    },
     handleEnter(event) {
       if (event.key === 'Enter') {
         event.preventDefault();
         this.navigateToNextPage();
       }
     }
-},
+  },
   watch: {
-    'formData.house_number': async function (newValue) {
-      if (newValue) {
-        await this.validateAddress();
+    'formData.zip': async function (newZip) {
+      if (newZip) {
+        await this.fetchValidHouseNumbers(); // Haal geldige huisnummers op
       }
+    },
+    'formData.house_number': function () {
+      // Wis de foutmelding zodra de gebruiker een nieuw huisnummer invoert
+      this.error = '';
     }
   },
   mounted() {
     if (this.formData.zip) {
-      this.updateAddress();
+      this.fetchValidHouseNumbers(); // Ophalen van huisnummers bij het laden van de pagina
     }
     window.addEventListener('keydown', this.handleEnter);
   },
   beforeDestroy() {
-  window.removeEventListener('keydown', this.handleEnter);
-}
-  
+    window.removeEventListener('keydown', this.handleEnter);
+  }
 };
 </script>
-
-
-
 
 
 <template>

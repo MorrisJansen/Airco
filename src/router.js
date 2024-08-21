@@ -9,6 +9,7 @@ import formulier from './components/formulier.vue';
 import navbar from './components/navbar.vue';
 import { campagneStartData } from './data';
 import bedankt from './components/bedankt.vue';
+import Googlemap from './components/googlemap.vue';
 
 Vue.use(Router);
 
@@ -54,6 +55,11 @@ export default new Router({
     {
       path: '/bedankt',
       component: bedankt,
+      props: {...campagneStartData},
+    },
+    {
+      path: '/googlemaps',
+      component: Googlemap,
       props: {...campagneStartData},
     },
     {
